@@ -8,11 +8,25 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <form (ngSubmit)="logform()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text" [(ngModel)]="userName" name="userName"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
+      </ion-item>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    </ion-list>
+    <div padding>
+      <button ion-button  class="campo" color="primary" type="submit">Enviar</button>
+    </div>
+  </form>
+  <form (ngSubmit)="novoUsuario()">
+    <div padding>
+        <button ion-button  class="campo" color="primary" type="submit">Novo Usuário</button>
+    </div>
+  </form>
 </ion-content>
