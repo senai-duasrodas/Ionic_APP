@@ -17,8 +17,11 @@ import { NovoUsuarioProvider } from '../../providers/novo-usuario/novo-usuario';
   templateUrl: 'novo-usuario.html',
 })
 export class NovoUsuarioPage {
-  public userName : string;
-  public password : string;
+  userName : string;
+  password : string;
+  nome: string;
+  email: string;
+  cracha : number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private toast : Toast, private novo : NovoUsuarioProvider ) {
   }
@@ -45,7 +48,7 @@ export class NovoUsuarioPage {
   }
 }
   public novoUsuario(){
-      this.novo.cadastrando(this.userName, this.password).subscribe(
+      this.novo.cadastrando(this.userName, this.password, this.cracha, this.email, this.nome).subscribe(
         (data5 : any) => {
           //console.log(data5);
           this.toast.presentToast("Cadastro realizado com sucesso!", 7000);

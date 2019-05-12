@@ -14,13 +14,22 @@ import { Toast } from '../providers/toast';
 import { NovoUsuarioProvider } from '../providers/novo-usuario/novo-usuario';
 import { HttpProvider } from '../providers/http';
 import { LoginProvider } from '../providers/login/login';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { ConsultaOrdensPage } from '../pages/consulta-ordens/consulta-ordens';
+import { CadastroOrdemServicoPage } from '../pages/cadastro-ordem-servico/cadastro-ordem-servico';
+import { ConsultarSetorProvider } from '../providers/consultar-setor/consultar-setor';
+import { CadastroOrdemProvider } from '../providers/cadastro-ordem/cadastro-ordem';
+import { ConsultOrdemProvider } from '../providers/consult-ordem/consult-ordem';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    NovoUsuarioPage
+    NovoUsuarioPage,
+    DashboardPage,
+    ConsultaOrdensPage,
+    CadastroOrdemServicoPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +41,10 @@ import { LoginProvider } from '../providers/login/login';
     MyApp,
     HomePage,
     ListPage,
-    NovoUsuarioPage
+    NovoUsuarioPage,
+    DashboardPage,
+    ConsultaOrdensPage,
+    CadastroOrdemServicoPage
   ],
   providers: [
     StatusBar,
@@ -41,7 +53,10 @@ import { LoginProvider } from '../providers/login/login';
     HttpProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NovoUsuarioProvider,
-    LoginProvider
+    LoginProvider,
+    ConsultarSetorProvider,
+    CadastroOrdemProvider,
+    ConsultOrdemProvider
   ]
 })
 export class AppModule {}

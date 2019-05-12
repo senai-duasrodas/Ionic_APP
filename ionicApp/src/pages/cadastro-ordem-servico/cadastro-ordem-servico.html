@@ -1,0 +1,63 @@
+<!--
+  Generated template for the CadastroOrdemServicoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>cadastroOrdemServico</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <form (ngSubmit)="cadastroOrdemServico()">
+        <ion-list>
+          <ion-item>
+              <ion-label floating>Resumo</ion-label>
+              <ion-input type="text" [(ngModel)]="resumo" name="resumo"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Descrição</ion-label>
+              <ion-input type="text" [(ngModel)]="descricao" name="descricao"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Tipo Manutenção</ion-label>
+              <ion-input type="text" [(ngModel)]="manutencao" name="manutencao"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label floating>Inicio Planejado</ion-label>
+            <ion-input type="text" [(ngModel)]="inicioPlanejado" name="inicioPlanejado"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Fim Planejado</ion-label>
+              <ion-input type="text" [(ngModel)]="fimPlanejado" name="fimPlanejado"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Prioridade</ion-label>
+              <ion-input type="text" [(ngModel)]="prioridade" name="prioridade"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Status Chamado</ion-label>
+              <ion-input type="text" [(ngModel)]="statusChamado" name="statusChamado"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label floating>Requer Parada</ion-label>
+              <ion-input type="text" [(ngModel)]="requerParada" name="requerParada"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>Setor</ion-label>
+                <ion-select [(ngModel)]="setorSelecionado" name="setorSelecionado">
+                  <ion-option value="{{item.id}}" *ngFor="let item of setor">{{item.nome}}</ion-option>
+                </ion-select>
+          </ion-item>
+        </ion-list>
+        <div padding>
+          <button ion-button  class="campo" color="primary" type="submit">Enviar</button>
+        </div>
+    </form>
+
+</ion-content>

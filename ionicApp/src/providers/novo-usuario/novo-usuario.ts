@@ -17,13 +17,16 @@ export class NovoUsuarioProvider {
   constructor(public http: HttpProvider) {
     console.log('Hello NovoUsuarioProvider Provider');
   }
-  public cadastrando(userName : string, password : string){
+  public cadastrando(userName : string, password : string, cracha : number, email: string, nome: string ){
     console.log("Passei Aqui mesmo");
     //console.log(userName);
     //console.log(password);
     let obj = {
       userName : userName,
-      password : password
+      password : password,
+      cracha : cracha,
+      email: email,
+      nome: nome
     }
     this.http.url = this.url;
     return this.http.post(obj);

@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpProvider } from '../http';
 
 /*
   Generated class for the LoginProvider provider.
@@ -12,7 +12,7 @@ export class LoginProvider {
 
   url = "http://localhost:3000/logando";
   
-  constructor(public http: HttpClient) {
+  constructor(public http: HttpProvider) {
     console.log('Hello LoginProvider Provider');
   }
 
