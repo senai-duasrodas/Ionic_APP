@@ -16,9 +16,13 @@ export class ConsultOrdemProvider {
   constructor(public http: HttpProvider) {
     console.log('Hello ConsultOrdemProvider Provider');
   }
-  public consultarOrdem(){
+  public consultarOrdem(statusOrdemSelecionada : string,prioridadeSelecionada : string){
+    let consultaOrdem = {
+      statusOrdemSelecionada : statusOrdemSelecionada,
+      prioridadeSelecionada : prioridadeSelecionada,
+    }
     this.http.url = this.url;
-    return this.http.get();
+    return this.http.post(consultaOrdem);
   }
 
 }

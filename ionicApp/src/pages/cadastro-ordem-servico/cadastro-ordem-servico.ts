@@ -67,7 +67,6 @@ export class CadastroOrdemServicoPage {
     this.tipoStatusProvider.todosStatus().subscribe(
       (data : any) => {
         this.statusOrdem=data;
-        console.log(this.setor);
       },
       (error : any) =>{
         console.log("Deu errado");
