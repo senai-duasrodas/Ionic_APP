@@ -14,30 +14,26 @@
 
 
 <ion-content padding>
-    <ion-card>
+    <ion-card *ngFor="let item of ordem">
         <ion-fab right top>
           <button ion-fab>
             <ion-icon name="ios-paper"></ion-icon>
           </button>
         </ion-fab>
         <ion-item>
-          <h2>{{item.resumo}}</h2>
-          <p>{{item.nome}}</p>
-        </ion-item>
-      
+          <h2>Resumo: {{item.resumo}}</h2>
+          <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
+          <p>Fim Planejado: {{item.fimPlanejado}}</p>
+        </ion-item>      
         <ion-item>
-          <h2>{{item.resumo}}</h2>
-          <p>{{item.nome}}</p>
-        </ion-item>
-      
-        <ion-item>
-          <span item-start>{{item.status}}</span>
+          <span item-start>Status: {{item.tipoStatus}}</span>
           <button ion-button icon-start clear item-end>
             <ion-icon name="navigate"></ion-icon>
             Detalhes
           </button>
         </ion-item>
-      
       </ion-card>
-
+      <div padding>
+        <button ion-button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
+      </div>
 </ion-content>

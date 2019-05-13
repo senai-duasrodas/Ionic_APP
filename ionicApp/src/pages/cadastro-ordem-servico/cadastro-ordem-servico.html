@@ -37,12 +37,16 @@
               <ion-input type="text" [(ngModel)]="fimPlanejado" name="fimPlanejado"></ion-input>
           </ion-item>
           <ion-item>
-              <ion-label floating>Prioridade</ion-label>
-              <ion-input type="text" [(ngModel)]="prioridade" name="prioridade"></ion-input>
+            <ion-label>Prioridade</ion-label>
+              <ion-select [(ngModel)]="prioridadeSelecionada" name="prioridadeSelecionada">
+                <ion-option value="{{item.id}}" *ngFor="let item of prioridade">{{item.tipoPrioridade}}</ion-option>
+              </ion-select>
           </ion-item>
           <ion-item>
-              <ion-label floating>Status Chamado</ion-label>
-              <ion-input type="text" [(ngModel)]="statusChamado" name="statusChamado"></ion-input>
+            <ion-label>Status Ordem</ion-label>
+              <ion-select [(ngModel)]="statusOrdemSelecionada" name="statusOrdemSelecionada">
+                <ion-option value="{{item.id}}" *ngFor="let item of statusOrdem">{{item.tipoStatus}}</ion-option>
+              </ion-select>
           </ion-item>
           <ion-item>
               <ion-label floating>Requer Parada</ion-label>
@@ -59,5 +63,9 @@
           <button ion-button  class="campo" color="primary" type="submit">Enviar</button>
         </div>
     </form>
+
+    <div padding>
+        <button ion-button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
+    </div>
 
 </ion-content>

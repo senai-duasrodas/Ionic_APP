@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { ConsultarSetorProvider } from '../../providers/consultar-setor/consultar-setor';
 import { CadastroOrdemProvider } from '../../providers/cadastro-ordem/cadastro-ordem';
 import { Toast } from '../../providers/toast';
+import { DashboardPage } from '../dashboard/dashboard';
+import { TipoPrioridadeProvider } from '../../providers/tipo-prioridade/tipo-prioridade';
+import { TipoStatusProvider } from '../../providers/tipo-status/tipo-status';
 
 /**
  * Generated class for the CadastroOrdemServicoPage page.
@@ -19,29 +22,51 @@ import { Toast } from '../../providers/toast';
 export class CadastroOrdemServicoPage {
 
   public setor = [];
+  public statusOrdem = [];
+  public prioridade = [];
   public ordem = [];
   resumo : string;
   descricao : string;
   manutencao : string;
   inicioPlanejado : string;
   fimPlanejado : string;
-  prioridade : string;
-  statusChamado : string;
   requerParada : string;
   setorSelecionado : string;
+  statusOrdemSelecionada : string;
+  prioridadeSelecionada : string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private toast : Toast, public consultarSetorProvider: ConsultarSetorProvider, public cadastroOrdemProvider: CadastroOrdemProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private toast : Toast, public consultarSetorProvider: ConsultarSetorProvider, public cadastroOrdemProvider: CadastroOrdemProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider, public tipoStatusProvider: TipoStatusProvider) {
     this.consultSetor();
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad CadastroOrdemServicoPage');
+    this.tipoPrioridade();
+    this.tipoStatus();
   }
   public consultSetor() {
     this.consultarSetorProvider.todosSetores().subscribe(
-      (data2 : any) => {
-        this.setor=data2;
+      (data : any) => {
+        this.setor=data;
+        console.log(this.setor);
+      },
+      (error : any) =>{
+        console.log("Deu errado");
+      }
+    );
+  }
+  public tipoPrioridade() {
+    this.tipoPrioridadeProvider.todasPrioridade().subscribe(
+      (data : any) => {
+        this.prioridade=data;
+        console.log(this.setor);
+      },
+      (error : any) =>{
+        console.log("Deu errado");
+      }
+    );
+  }
+  public tipoStatus() {
+    this.tipoStatusProvider.todosStatus().subscribe(
+      (data : any) => {
+        this.statusOrdem=data;
         console.log(this.setor);
       },
       (error : any) =>{
@@ -50,7 +75,7 @@ export class CadastroOrdemServicoPage {
     );
   }
   public cadastroOrdemServico(){
-    this.cadastroOrdemProvider.cadastroOrdem(this.resumo, this.descricao, this.manutencao, this.inicioPlanejado, this.fimPlanejado, this.prioridade, this.statusChamado, this.requerParada, this.setorSelecionado).subscribe(
+    this.cadastroOrdemProvider.cadastroOrdem(this.resumo, this.descricao, this.manutencao, this.inicioPlanejado, this.fimPlanejado, this.prioridadeSelecionada, this.statusOrdemSelecionada, this.requerParada, this.setorSelecionado).subscribe(
       (data2 : any) => {
         this.ordem=data2;
         console.log(this.ordem);
@@ -61,6 +86,9 @@ export class CadastroOrdemServicoPage {
         this.toast.presentToast("Ordem de serviço inválido!", 7000);
       }
     );
+  }
+  public voltarDashboard(){
+    this.navCtrl.setRoot(DashboardPage);
   }
 
 }

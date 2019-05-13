@@ -3,20 +3,20 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
-  Generated class for the ConsultOrdemProvider provider.
+  Generated class for the TipoStatusProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
-export class ConsultOrdemProvider {
-
-  url = "http://localhost:3000/ordemServico";
+export class TipoStatusProvider {
+  
+  url = "http://localhost:3000/status";
 
   constructor(public http: HttpProvider) {
-    console.log('Hello ConsultOrdemProvider Provider');
+    console.log('Hello TipoStatusProvider Provider');
   }
-  public consultarOrdem(){
+  public todosStatus(){
     this.http.url = this.url;
     return this.http.get();
   }

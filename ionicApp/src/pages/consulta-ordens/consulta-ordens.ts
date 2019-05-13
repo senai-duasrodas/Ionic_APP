@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConsultOrdemProvider } from '../../providers/consult-ordem/consult-ordem';
+import { DashboardPage } from '../dashboard/dashboard';
 
 /**
  * Generated class for the ConsultaOrdensPage page.
@@ -35,6 +36,9 @@ export class ConsultaOrdensPage {
         console.log("Deu errado");
       }
     );
+  }
+  public voltarDashboard(){
+    this.navCtrl.setRoot(DashboardPage);
   }
 
 }

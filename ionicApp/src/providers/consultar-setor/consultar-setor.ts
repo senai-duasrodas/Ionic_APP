@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class ConsultarSetorProvider {
 
-  url = "http://localhost:3000/ordemServico";
+  url = "http://localhost:3000/setor";
 
   constructor(public http: HttpProvider) {
     console.log('Hello ConsultarSetorProvider Provider');

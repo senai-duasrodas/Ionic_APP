@@ -20,6 +20,8 @@ import { CadastroOrdemServicoPage } from '../pages/cadastro-ordem-servico/cadast
 import { ConsultarSetorProvider } from '../providers/consultar-setor/consultar-setor';
 import { CadastroOrdemProvider } from '../providers/cadastro-ordem/cadastro-ordem';
 import { ConsultOrdemProvider } from '../providers/consult-ordem/consult-ordem';
+import { TipoStatusProvider } from '../providers/tipo-status/tipo-status';
+import { TipoPrioridadeProvider } from '../providers/tipo-prioridade/tipo-prioridade';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { ConsultOrdemProvider } from '../providers/consult-ordem/consult-ordem';
     LoginProvider,
     ConsultarSetorProvider,
     CadastroOrdemProvider,
-    ConsultOrdemProvider
+    ConsultOrdemProvider,
+    TipoStatusProvider,
+    TipoPrioridadeProvider
   ]
 })
 export class AppModule {}
