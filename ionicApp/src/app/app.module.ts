@@ -22,6 +22,8 @@ import { CadastroOrdemProvider } from '../providers/cadastro-ordem/cadastro-orde
 import { ConsultOrdemProvider } from '../providers/consult-ordem/consult-ordem';
 import { TipoStatusProvider } from '../providers/tipo-status/tipo-status';
 import { TipoPrioridadeProvider } from '../providers/tipo-prioridade/tipo-prioridade';
+import { DetalhamentoOrdemProvider } from '../providers/detalhamento-ordem/detalhamento-ordem';
+import { ConsultaOrdemProvider } from '../providers/consulta-ordem/consulta-ordem';
 
 @NgModule({
   declarations: [
@@ -60,7 +62,9 @@ import { TipoPrioridadeProvider } from '../providers/tipo-prioridade/tipo-priori
     CadastroOrdemProvider,
     ConsultOrdemProvider,
     TipoStatusProvider,
-    TipoPrioridadeProvider
+    TipoPrioridadeProvider,
+    DetalhamentoOrdemProvider,
+    ConsultaOrdemProvider
   ]
 })
 export class AppModule {}
