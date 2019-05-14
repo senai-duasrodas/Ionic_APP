@@ -1,6 +1,6 @@
-import { HttpProvider } from './../../../../../Versão antiga salva/Ionic_APP/ionicApp/src/providers/http';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { HttpProvider } from '../http';
 
 /*
   Generated class for the ConsultaOrdemProvider provider.

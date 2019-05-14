@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConsultaOrdemProvider } from '../../providers/consulta-ordem/consulta-ordem';
+import { TipoStatusProvider } from '../../providers/tipo-status/tipo-status';
+import { TipoPrioridadeProvider } from '../../providers/tipo-prioridade/tipo-prioridade';
 
 /**
  * Generated class for the DetalheOrdemServicoPage page.
@@ -22,7 +24,7 @@ export class DetalheOrdemServicoPage {
   statusOrdemSelecionada : string;
   prioridadeSelecionada : string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public consultaOrdemProvider: ConsultaOrdemProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public consultaOrdemProvider: ConsultaOrdemProvider,public tipoStatusProvider: TipoStatusProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider) {
   }
   public consultaOrdem() {
     this.consultaOrdemProvider.detalhamentoOrdem().subscribe(
