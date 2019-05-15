@@ -24,6 +24,7 @@ import { TipoStatusProvider } from '../providers/tipo-status/tipo-status';
 import { TipoPrioridadeProvider } from '../providers/tipo-prioridade/tipo-prioridade';
 import { DetalhamentoOrdemProvider } from '../providers/detalhamento-ordem/detalhamento-ordem';
 import { ConsultaOrdemProvider } from '../providers/consulta-ordem/consulta-ordem';
+import { SolicitacaoPecaPage } from '../pages/solicitacao-peca/solicitacao-peca';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ConsultaOrdemProvider } from '../providers/consulta-ordem/consulta-orde
     NovoUsuarioPage,
     DashboardPage,
     ConsultaOrdensPage,
-    CadastroOrdemServicoPage
+    CadastroOrdemServicoPage,
+    SolicitacaoPecaPage
   ],
   imports: [
     BrowserModule,
@@ -48,7 +50,8 @@ import { ConsultaOrdemProvider } from '../providers/consulta-ordem/consulta-orde
     NovoUsuarioPage,
     DashboardPage,
     ConsultaOrdensPage,
-    CadastroOrdemServicoPage
+    CadastroOrdemServicoPage,
+    SolicitacaoPecaPage
   ],
   providers: [
     StatusBar,

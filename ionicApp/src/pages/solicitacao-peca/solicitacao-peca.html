@@ -1,0 +1,63 @@
+<!--
+  Generated template for the SolicitacaoPecaPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Solicitação Peça</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+    <ion-list>
+        <ion-item>
+          <ion-label fixed>Nome</ion-label>
+          <ion-input [(ngModel)]="Nome"type="text" value=""></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label fixed>Número de peças</ion-label>
+          <ion-input [(ngModel)]="numeroPecas"type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Setor</ion-label>
+            <ion-input [(ngModel)]="setor" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Máquina Destinada</ion-label>
+            <ion-input [(ngModel)]="maquinaDestinada" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Nome do Funcionário que Requisita a Peça</ion-label>
+            <ion-input [(ngModel)]="funcioRequisitoPeca" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Prioridade</ion-label>
+            <ion-input [(ngModel)]="prioridade" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Hora</ion-label>
+            <ion-input [(ngModel)]="hora" type="time"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Data</ion-label>
+            <ion-input [(ngModel)]="Data" type="date"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Preço da Peça</ion-label>
+            <ion-input [(ngModel)]="precoPeca" type="text"></ion-input>
+        </ion-item>
+
+      </ion-list>
+      <div padding>
+          <button ion-button  class="campo" color="primary"(click)="solicitarPeca()">Solicitar</button>
+        </div>
+      
+  <div padding>
+    <button ion-button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
+</div>
+</ion-content>
