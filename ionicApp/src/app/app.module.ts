@@ -25,6 +25,8 @@ import { TipoPrioridadeProvider } from '../providers/tipo-prioridade/tipo-priori
 import { DetalhamentoOrdemProvider } from '../providers/detalhamento-ordem/detalhamento-ordem';
 import { ConsultaOrdemProvider } from '../providers/consulta-ordem/consulta-ordem';
 import { SolicitacaoPecaPage } from '../pages/solicitacao-peca/solicitacao-peca';
+import { DetalheOrdemServicoPage } from '../pages/detalhe-ordem-servico/detalhe-ordem-servico';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,10 +37,12 @@ import { SolicitacaoPecaPage } from '../pages/solicitacao-peca/solicitacao-peca'
     DashboardPage,
     ConsultaOrdensPage,
     CadastroOrdemServicoPage,
-    SolicitacaoPecaPage
+    SolicitacaoPecaPage,
+    DetalheOrdemServicoPage 
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
   ],
@@ -51,7 +55,8 @@ import { SolicitacaoPecaPage } from '../pages/solicitacao-peca/solicitacao-peca'
     DashboardPage,
     ConsultaOrdensPage,
     CadastroOrdemServicoPage,
-    SolicitacaoPecaPage
+    SolicitacaoPecaPage,
+    DetalheOrdemServicoPage
   ],
   providers: [
     StatusBar,

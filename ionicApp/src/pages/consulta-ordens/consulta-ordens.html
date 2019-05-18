@@ -24,7 +24,7 @@
         <ion-item>
           <h2>Consultar Ordens:</h2>
         </ion-item>
-        <form (ngSubmit)="consultOrdem()">  
+        <form (ngSubmit)="consultOrdem()">
           <ion-item>
               <ion-label>Status Ordem</ion-label>
                 <ion-select [(ngModel)]="statusOrdemSelecionada" name="statusOrdemSelecionada">
@@ -39,7 +39,7 @@
           </ion-item>
           <div padding>
               <button ion-button  class="campo" color="primary" type="submit">Consultar</button>
-          </div>  
+          </div>
         </form>
       </ion-card>
     <ion-list *ngIf="ordem.length > 0">
@@ -53,10 +53,10 @@
           <h2>Resumo: {{item.resumo}}</h2>
           <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
           <p>Fim Planejado: {{item.fimPlanejado}}</p>
-        </ion-item>      
-        <ion-item>
+        </ion-item>
+        <ion-item >
           <span item-start>Status: {{item.tipoStatus}}</span>
-          <button ion-button icon-start clear item-end>
+          <button ion-button icon-start clear item-end (click)="telaDetalhamento(item.idOrdemServico)">
             <ion-icon name="navigate"></ion-icon>
             Detalhes
           </button>

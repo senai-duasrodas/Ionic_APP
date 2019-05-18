@@ -16,9 +16,12 @@ export class ConsultaOrdemProvider {
   constructor(public http: HttpProvider) {
     console.log('Hello ConsultaOrdemProvider Provider');
   }
-  public detalhamentoOrdem(){
+  public detalhamentoOrdem(id:number){
     this.http.url = this.url;
-    return this.http.get();
+    let obj = {
+      id : id,
+    }
+    return this.http.post(obj);
   }
 
 }

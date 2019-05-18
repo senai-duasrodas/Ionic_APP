@@ -22,26 +22,22 @@
         <ion-item>
           <h2>Consultar Ordens:</h2>
         </ion-item>
-    <ion-list *ngIf="ordem.length > 0">
+    <ion-list>
       <ion-card *ngFor="let item of ordem">
-        <ion-fab right top>
-          <button ion-fab>
-            <ion-icon name="ios-paper"></ion-icon>
-          </button>
-        </ion-fab>
         <ion-item>
           <h2>Resumo: {{item.resumo}}</h2>
-          <p>Descricao: {{item.descricao}}</p>
+          <p>Descricao: {{item.descricao}}</p><br>
+          <p>Setor: {{item.nome}}</p>
+          <p>Requer Parada: {{item.requerParada}}</p>
+          <p>Tipo de Manutencao: {{item.tipoManutencao}}</p>
+          <p>Número Patrimônio: {{item.numeroPatrimonio}}</p>
           <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
           <p>Fim Planejado: {{item.fimPlanejado}}</p>
-        </ion-item>      
-        <ion-item>
-          <span item-start>Status: {{item.tipoStatus}}</span>
+          <p>Status: {{item.tipoStatus}}</p>
         </ion-item>
       </ion-card>
     </ion-list>
       <div padding>
         <button ion-button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
       </div>
-
 </ion-content>
