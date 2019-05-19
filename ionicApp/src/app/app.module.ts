@@ -27,6 +27,8 @@ import { ConsultaOrdemProvider } from '../providers/consulta-ordem/consulta-orde
 import { SolicitacaoPecaPage } from '../pages/solicitacao-peca/solicitacao-peca';
 import { DetalheOrdemServicoPage } from '../pages/detalhe-ordem-servico/detalhe-ordem-servico';
 import { FormsModule } from '@angular/forms';
+import { VerificacaoPage } from '../pages/verificacao/verificacao';
+import { VerificacaoManutencaoProvider } from '../providers/verificacao-manutencao/verificacao-manutencao';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { FormsModule } from '@angular/forms';
     ConsultaOrdensPage,
     CadastroOrdemServicoPage,
     SolicitacaoPecaPage,
-    DetalheOrdemServicoPage 
+    DetalheOrdemServicoPage ,
+    VerificacaoPage
   ],
   imports: [
     BrowserModule,
@@ -56,7 +59,8 @@ import { FormsModule } from '@angular/forms';
     ConsultaOrdensPage,
     CadastroOrdemServicoPage,
     SolicitacaoPecaPage,
-    DetalheOrdemServicoPage
+    DetalheOrdemServicoPage,
+    VerificacaoPage
   ],
   providers: [
     StatusBar,
@@ -72,7 +76,8 @@ import { FormsModule } from '@angular/forms';
     TipoStatusProvider,
     TipoPrioridadeProvider,
     DetalhamentoOrdemProvider,
-    ConsultaOrdemProvider
+    ConsultaOrdemProvider,
+    VerificacaoManutencaoProvider
   ]
 })
 export class AppModule {}

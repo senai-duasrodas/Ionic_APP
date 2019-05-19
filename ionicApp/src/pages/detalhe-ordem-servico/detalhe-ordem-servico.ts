@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConsultaOrdemProvider } from '../../providers/consulta-ordem/consulta-ordem';
 import { TipoStatusProvider } from '../../providers/tipo-status/tipo-status';
 import { TipoPrioridadeProvider } from '../../providers/tipo-prioridade/tipo-prioridade';
+import { VerificacaoPage } from '../verificacao/verificacao';
 
 /**
  * Generated class for the DetalheOrdemServicoPage page.
@@ -69,5 +70,10 @@ export class DetalheOrdemServicoPage {
   public voltarDashboard(){
     this.navCtrl.pop();
   }
-
+  public verificacao(){
+    let obj = {
+      id : this.orderKey
+    }
+    this.navCtrl.push(VerificacaoPage,obj);
+  }
 }
