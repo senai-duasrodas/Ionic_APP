@@ -29,6 +29,8 @@ import { DetalheOrdemServicoPage } from '../pages/detalhe-ordem-servico/detalhe-
 import { FormsModule } from '@angular/forms';
 import { VerificacaoPage } from '../pages/verificacao/verificacao';
 import { VerificacaoManutencaoProvider } from '../providers/verificacao-manutencao/verificacao-manutencao';
+import { ApontamentoPage } from '../pages/apontamento/apontamento';
+import { LancamentosProvider } from '../providers/lancamentos/lancamentos';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { VerificacaoManutencaoProvider } from '../providers/verificacao-manutenc
     CadastroOrdemServicoPage,
     SolicitacaoPecaPage,
     DetalheOrdemServicoPage ,
-    VerificacaoPage
+    VerificacaoPage,
+    ApontamentoPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +63,8 @@ import { VerificacaoManutencaoProvider } from '../providers/verificacao-manutenc
     CadastroOrdemServicoPage,
     SolicitacaoPecaPage,
     DetalheOrdemServicoPage,
-    VerificacaoPage
+    VerificacaoPage,
+    ApontamentoPage
   ],
   providers: [
     StatusBar,
@@ -77,7 +81,8 @@ import { VerificacaoManutencaoProvider } from '../providers/verificacao-manutenc
     TipoPrioridadeProvider,
     DetalhamentoOrdemProvider,
     ConsultaOrdemProvider,
-    VerificacaoManutencaoProvider
+    VerificacaoManutencaoProvider,
+    LancamentosProvider
   ]
 })
 export class AppModule {}

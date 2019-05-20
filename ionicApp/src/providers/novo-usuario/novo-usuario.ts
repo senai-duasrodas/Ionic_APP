@@ -18,7 +18,6 @@ export class NovoUsuarioProvider {
     console.log('Hello NovoUsuarioProvider Provider');
   }
   public cadastrando(userName : string, password : string, cracha : number, email: string, nome: string ){
-    console.log("Passei Aqui mesmo");
     //console.log(userName);
     //console.log(password);
     let obj = {

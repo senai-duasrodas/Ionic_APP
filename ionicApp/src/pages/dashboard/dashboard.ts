@@ -4,6 +4,7 @@ import { ConsultaOrdensPage } from '../consulta-ordens/consulta-ordens';
 import { CadastroOrdemServicoPage } from '../cadastro-ordem-servico/cadastro-ordem-servico';
 import { SolicitacaoPecaPage } from '../solicitacao-peca/solicitacao-peca';
 import { VerificacaoPage } from '../verificacao/verificacao';
+import { ApontamentoPage } from '../apontamento/apontamento';
 
 /**
  * Generated class for the DashboardPage page.
@@ -36,6 +37,9 @@ export class DashboardPage {
   }
   public verificacao(){
     this.navCtrl.setRoot(VerificacaoPage);
+  }
+  public apontamento(){
+    this.navCtrl.setRoot(ApontamentoPage);
   }
 
 }
