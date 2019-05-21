@@ -15,29 +15,34 @@
 <ion-content padding>
     <ion-list>
         <ion-item>
-          <ion-label fixed>Nome</ion-label>
+          <ion-label fixed>Número Cracha</ion-label>
           <ion-input [(ngModel)]="Nome"type="text" value=""></ion-input>
         </ion-item>
       
         <ion-item>
-          <ion-label fixed>Número de peças</ion-label>
+          <ion-label float>Número de peças</ion-label>
           <ion-input [(ngModel)]="numeroPecas"type="text"></ion-input>
         </ion-item>
+
         <ion-item>
-            <ion-label fixed>Setor</ion-label>
-            <ion-input [(ngModel)]="setor" type="text"></ion-input>
+            <ion-label fixed>{{Setor}}</ion-label>
+            <ion-select [(ngModel)]="setor">
+                <ion-option value="{{setores.id}}" *ngFor="let setores of listaSetor">{{setores.nome}}</ion-option>
+            </ion-select>
         </ion-item>
         <ion-item>
-            <ion-label fixed>Máquina Destinada</ion-label>
+            <ion-label float>Máquina Destinada</ion-label>
             <ion-input [(ngModel)]="maquinaDestinada" type="text"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label fixed>Nome do Funcionário que Requisita a Peça</ion-label>
-            <ion-input [(ngModel)]="funcioRequisitoPeca" type="text"></ion-input>
+            <ion-label >Nome do Produto</ion-label>
+            <ion-input [(ngModel)]="NomePeca" type="text"></ion-input>
         </ion-item>
         <ion-item>
-            <ion-label fixed>Prioridade</ion-label>
-            <ion-input [(ngModel)]="prioridade" type="text"></ion-input>
+            <ion-label fixed>{{Prioridade}}</ion-label>
+            <ion-select [(ngModel)]="prioridade">
+            <ion-option value="{{priori.id}}" *ngFor="let priori of listaPriridade">{{priori.tipoPrioridade}}</ion-option>
+            </ion-select>
         </ion-item>
         <ion-item>
             <ion-label fixed>Hora</ion-label>
@@ -47,10 +52,7 @@
             <ion-label fixed>Data</ion-label>
             <ion-input [(ngModel)]="Data" type="date"></ion-input>
         </ion-item>
-        <ion-item>
-            <ion-label fixed>Preço da Peça</ion-label>
-            <ion-input [(ngModel)]="precoPeca" type="text"></ion-input>
-        </ion-item>
+
 
       </ion-list>
       <div padding>
