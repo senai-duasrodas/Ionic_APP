@@ -31,7 +31,7 @@ import { VerificacaoPage } from '../pages/verificacao/verificacao';
 import { VerificacaoManutencaoProvider } from '../providers/verificacao-manutencao/verificacao-manutencao';
 import { ApontamentoPage } from '../pages/apontamento/apontamento';
 import { LancamentosProvider } from '../providers/lancamentos/lancamentos';
-
+import { SolicitarPecas } from '../providers/solicitaPeca';
 @NgModule({
   declarations: [
     MyApp,
@@ -82,7 +82,8 @@ import { LancamentosProvider } from '../providers/lancamentos/lancamentos';
     DetalhamentoOrdemProvider,
     ConsultaOrdemProvider,
     VerificacaoManutencaoProvider,
-    LancamentosProvider
+    LancamentosProvider,
+    SolicitarPecas
   ]
 })
 export class AppModule {}

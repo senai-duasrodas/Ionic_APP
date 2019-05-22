@@ -41,5 +41,9 @@ export class DashboardPage {
   public apontamento(){
     this.navCtrl.setRoot(ApontamentoPage);
   }
+  public refresh(){
+    document.location.reload(true);
+
+  }
 
 }
