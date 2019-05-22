@@ -16,16 +16,16 @@ export class HomePage {
 
   }
   public logform() {
-    //this.login.logando(this.userName, this.password).subscribe(
-      //(data : any) => {
-     //   console.log(data);
-     this.evt.publish("swipeEnabled");
+    this.login.logando(this.userName, this.password).subscribe(
+      (data : any) => {
+        console.log(data);
+        this.evt.publish("swipeEnabled");
         this.navCtrl.setRoot(DashboardPage);
-     // },
-    //  (error : any) =>{
-    //    console.log(error);
-    //  }
-    //);
+      },
+      (error : any) =>{
+        console.log(error);
+      }
+    );
   }
   public novoUsuario(){
     this.navCtrl.setRoot(NovoUsuarioPage);
