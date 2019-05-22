@@ -1,6 +1,6 @@
 import { LoginProvider } from './../../providers/login/login';
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, Events } from 'ionic-angular';
 import { NovoUsuarioPage } from '../novo-usuario/novo-usuario';
 import { DashboardPage } from '../dashboard/dashboard';
 
@@ -12,19 +12,20 @@ export class HomePage {
   userName : string;
   password : string;
 
-  constructor(public navCtrl: NavController, public login: LoginProvider) {
+  constructor(public navCtrl: NavController, public login: LoginProvider, private evt : Events) {
 
   }
   public logform() {
-    this.login.logando(this.userName, this.password).subscribe(
-      (data : any) => {
-        console.log(data);
+    //this.login.logando(this.userName, this.password).subscribe(
+      //(data : any) => {
+     //   console.log(data);
+     this.evt.publish("swipeEnabled");
         this.navCtrl.setRoot(DashboardPage);
-      },
-      (error : any) =>{
-        console.log(error);
-      }
-    );
+     // },
+    //  (error : any) =>{
+    //    console.log(error);
+    //  }
+    //);
   }
   public novoUsuario(){
     this.navCtrl.setRoot(NovoUsuarioPage);
