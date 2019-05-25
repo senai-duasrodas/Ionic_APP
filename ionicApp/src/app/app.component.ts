@@ -9,6 +9,7 @@ import {CadastroOrdemServicoPage} from '../pages/cadastro-ordem-servico/cadastro
 import {SolicitacaoPecaPage} from '../pages/solicitacao-peca/solicitacao-peca';
 import {VerificacaoPage} from '../pages/verificacao/verificacao';
 import {ApontamentoPage} from '../pages/apontamento/apontamento';
+import { DashboardPage } from '../pages/dashboard/dashboard';
 
 @Component({
   templateUrl: 'app.html'
@@ -16,7 +17,7 @@ import {ApontamentoPage} from '../pages/apontamento/apontamento';
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = HomePage;
+  rootPage: any = DashboardPage;
   public swipeEnabled = false;
 
   pages: Array<{title: string, component: any}>;
@@ -26,10 +27,10 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Consultar ordem de serviço', component: ConsultaOrdensPage },
-      { title: 'Cadastrar ordem de serviço', component: CadastroOrdemServicoPage },
+      { title: 'Consultar OS', component: ConsultaOrdensPage },
+      { title: 'Cadastrar OS', component: CadastroOrdemServicoPage },
       { title: 'Solicitar Peça', component: SolicitacaoPecaPage },
-      { title: 'Verificação de ordem de serviço', component: VerificacaoPage },
+      { title: 'Verificar OS', component: VerificacaoPage },
       { title: 'Apontamentos', component: ApontamentoPage },
     ];
 

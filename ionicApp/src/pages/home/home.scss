@@ -1,20 +1,53 @@
 page-home {
-    .homeContent{
+    .fundo {
         background-color: #e82c37;
     }
-
-    .inputContent{
-        background-color: green;
+    /* Centralização e tamanho dos campos, senha e logar */
+    .form-login {
+        max-width: 330px;
+        margin: 0 auto;
+        background-color: #e82c37;
+        color: #e82c37;
+        border: 0px;
     }
-
-    .logoContent{
-        background-color: blue;
-
+    #fundo2 {
+        background-color: #e82c37;
+        color: #e82c37;
     }
-
-    .holdLogo{
-        background-color: yellow;
-        width: 15rem;
-        min-height: 2rem;
+    /* Centralização e tamanho dos campos, senha e logar */
+    /* Aqui é o espaçamento entre o campo logar e o campo senha */
+    .form-logar,
+    .form-senha {
+        margin-bottom: 5px;
     }
+    /* Aqui é o espaçamento entre o campo logar e o campo senha */
+    /* Se adequar a vários navegadores */
+    .form-logar,
+    .form-senha,
+    .form-login {
+        position: relative;
+        height: auto;
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        padding: 10px;
+    }
+    /* Se adequar a vários navegadores */
+    /* Centralizar no meio */
+    #container {
+        padding-top: 220px;
+        border: 0px;
+    }
+    /* Centralizar no meio */
+}
+
+.rounded-pill {
+    background-color: whitesmoke;
+    border: 0px;
+}
+
+.logando {
+    background-color: #e82c37;
+    color: #e82c37;
+    border: 0px;
 }

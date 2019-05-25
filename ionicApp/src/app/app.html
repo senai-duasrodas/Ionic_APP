@@ -1,16 +1,24 @@
-<ion-menu [content]="content" [swipeEnabled]="swipeEnabled">
-    <ion-header>
-      <ion-toolbar>
-        <ion-title>Menu</ion-title>
-      </ion-toolbar>
-    </ion-header>
-  
-    <ion-content>
-      <ion-list>
-        <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+<ion-menu [content]="content">
+  <ion-content class="ionContent">  
+    
+    <div class="headerContent">
+      <div class="holdText">
+        <p>Smart Solution</p>
+      </div>
+    </div>
+
+    <div class="menuContent">
+      <div class="holdMenuContent" *ngFor="let p of pages">
+        <div class="icon">
+          <img src="../assets/imgs/logoDuasRodas.png">
+        </div>
+
+        <button menuClose class="btnMenu" (click)="openPage(p)">
           {{p.title}}
         </button>
-      </ion-list>
+      </div>
+    </div>
+
     </ion-content>
   
   </ion-menu>

@@ -1,37 +1,23 @@
-<ion-content padding class="homeContent">
-  <div class="logoContent">
-    <div class="holdLogo">
-      <img src="../../assets/imgs/logoDuasRodas.png">
+<ion-content class="fundo">
+    <div id="container">
+        <form (ngSubmit)="logform()" class="form-login">
+            <ion-list id="fundo2">
+                <ion-item class="logando">
+                    <ion-input type="text" [(ngModel)]="userName" name="userName" placeholder="Usuário" class="form-logar" class="rounded-pill" required autofocus></ion-input>
+                </ion-item>
+                <ion-item class="logando">
+
+                    <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Senha" class="form-senha" required></ion-input>
+                </ion-item>
+            </ion-list>
+            <div padding>
+                <button class="campo" color="primary" type="submit">Enviar</button>
+            </div>
+        </form>
     </div>
-  </div>
-
-
-  <div class="inputContent">
-    <form (ngSubmit)="logform()">
-      <ion-list>
-        <ion-item>
-          <ion-label floating>Username</ion-label>
-          <ion-input type="text" [(ngModel)]="userName" name="userName"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Senha</ion-label>
-            <ion-input type="password" [(ngModel)]="password" name="password"></ion-input>
-        </ion-item>
-
-      </ion-list>
-      <div padding>
-        <button class="campo" color="primary" type="submit">Enviar</button>
-      </div>
+    <form (ngSubmit)="novoUsuario()">
+        <div padding>
+            <button ion-button class="campo" color="primary" type="submit">Novo Usuário</button>
+        </div>
     </form>
-  </div>
-
-  <form (ngSubmit)="novoUsuario()">
-    <div padding>
-        <button ion-button  class="campo" color="primary" type="submit">Novo Usuário</button>
-    </div>
-  </form>
-
-
-
-
 </ion-content>
