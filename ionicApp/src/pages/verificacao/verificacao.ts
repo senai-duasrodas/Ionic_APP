@@ -41,7 +41,7 @@ export class VerificacaoPage {
       }
     );
   }
-  public voltarDashboard(){
+  public voltarDetalhe(){
     this.navCtrl.pop();
   }
 }

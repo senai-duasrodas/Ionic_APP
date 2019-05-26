@@ -36,7 +36,7 @@ export class DashboardPage {
     this.navCtrl.setRoot(SolicitacaoPecaPage);
   }
   public verificacao(){
-    this.navCtrl.setRoot(VerificacaoPage);
+    this.navCtrl.push(VerificacaoPage);
   }
   public apontamento(){
     this.navCtrl.setRoot(ApontamentoPage);
