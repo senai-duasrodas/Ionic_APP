@@ -32,6 +32,10 @@ import { VerificacaoManutencaoProvider } from '../providers/verificacao-manutenc
 import { ApontamentoPage } from '../pages/apontamento/apontamento';
 import { LancamentosProvider } from '../providers/lancamentos/lancamentos';
 import { SolicitarPecas } from '../providers/solicitaPeca';
+import { GerarTokenProvider } from '../providers/gerar-token/gerar-token';
+import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificacao';
+import { VerificaServicoProvider } from '../providers/verifica-servico/verifica-servico';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -44,7 +48,8 @@ import { SolicitarPecas } from '../providers/solicitaPeca';
     SolicitacaoPecaPage,
     DetalheOrdemServicoPage ,
     VerificacaoPage,
-    ApontamentoPage
+    ApontamentoPage,
+    ModalVerificacaoPage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +69,8 @@ import { SolicitarPecas } from '../providers/solicitaPeca';
     SolicitacaoPecaPage,
     DetalheOrdemServicoPage,
     VerificacaoPage,
-    ApontamentoPage
+    ApontamentoPage,
+    ModalVerificacaoPage
   ],
   providers: [
     StatusBar,
@@ -83,7 +89,9 @@ import { SolicitarPecas } from '../providers/solicitaPeca';
     ConsultaOrdemProvider,
     VerificacaoManutencaoProvider,
     LancamentosProvider,
-    SolicitarPecas
+    SolicitarPecas,
+    GerarTokenProvider,
+    VerificaServicoProvider
   ]
 })
 export class AppModule {}

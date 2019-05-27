@@ -30,8 +30,6 @@ export class DetalheOrdemServicoPage {
     this.tipoStatus();
     this.tipoPrioridade();
     this.orderKey = this.navParams.data.id;
-    console.log(this.orderKey)
-    this.consultaOrdem()
 
 }
   public consultaOrdem() {

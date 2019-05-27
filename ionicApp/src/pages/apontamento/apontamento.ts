@@ -2,6 +2,7 @@ import { Toast } from './../../providers/toast';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LancamentosProvider } from '../../providers/lancamentos/lancamentos';
+import { DashboardPage } from '../dashboard/dashboard';
 
 /**
  * Generated class for the ApontamentoPage page.
@@ -36,5 +37,8 @@ export class ApontamentoPage {
         this.toast.presentToast("Erro ao registrar Verificação!", 7000);
       }
     );
+  }
+  public voltarDashboard(){
+    this.navCtrl.setRoot(DashboardPage);
   }
 }
