@@ -29,20 +29,24 @@
                   <ion-option value="nao">Não</ion-option>
                 </ion-select>
           </ion-item>
-          <ion-item>
-              <ion-label floating>Responsável 1</ion-label>
-              <ion-input type="text" [(ngModel)]="responsavel1" name="responsavel1"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>Responsável 2</ion-label>
-            <ion-input type="text" [(ngModel)]="responsavel2" name="responsavel2"></ion-input>
-          </ion-item>
         </ion-list>
         <div padding>
           <button ion-button  class="campo" color="primary" type="submit">Enviar</button>
         </div>
     </form>
     <div padding>
+        <button ion-button  class="campo" color="primary" (click)="modalVerificacao(1)">Responsavel 1</button>
+      </div>
+      <div padding>
+          <button ion-button  class="campo" color="primary" (click)="modalVerificacao(2)">Responsavel 2</button>
+      </div>
+    <div padding>
       <button ion-button  class="campo" color="primary" (click)="voltarDetalhe()">Voltar</button>
+    </div>
+    <div padding>
+        <button ion-button  class="campo" color="primary" (click)="validar()">ValidarTeste</button>
+    </div>
+    <div padding>
+        <button ion-button  class="campo" color="primary" (click)="validar2()">ValidarTeste2</button>
     </div>
 </ion-content>
