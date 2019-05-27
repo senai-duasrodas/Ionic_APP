@@ -31,7 +31,7 @@ import { VerificacaoPage } from '../pages/verificacao/verificacao';
 import { VerificacaoManutencaoProvider } from '../providers/verificacao-manutencao/verificacao-manutencao';
 import { ApontamentoPage } from '../pages/apontamento/apontamento';
 import { LancamentosProvider } from '../providers/lancamentos/lancamentos';
-import { SolicitarPecas } from '../providers/solicitaPeca';
+import { SolicitarPecas } from '../providers/solicitapeca';
 import { GerarTokenProvider } from '../providers/gerar-token/gerar-token';
 import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificacao';
 import { VerificaServicoProvider } from '../providers/verifica-servico/verifica-servico';
