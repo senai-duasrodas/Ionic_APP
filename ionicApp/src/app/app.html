@@ -2,8 +2,15 @@
   
   <ion-header class="ionHeader">
     <div class="headerContent">
-      <div class="holdText">
-        <p>Smart Solution</p>
+      <div class="imgConteinar">
+        <div class="holdImg">
+          <img src="../assets/imgs/logoDuasRodas.png">
+        </div>
+      </div>
+      <div class="txtConteiner">
+        <div class="holdTxt">
+          <p>Douglas Blank</p>
+        </div>
       </div>
     </div>
   </ion-header>
@@ -12,7 +19,7 @@
     <div class="menuContent">
       <div class="holdMenuContent" *ngFor="let p of pages">
         <div class="icon">
-          <img src="../assets/imgs/logoDuasRodas.png">
+          <img src="{{p.img}}">
         </div>
 
         <button menuClose class="btnMenu" (click)="openPage(p)">

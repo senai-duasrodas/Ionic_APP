@@ -20,18 +20,23 @@ export class MyApp {
   rootPage: any = HomePage;
   public swipeEnabled = false;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string, component: any, img: string}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen, private evt : Events) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Consultar OS', component: ConsultaOrdensPage },
-      { title: 'Cadastrar OS', component: CadastroOrdemServicoPage },
-      { title: 'Solicitar Peça', component: SolicitacaoPecaPage },
-      { title: 'Verificar OS', component: VerificacaoPage },
-      { title: 'Apontamentos', component: ApontamentoPage },
+      { title: 'Consultar OS', component: ConsultaOrdensPage, img: "../assets/imgs/consultar.png" },
+      { title: 'Cadastrar OS', component: CadastroOrdemServicoPage, img: "../assets/imgs/cadastrar.png" },
+      { title: 'Solicitar Peça', component: SolicitacaoPecaPage, img: "../assets/imgs/solicitar peca2.png" },
+      { title: 'Verificar OS', component: VerificacaoPage, img: "../assets/imgs/consultar.png" },
+      { title: 'Apontamentos', component: ApontamentoPage, img: "../assets/imgs/apontamento.png" },
+      { title: 'Consultar OS', component: ConsultaOrdensPage, img: "../assets/imgs/consultar.png" },
+      { title: 'Cadastrar OS', component: CadastroOrdemServicoPage, img: "../assets/imgs/consultar.png" },
+      { title: 'Solicitar Peça', component: SolicitacaoPecaPage, img: "../assets/imgs/consultar.png" },
+      { title: 'Verificar OS', component: VerificacaoPage, img: "../assets/imgs/consultar.png" },
+      { title: 'Apontamentos', component: ApontamentoPage, img: "../assets/imgs/consultar.png" },
     ];
 
     this.evt.subscribe("swipeEnabled", () => {
@@ -57,4 +62,6 @@ export class MyApp {
     // we wouldn't want the back button to show in this scenario
     this.nav.push(page.component);
   }
+
+
 }
