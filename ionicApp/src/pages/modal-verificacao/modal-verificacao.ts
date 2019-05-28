@@ -34,21 +34,22 @@ export class ModalVerificacaoPage {
   public verificaForm() {
     this.verificaServicoProvider.verificarServico(this.cracha, this.password).subscribe(
       (data : any) => {
+        /*
         console.log(data)
         let data2 = JSON.stringify(data);
         console.log(data2)
         let data3 = JSON.parse(data2);
         console.log(data3)
-        //data.forEach((element : any) => {
-        //  this.dadosVerifica.push({
-        //    numeroCracha: element.numeroCracha,
-        //  })
-        //});
-
+        data3.forEach((element : any) => {
+          this.dadosVerifica.push({
+            numeroCracha: element.numeroCracha,
+          })
+        });
+        */
         console.log("----------")
         console.log(this.dadosVerifica.numeroCracha)
         console.log(this.dadosVerifica.numeroCracha)
-        window.localStorage.setItem(this.orderValue,this.dadosVerifica)
+        window.localStorage.setItem(this.orderValue,data.numeroCracha)
         //this.validaVericacao = 1;
         this.toast.presentToast("Verificação registrada com sucesso!", 7000);
         console.log("Este é o dados Login1: ");
@@ -58,6 +59,6 @@ export class ModalVerificacaoPage {
       }
     );
   }
- 
+
 
 }

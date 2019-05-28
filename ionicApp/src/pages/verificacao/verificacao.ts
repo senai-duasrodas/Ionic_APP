@@ -29,19 +29,28 @@ export class VerificacaoPage {
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams,private toast : Toast, public verificacaoManutencaoProvider: VerificacaoManutencaoProvider) {
     this.orderKey = this.navParams.data.id;
+    localStorage.removeItem('1');
+    localStorage.removeItem('2');
     this.validacao = this.navParams.get('name') || null;
+    console.log("Aqui esta a validação")
     console.log(this.validacao)
   }
   public verificaOrdem() {
+    this.responsavel1 = window.localStorage.getItem("1")
+    this.responsavel2 = window.localStorage.getItem("2")
     this.verificacaoManutencaoProvider.verificacao(this.orderKey,this.solucaoRealizada,this.dataFim,this.problemaResolvido,this.responsavel1,this.responsavel2).subscribe(
       (data : any) => {
         this.verificacao=data;
         this.toast.presentToast("Verificação registrada com sucesso!", 7000);
         console.log(this.verificacao);
+        localStorage.removeItem('1');
+        localStorage.removeItem('2');
       },
       (error : any) =>{
         console.log("Deu errado");
         this.toast.presentToast("Erro ao registrar Verificação!", 7000);
+        localStorage.removeItem('1');
+        localStorage.removeItem('2');
       }
     );
   }
@@ -56,7 +65,7 @@ export class VerificacaoPage {
     let teste = window.localStorage.getItem("2")
     this.toast.presentToast(teste, 7000);
     if (teste == "1"){
-      
+
     }
   }
   public voltarDetalhe(){

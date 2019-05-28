@@ -25,8 +25,10 @@
               <ion-input type="text" [(ngModel)]="descricao" name="descricao"></ion-input>
           </ion-item>
           <ion-item>
-              <ion-label floating>Tipo Manutenção</ion-label>
-              <ion-input type="text" [(ngModel)]="manutencao" name="manutencao"></ion-input>
+            <ion-label>Tipo Manutenção</ion-label>
+              <ion-select [(ngModel)]="manutencao" name="manutencao">
+                <ion-option value="{{item.id}}" *ngFor="let item of manutencaoTodas">{{item.tipoManutencao}}</ion-option>
+              </ion-select>
           </ion-item>
           <ion-item>
             <ion-label floating>Inicio Planejado</ion-label>
@@ -39,7 +41,7 @@
           <ion-item>
             <ion-label>Prioridade</ion-label>
               <ion-select [(ngModel)]="prioridadeSelecionada" name="prioridadeSelecionada">
-                <ion-option value="{{item.id}}" *ngFor="let item of prioridade">{{item.tipoPrioridade}}</ion-option>
+                <ion-option value="{{item.id}}" *ngFor="let item of prioridade">{{item.descricaoPrioridade}}</ion-option>
               </ion-select>
           </ion-item>
           <ion-item>

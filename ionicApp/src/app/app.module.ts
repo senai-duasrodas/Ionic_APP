@@ -35,6 +35,7 @@ import { SolicitarPecas } from '../providers/solicitaPeca';
 import { GerarTokenProvider } from '../providers/gerar-token/gerar-token';
 import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificacao';
 import { VerificaServicoProvider } from '../providers/verifica-servico/verifica-servico';
+import { TipoManutencaoProvider } from '../providers/tipo-manutencao/tipo-manutencao';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { VerificaServicoProvider } from '../providers/verifica-servico/verifica-
     LancamentosProvider,
     SolicitarPecas,
     GerarTokenProvider,
-    VerificaServicoProvider
+    VerificaServicoProvider,
+    TipoManutencaoProvider
   ]
 })
 export class AppModule {}

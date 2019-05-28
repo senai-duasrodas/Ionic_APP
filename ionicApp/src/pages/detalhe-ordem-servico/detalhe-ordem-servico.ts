@@ -27,9 +27,10 @@ export class DetalheOrdemServicoPage {
   private orderKey : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public consultaOrdemProvider: ConsultaOrdemProvider, public tipoStatusProvider: TipoStatusProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider) {
+    this.orderKey = this.navParams.data.id;
     this.tipoStatus();
     this.tipoPrioridade();
-    this.orderKey = this.navParams.data.id;
+    this.consultaOrdem();
 
 }
   public consultaOrdem() {

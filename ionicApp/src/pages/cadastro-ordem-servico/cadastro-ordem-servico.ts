@@ -6,6 +6,7 @@ import { Toast } from '../../providers/toast';
 import { DashboardPage } from '../dashboard/dashboard';
 import { TipoPrioridadeProvider } from '../../providers/tipo-prioridade/tipo-prioridade';
 import { TipoStatusProvider } from '../../providers/tipo-status/tipo-status';
+import { TipoManutencaoProvider } from '../../providers/tipo-manutencao/tipo-manutencao';
 
 /**
  * Generated class for the CadastroOrdemServicoPage page.
@@ -22,6 +23,7 @@ import { TipoStatusProvider } from '../../providers/tipo-status/tipo-status';
 export class CadastroOrdemServicoPage {
 
   public setor = [];
+  public manutencaoTodas = [];
   public statusOrdem = [];
   public prioridade = [];
   public ordem = [];
@@ -36,7 +38,7 @@ export class CadastroOrdemServicoPage {
   prioridadeSelecionada : string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private toast : Toast, public consultarSetorProvider: ConsultarSetorProvider, public cadastroOrdemProvider: CadastroOrdemProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider, public tipoStatusProvider: TipoStatusProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private toast : Toast, public tipoManutencaoProvider: TipoManutencaoProvider ,public consultarSetorProvider: ConsultarSetorProvider, public cadastroOrdemProvider: CadastroOrdemProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider, public tipoStatusProvider: TipoStatusProvider) {
     this.consultSetor();
     this.tipoPrioridade();
     this.tipoStatus();
@@ -45,6 +47,17 @@ export class CadastroOrdemServicoPage {
     this.consultarSetorProvider.todosSetores().subscribe(
       (data : any) => {
         this.setor=data;
+        console.log(this.setor);
+      },
+      (error : any) =>{
+        console.log("Deu errado");
+      }
+    );
+  }
+  public tipoManutencao() {
+    this.tipoManutencaoProvider.Manutencao().subscribe(
+      (data : any) => {
+        this.manutencaoTodas=data;
         console.log(this.setor);
       },
       (error : any) =>{
