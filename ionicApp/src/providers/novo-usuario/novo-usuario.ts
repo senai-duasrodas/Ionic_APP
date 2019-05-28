@@ -12,7 +12,7 @@ export class NovoUsuarioProvider {
 
   url = "http://localhost:3000/novo";
   url2 = "http://localhost:3000/verifica";
-  url3 = "http://localhost:3000/cadastroSabores";
+  
 
   constructor(public http: HttpProvider) {
     console.log('Hello NovoUsuarioProvider Provider');

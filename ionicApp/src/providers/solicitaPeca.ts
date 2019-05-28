@@ -1,11 +1,11 @@
 import {  Injectable  } from '@angular/core';
-import { HttpProvider } from '../providers/http';  
+import { HttpProvider } from './http';  
 @Injectable ()
 export class SolicitarPecas {
     constructor(private httpProvider: HttpProvider){
 
     }
-    urlPeca="http://localhost:3000/SolicitaPecas"
+    urlPeca="http://localhost:3000/solicitapecas"
 
     public pecas(  Nome:string,
         numeroPecas:number,
