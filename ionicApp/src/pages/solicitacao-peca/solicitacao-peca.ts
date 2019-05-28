@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { DashboardPage } from  '../dashboard/dashboard';
-import { SolicitarPecas } from '../../providers/solicitaPeca';
+import { SolicitarPecas } from '../../providers/solicitapeca';
 import { Toast } from '../../providers/toast';
 import { ConsultarSetorProvider } from '../../providers/consultar-setor/consultar-setor';
 import { TipoPrioridadeProvider }  from   '../../providers/tipo-prioridade/tipo-prioridade';
