@@ -22,10 +22,6 @@ export class DashboardPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad DashboardPage');
-  }
   public consultOrdem(){
     this.navCtrl.setRoot(ConsultaOrdensPage);
   }
@@ -35,15 +31,11 @@ export class DashboardPage {
   public solicitarPecas(){
     this.navCtrl.setRoot(SolicitacaoPecaPage);
   }
-  public verificacao(){
-    this.navCtrl.push(VerificacaoPage);
-  }
   public apontamento(){
     this.navCtrl.setRoot(ApontamentoPage);
   }
   public refresh(){
     document.location.reload(true);
-
   }
 
 }

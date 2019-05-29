@@ -42,6 +42,7 @@ export class CadastroOrdemServicoPage {
     this.consultSetor();
     this.tipoPrioridade();
     this.tipoStatus();
+    this.tipoManutencao();
   }
   public consultSetor() {
     this.consultarSetorProvider.todosSetores().subscribe(
