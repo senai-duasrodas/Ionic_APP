@@ -38,8 +38,13 @@ $colors: (
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       #222,
+
 );
+
+$toolbar-md-background: #dc143c;
+
+
 
 
 // App iOS Variables
@@ -86,3 +91,8 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+
+$navbar-md-height: #dc143c;
+$navbar-ios-height:#dc143c;
+$navbar-wp-height:#dc143c;

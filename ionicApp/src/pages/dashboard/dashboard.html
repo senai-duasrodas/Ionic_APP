@@ -5,9 +5,15 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
   <ion-navbar>
-    <ion-title>dashboard</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dashboard</ion-title>
+    <div class="holdExit">
+      <ion-icon name="md-exit" class="ionIcon" (click)="refresh()"></ion-icon>
+    </div>
+    
   </ion-navbar>
 
 </ion-header>

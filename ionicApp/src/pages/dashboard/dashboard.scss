@@ -1,3 +1,21 @@
 page-dashboard {
+    .toolbar-title-md{
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-family: 'Montserrat';
+        display: flex;
+        align-items: center;
+    }
 
+    .ionIcon{
+        
+        color:white;
+        font-size: 2.4rem;
+        float: left;
+        right: 20px;
+    }
+
+    .holdExit{
+        float: right;
+    }
 }
