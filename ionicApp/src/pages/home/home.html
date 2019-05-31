@@ -1,19 +1,38 @@
-<ion-content class="fundo">
-    <div id="container">
-        <form (ngSubmit)="logform()" class="form-login">
-            <ion-list id="fundo2">
-                <ion-item class="logando">
-                    <ion-input type="text" [(ngModel)]="userName" name="userName" placeholder="Usuário" class="form-logar" class="rounded-pill" required autofocus></ion-input>
-                </ion-item>
-                <ion-item class="logando">
+<ion-content class="contentBackground">
+    <ion-grid class="contentGrid">
+        <ion-row>
+            <ion-col>
+                <div class="holdLogo">
+                    <img src="../../assets/imgs/logoDuasRodas.png">
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 
-                    <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Senha" class="form-senha" required></ion-input>
-                </ion-item>
-            </ion-list>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <div class="loginContent">
+                    <form (ngSubmit)="logform()" class="form-login">
+                        <ion-list id="fundo2">
+                            <ion-item class="logando">
+                                <ion-input type="text" [(ngModel)]="userName" name="userName" placeholder="Usuário" class="form-logar" class="rounded-pill" required autofocus></ion-input>
+                            </ion-item>
+                            <ion-item class="logando">
+                                <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Senha" class="form-senha" required></ion-input>
+                            </ion-item>
+                        </ion-list>
+                    </form>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+    <div id="container">
+            
             <div padding>
                 <button class="campo" color="primary" type="submit">Enviar</button>
             </div>
-        </form>
+        
     </div>
     <form (ngSubmit)="novoUsuario()">
         <div padding>

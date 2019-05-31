@@ -1,4 +1,4 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" swipeEnabled="{{swipeEnabled}}">
   
   <ion-header class="ionHeader">
     <div class="headerContent">
@@ -8,19 +8,26 @@
         </div>
       </div>
       <div class="txtConteiner">
-        <p>Douglas Blank</p>
+        <div class="userContent">
+          <p>Usuário</p>
+        </div>
+        <div class="nameContent">
+          <!-- AQUI PRECISA IR UMA VARIAVEL PARA CAPTAR -->
+          <!-- O USUARIO CADASTRADO (LOCALSTORAGE) -->
+          <p>Douglas Blank</p>
+        </div>
       </div>
     </div>
   </ion-header>
 
   <ion-content class="ionContent">
     <div class="menuContent">
-      <div class="holdMenuContent" *ngFor="let p of pages">
+      <div class="holdMenuContent" menuClose *ngFor="let p of pages" (click)="openPage(p)">
         <div class="icon">
           <img src="{{p.img}}">
         </div>
 
-        <button menuClose class="btnMenu" (click)="openPage(p)">
+        <button class="btnMenu">
           {{p.title}}
         </button>
       </div>

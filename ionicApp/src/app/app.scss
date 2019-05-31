@@ -19,24 +19,33 @@
     width: 100%;
     height: 100px;
     box-sizing: border-box;
-    display: flex;
-    align-items: center;
+    display: flex
 }
 
 .holdImg{
-    width: 13rem;
+    width: 8rem;
+    margin-top: 1rem;
 }
 
 .txtConteiner{
     height: 4rem;
-    display: flex;
-    align-items: center;
 }
 
-.txtConteiner p{
+.userContent{
+
+}
+
+.userContent p{
+    color: white;
+    font-family: 'Montserrat';
+    font-size: 12px;
+    margin: 0px;
+}
+
+.nameContent p{
     color:white;
     font-family: 'Montserrat';
-    font-size: 17px;
+    font-size: 16px;
     margin: 0px;
 }
 
@@ -64,9 +73,9 @@
     height: 100%;
     padding: 10px;
     margin-left: 3rem;
-    font-size: 14px;
-    letter-spacing: 1px;
-    color: rgb(0, 0, 0);
-    font-family: 'Montserrat';
+    font-size: 1.4rem;
+    color: rgb(24, 24, 24);
+    font-family: 'montserrat';
+    font-weight: bold;
     background: none;
 }

@@ -1,7 +1,28 @@
 page-home {
-    .fundo {
+    .contentBackground {
         background-color: #e82c37;
     }
+
+    .contentGrid{
+        margin-top: 10rem;
+        
+    }
+
+    .contentGrid ion-col{
+        display: flex;
+        justify-content: center
+    }
+
+    .holdLogo{
+        width: 150px;
+    }
+
+    .loginContent{
+        width: 500px;
+        height: 50px;
+        background-color: green;
+    }
+
     /* Centralização e tamanho dos campos, senha e logar */
     .form-login {
         max-width: 330px;
@@ -32,13 +53,7 @@ page-home {
         -moz-box-sizing: border-box;
         padding: 10px;
     }
-    /* Se adequar a vários navegadores */
-    /* Centralizar no meio */
-    #container {
-        padding-top: 220px;
-        border: 0px;
-    }
-    /* Centralizar no meio */
+
 }
 
 .rounded-pill {

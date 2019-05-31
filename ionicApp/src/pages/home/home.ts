@@ -18,7 +18,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, public login: LoginProvider, private evt : Events, private gerarTokenProvider: GerarTokenProvider) {
 
   }
-  public logform() {
+   public logform() {
     this.login.logando(this.userName, this.password).subscribe(
       (data : any) => {
         this.dadosLogin = data;
