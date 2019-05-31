@@ -4,7 +4,7 @@ import { ConsultaOrdemProvider } from '../../providers/consulta-ordem/consulta-o
 import { TipoStatusProvider } from '../../providers/tipo-status/tipo-status';
 import { TipoPrioridadeProvider } from '../../providers/tipo-prioridade/tipo-prioridade';
 import { VerificacaoPage } from '../verificacao/verificacao';
-
+import {OperacoesPage} from '../operacoes/operacoes';
 /**
  * Generated class for the DetalheOrdemServicoPage page.
  *
@@ -74,5 +74,12 @@ export class DetalheOrdemServicoPage {
       id : this.orderKey
     }
     this.navCtrl.push(VerificacaoPage,obj);
+  }
+  public operacoesForm(id: number){
+    let obj = {
+      id : this.orderKey
+    }
+    this.navCtrl.push(OperacoesPage,obj);
+    
   }
 }

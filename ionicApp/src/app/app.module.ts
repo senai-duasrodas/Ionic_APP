@@ -5,6 +5,7 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { OperacoesPage } from '../pages/operacoes/operacoes';
 import { HttpModule} from '@angular/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -36,7 +37,7 @@ import { GerarTokenProvider } from '../providers/gerar-token/gerar-token';
 import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificacao';
 import { VerificaServicoProvider } from '../providers/verifica-servico/verifica-servico';
 import { TipoManutencaoProvider } from '../providers/tipo-manutencao/tipo-manutencao';
-
+import { OperacoesProvider } from '../providers/operacoesprovider';
 @NgModule({
   declarations: [
     MyApp,
@@ -50,7 +51,8 @@ import { TipoManutencaoProvider } from '../providers/tipo-manutencao/tipo-manute
     DetalheOrdemServicoPage ,
     VerificacaoPage,
     ApontamentoPage,
-    ModalVerificacaoPage
+    ModalVerificacaoPage,
+    OperacoesPage
   ],
   imports: [
     BrowserModule,
@@ -71,7 +73,8 @@ import { TipoManutencaoProvider } from '../providers/tipo-manutencao/tipo-manute
     DetalheOrdemServicoPage,
     VerificacaoPage,
     ApontamentoPage,
-    ModalVerificacaoPage
+    ModalVerificacaoPage,
+    OperacoesPage
   ],
   providers: [
     StatusBar,
@@ -93,7 +96,8 @@ import { TipoManutencaoProvider } from '../providers/tipo-manutencao/tipo-manute
     SolicitarPecas,
     GerarTokenProvider,
     VerificaServicoProvider,
-    TipoManutencaoProvider
+    TipoManutencaoProvider,
+    OperacoesProvider
   ]
 })
 export class AppModule {}
