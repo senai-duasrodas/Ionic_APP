@@ -4,7 +4,7 @@ page-home {
     }
 
     .contentGrid{
-        margin-top: 10rem;
+        margin-top: 4rem;
         
     }
 
@@ -19,50 +19,41 @@ page-home {
 
     .loginContent{
         width: 500px;
-        height: 50px;
+        min-height: 50px;
         background-color: green;
     }
 
-    /* Centralização e tamanho dos campos, senha e logar */
-    .form-login {
-        max-width: 330px;
-        margin: 0 auto;
-        background-color: #e82c37;
-        color: #e82c37;
-        border: 0px;
+    .holdContentLogin{
+        display: flex;
     }
-    #fundo2 {
-        background-color: #e82c37;
-        color: #e82c37;
+
+    .holdIcon{
+        width: 5rem;
+        background-color: yellow;
+        display: flex;
+        align-items: center;
+        justify-content: center;       
     }
-    /* Centralização e tamanho dos campos, senha e logar */
-    /* Aqui é o espaçamento entre o campo logar e o campo senha */
-    .form-logar,
-    .form-senha {
+
+    .holdIcon ion-icon{
+        font-size: 4rem;
+        color: rgb(36, 36, 36) 
+    }
+
+    .icon{
+        height: 0;
+    }
+
+    .holdInput{
+        width: 100%;
+    }
+
+    .form-logar{
         margin-bottom: 5px;
-    }
-    /* Aqui é o espaçamento entre o campo logar e o campo senha */
-    /* Se adequar a vários navegadores */
-    .form-logar,
-    .form-senha,
-    .form-login {
         position: relative;
         height: auto;
         box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
         padding: 10px;
+        background: green;
     }
-
-}
-
-.rounded-pill {
-    background-color: whitesmoke;
-    border: 0px;
-}
-
-.logando {
-    background-color: #e82c37;
-    color: #e82c37;
-    border: 0px;
 }
