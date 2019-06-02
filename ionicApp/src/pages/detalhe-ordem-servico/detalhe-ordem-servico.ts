@@ -6,6 +6,7 @@ import { TipoPrioridadeProvider } from '../../providers/tipo-prioridade/tipo-pri
 import { VerificacaoPage } from '../verificacao/verificacao';
 import { ApontamentoPage } from '../apontamento/apontamento';
 import { SolicitaProdutoPage } from '../solicita-produto/solicita-produto';
+import { OperacoesPage } from '../operacoes/operacoes';
 
 /**
  * Generated class for the DetalheOrdemServicoPage page.
@@ -88,5 +89,11 @@ export class DetalheOrdemServicoPage {
       id : this.orderKey
     }
     this.navCtrl.push(ApontamentoPage,obj);
+  }
+  public operacoes(){
+    let obj = {
+      id : this.orderKey
+    }
+    this.navCtrl.push(OperacoesPage,obj);
   }
 }
