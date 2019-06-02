@@ -19,7 +19,7 @@
                                 <ion-icon name="md-contact"></ion-icon>
                             </div>
                             <div class="holdInput">
-                                <ion-input type="text" [(ngModel)]="userName" name="userName" placeholder="Usuário" class="form-logar" required autofocus></ion-input>
+                                <ion-input type="text" [(ngModel)]="userName" name="userName" placeholder="Usuário" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
                             </div>
                         </div>
                         <div class="holdContentLogin">
@@ -27,7 +27,12 @@
                                 <ion-icon name="md-lock"></ion-icon>
                             </div>
                             <div class="holdInput">
-                                <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Senha" class="form-logar" required></ion-input>                        
+                                <ion-input type="password" [(ngModel)]="password" name="password" placeholder="Senha" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Senha'"></ion-input>                        
+                            </div>
+                        </div>
+                        <div class="holdContentSubmit">
+                            <div class="holdInput">
+                                <button class="campo" color="primary" type="submit">Entrar</button>
                             </div>
                         </div>
                     </form>
@@ -35,16 +40,16 @@
             </ion-col>
         </ion-row>
     </ion-grid>
-    <div id="container">
-            
-            <div padding>
-                <button class="campo" color="primary" type="submit">Enviar</button>
-            </div>
+
+    <ion-grid class="contentFooter">
+        <ion-row>
+            <ion-col>
+                <div class="holdNovoUsuario" (click)="novoUsuario()">
+                    <span>Cadastrar usuário</span>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
         
-    </div>
-    <form (ngSubmit)="novoUsuario()">
-        <div padding>
-            <button ion-button class="campo" color="primary" type="submit">Novo Usuário</button>
-        </div>
-    </form>
+
 </ion-content>

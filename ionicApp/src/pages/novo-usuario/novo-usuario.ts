@@ -62,6 +62,6 @@ export class NovoUsuarioPage {
     );
   }
   public voltarLogin(){
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.pop();
   }
 }

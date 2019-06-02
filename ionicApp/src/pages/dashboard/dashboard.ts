@@ -23,16 +23,16 @@ export class DashboardPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
   public consultOrdem(){
-    this.navCtrl.setRoot(ConsultaOrdensPage);
+    this.navCtrl.push(ConsultaOrdensPage);
   }
   public cadastroOrdem(){
-    this.navCtrl.setRoot(CadastroOrdemServicoPage);
+    this.navCtrl.push(CadastroOrdemServicoPage);
   }
   public solicitarPecas(){
-    this.navCtrl.setRoot(SolicitacaoPecaPage);
+    this.navCtrl.push(SolicitacaoPecaPage);
   }
   public apontamento(){
-    this.navCtrl.setRoot(ApontamentoPage);
+    this.navCtrl.push(ApontamentoPage);
   }
   public refresh(){
     document.location.reload(true);
