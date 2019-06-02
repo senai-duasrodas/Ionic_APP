@@ -10,11 +10,10 @@ import { HttpProvider } from '../http';
 */
 @Injectable()
 export class VerificacaoManutencaoProvider {
-
+  
   url = "http://localhost:3000/verificamanutencao";
 
   constructor(public http: HttpProvider) {
-    console.log('Hello VerificacaoManutencaoProvider Provider');
   }
   public verificacao(numeroOrdem : number, solucaoRealizada : string, dataFim : string, problemaResolvido: string, responsavel1: string, responsavel2: string ){
     console.log("Passei Aqui mesmo");

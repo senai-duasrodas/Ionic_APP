@@ -41,14 +41,14 @@ export class VerificacaoPage {
     this.verificacaoManutencaoProvider.verificacao(this.orderKey,this.solucaoRealizada,this.dataFim,this.problemaResolvido,this.responsavel1,this.responsavel2).subscribe(
       (data : any) => {
         this.verificacao=data;
-        this.toast.presentToast("Verificação registrada com sucesso!", 7000);
+        this.toast.presentToast("Usuário autenticado com sucesso!", 7000);
         console.log(this.verificacao);
         localStorage.removeItem('1');
         localStorage.removeItem('2');
       },
       (error : any) =>{
         console.log("Deu errado");
-        this.toast.presentToast("Erro ao registrar Verificação!", 7000);
+        this.toast.presentToast("Erro ao autenticar usuário!", 7000);
         localStorage.removeItem('1');
         localStorage.removeItem('2');
       }

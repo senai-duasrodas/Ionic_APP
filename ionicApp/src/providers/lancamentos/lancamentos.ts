@@ -15,13 +15,14 @@ export class LancamentosProvider {
 
   constructor(public http: HttpProvider) {
   }
-  public lancamento(dataApontamento : string, tempoDedicado : string, usuario: string){
+  public lancamento(orderKey : number,dataApontamento : string, tempoDedicado : string, usuario: string){
     //console.log(userName);
     //console.log(password);
     let obj = {
       dataApontamento : dataApontamento,
       tempoDedicado : tempoDedicado,
-      usuario: usuario
+      usuario: usuario,
+      orderKey: orderKey
     }
     this.http.url = this.url;
     return this.http.post(obj);

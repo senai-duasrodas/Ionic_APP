@@ -21,12 +21,8 @@
               <ion-input type="date" [(ngModel)]="dataApontamento" name="dataApontamento"></ion-input>
           </ion-item>
           <ion-item>
-              <ion-label floating>Tempo dedicado</ion-label>
-              <ion-input type="text" [(ngModel)]="tempoDedicado" name="tempoDedicado"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>Usuario</ion-label>
-            <ion-input type="text" [(ngModel)]="usuario" name="usuario"></ion-input>
+              <ion-label fixed>Tempo dedicado</ion-label>
+              <ion-input [(ngModel)]="tempoDedicado" name="tempoDedicado" type="time"></ion-input>
           </ion-item>
         </ion-list>
         <div padding>

@@ -15,52 +15,55 @@
 
 <ion-content padding>
     <form (ngSubmit)="cadastroOrdemServico()">
-        <ion-list>
-          <ion-item>
-              <ion-label floating>Resumo</ion-label>
-              <ion-input type="text" [(ngModel)]="resumo" name="resumo"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label floating>Descrição</ion-label>
-              <ion-input type="text" [(ngModel)]="descricao" name="descricao"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Tipo Manutenção</ion-label>
-              <ion-select [(ngModel)]="manutencao" name="manutencao">
-                <ion-option value="{{item.id}}" *ngFor="let item of manutencaoTodas">{{item.tipoManutencao}}</ion-option>
+      <ion-list>
+        <ion-item>
+            <ion-label floating>Resumo</ion-label>
+            <ion-input type="text" [(ngModel)]="resumo" name="resumo"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Descrição</ion-label>
+            <ion-input type="text" [(ngModel)]="descricao" name="descricao"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Tipo Manutenção</ion-label>
+            <ion-select [(ngModel)]="manutencao" name="manutencao">
+              <ion-option value="{{item.id}}" *ngFor="let item of manutencaoTodas">{{item.tipoManutencao}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label fixed>Inicio Planejado</ion-label>
+          <ion-input type="date" [(ngModel)]="inicioPlanejado" name="inicioPlanejado"></ion-input>
+        </ion-item>
+        <ion-item>
+            <ion-label fixed>Fim Planejado</ion-label>
+            <ion-input type="date" [(ngModel)]="fimPlanejado" name="fimPlanejado"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Prioridade</ion-label>
+            <ion-select [(ngModel)]="prioridadeSelecionada" name="prioridadeSelecionada">
+              <ion-option value="{{item.id}}" *ngFor="let item of prioridade">{{item.descricaoPrioridade}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Status Ordem</ion-label>
+            <ion-select [(ngModel)]="statusOrdemSelecionada" name="statusOrdemSelecionada">
+              <ion-option value="{{item.id}}" *ngFor="let item of statusOrdem">{{item.tipoStatus}}</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+          <ion-label>Requer Parada</ion-label>
+            <ion-select [(ngModel)]="requerParada" name="requerParada">
+              <ion-option value="0">Não</ion-option>
+              <ion-option value="1">Sim</ion-option>
+            </ion-select>
+      </ion-item>
+        <ion-item>
+            <ion-label>Setor</ion-label>
+              <ion-select [(ngModel)]="setorSelecionado" name="setorSelecionado">
+                <ion-option value="{{item.id}}" *ngFor="let item of setor">{{item.nome}}</ion-option>
               </ion-select>
-          </ion-item>
-          <ion-item>
-            <ion-label floating>Inicio Planejado</ion-label>
-            <ion-input type="text" [(ngModel)]="inicioPlanejado" name="inicioPlanejado"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label floating>Fim Planejado</ion-label>
-              <ion-input type="text" [(ngModel)]="fimPlanejado" name="fimPlanejado"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label>Prioridade</ion-label>
-              <ion-select [(ngModel)]="prioridadeSelecionada" name="prioridadeSelecionada">
-                <ion-option value="{{item.id}}" *ngFor="let item of prioridade">{{item.descricaoPrioridade}}</ion-option>
-              </ion-select>
-          </ion-item>
-          <ion-item>
-            <ion-label>Status Ordem</ion-label>
-              <ion-select [(ngModel)]="statusOrdemSelecionada" name="statusOrdemSelecionada">
-                <ion-option value="{{item.id}}" *ngFor="let item of statusOrdem">{{item.tipoStatus}}</ion-option>
-              </ion-select>
-          </ion-item>
-          <ion-item>
-              <ion-label floating>Requer Parada</ion-label>
-              <ion-input type="text" [(ngModel)]="requerParada" name="requerParada"></ion-input>
-          </ion-item>
-          <ion-item>
-              <ion-label>Setor</ion-label>
-                <ion-select [(ngModel)]="setorSelecionado" name="setorSelecionado">
-                  <ion-option value="{{item.id}}" *ngFor="let item of setor">{{item.nome}}</ion-option>
-                </ion-select>
-          </ion-item>
-        </ion-list>
+        </ion-item>
+      </ion-list>
         <div padding>
           <button ion-button  class="campo" color="primary" type="submit">Enviar</button>
         </div>

@@ -6,10 +6,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { HomePage } from '../pages/home/home';
 import {ConsultaOrdensPage} from '../pages/consulta-ordens/consulta-ordens';
 import {CadastroOrdemServicoPage} from '../pages/cadastro-ordem-servico/cadastro-ordem-servico';
-import {SolicitacaoPecaPage} from '../pages/solicitacao-peca/solicitacao-peca';
 import {VerificacaoPage} from '../pages/verificacao/verificacao';
 import {ApontamentoPage} from '../pages/apontamento/apontamento';
 import { DashboardPage } from '../pages/dashboard/dashboard';
+import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
 
 @Component({
   templateUrl: 'app.html'
@@ -29,12 +29,12 @@ export class MyApp {
     this.pages = [
       { title: 'Consultar OS', component: ConsultaOrdensPage, img: "../assets/imgs/logo/Consultar.png" },
       { title: 'Cadastrar OS', component: CadastroOrdemServicoPage, img: "../assets/imgs/logo/cadastrar.png" },
-      { title: 'Solicitar Peça', component: SolicitacaoPecaPage, img: "../assets/imgs/logo/solicitar.png" },
+      { title: 'Solicitar Peça', component: SolicitaProdutoPage, img: "../assets/imgs/logo/solicitar.png" },
       { title: 'Verificar OS', component: VerificacaoPage, img: "../assets/imgs/logo/verificar.png" },
       { title: 'Apontamentos', component: ApontamentoPage, img: "../assets/imgs/logo/apontamento.png" },
       { title: 'Consultar OS', component: ConsultaOrdensPage, img: "../assets/imgs/logo/Consultar.png" },
       { title: 'Cadastrar OS', component: CadastroOrdemServicoPage, img: "../assets/imgs/logo/cadastrar.png" },
-      { title: 'Solicitar Peça', component: SolicitacaoPecaPage, img: "../assets/imgs/logo/solicitar.png" },
+      { title: 'Solicitar Peça', component: SolicitaProdutoPage, img: "../assets/imgs/logo/solicitar.png" },
       { title: 'Verificar OS', component: VerificacaoPage, img: "../assets/imgs/logo/verificar.png" },
       { title: 'Apontamentos', component: ApontamentoPage, img: "../assets/imgs/logo/apontamento.png" },
     ];

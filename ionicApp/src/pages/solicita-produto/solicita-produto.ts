@@ -5,8 +5,9 @@ import { SolicitarPecas } from '../../providers/solicitapeca';
 import { Toast } from '../../providers/toast';
 import { ConsultarSetorProvider } from '../../providers/consultar-setor/consultar-setor';
 import { TipoPrioridadeProvider }  from   '../../providers/tipo-prioridade/tipo-prioridade';
+import { ConsultarMaquinasProvider } from '../../providers/consultar-maquinas/consultar-maquinas';
 /**
- * Generated class for the SolicitacaoPecaPage page.
+ * Generated class for the SolicitaProdutoPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -14,11 +15,11 @@ import { TipoPrioridadeProvider }  from   '../../providers/tipo-prioridade/tipo-
 
 @IonicPage()
 @Component({
-  selector: 'page-solicitacao-peca',
-  templateUrl: 'solicitacao-peca.html',
+  selector: 'page-solicita-produto',
+  templateUrl: 'solicita-produto.html',
 })
-export class SolicitacaoPecaPage {
-  Nome:string;
+export class SolicitaProdutoPage {
+
   numeroPecas:number;
   setor:number;
   maquinaDestinada:string;
@@ -30,26 +31,36 @@ export class SolicitacaoPecaPage {
   Prioridade: string = "Prioridade";
   Setor:string = "Setor";
   public listaSetor = [];
+  public todasMaquinas = [];
   public listaPriridade = [];
-  
+  private orderKey : any;
 
   constructor(public navCtrl: NavController,
-     public navParams: NavParams,
-     private solicitarPecas:SolicitarPecas, 
-     private toast:Toast,
-     private consultarSetorProvider:ConsultarSetorProvider, 
-     private tipoPrioridadeProvider:TipoPrioridadeProvider) {
-       this.prioridadePegar();
-       this.setorPega();
+    public navParams: NavParams,
+    private solicitarPecas:SolicitarPecas, 
+    private toast:Toast,
+    private consultarSetorProvider:ConsultarSetorProvider,
+    private consultarMaquinasProvider: ConsultarMaquinasProvider,
+    private tipoPrioridadeProvider:TipoPrioridadeProvider) {
+      this.orderKey = this.navParams.data.id;
+      console.log( this.orderKey)
+      this.prioridadePegar();
+      this.setorPega();
+      this.showMaquinas(); 
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad SolicitacaoPecaPage');
-  }
   setorPega(){
     this.consultarSetorProvider.todosSetores().subscribe(
       (data:any) =>{
         this.listaSetor = data;
+      }
+    )
+  }
+  showMaquinas(){
+    this.consultarMaquinasProvider.todasMaquinas().subscribe(
+      (data:any) =>{
+        this.todasMaquinas = data;
+        console.log(data)
       }
     )
   }
@@ -62,18 +73,21 @@ export class SolicitacaoPecaPage {
   }
   voltarDashboard(){
     this.navCtrl.setRoot(DashboardPage);
-
   }
   solicitarPeca(){
-      this.solicitarPecas.pecas(this.Nome,
-        this.numeroPecas,
+      let usuario = ""
+      usuario = window.localStorage.getItem("idUsuario")
+      this.solicitarPecas.pecas(this.numeroPecas,
         this.setor,
         this.maquinaDestinada,
         this.NomePeca,
         this.prioridade,
         this.hora,
         this.Data,
-        this.precoPeca).subscribe(
+        this.precoPeca,
+        this.orderKey,
+        usuario
+      ).subscribe(
           (data : any) => {
             this.toast.presentToast(data.Sucesso, 5000);
           },
@@ -81,9 +95,6 @@ export class SolicitacaoPecaPage {
             console.log(error);
             this.toast.presentToast("Falha ao registrar peça", 5000);
           }
-
         );
-
-
   }
 }

@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConsultaOrdensPage } from '../consulta-ordens/consulta-ordens';
 import { CadastroOrdemServicoPage } from '../cadastro-ordem-servico/cadastro-ordem-servico';
-import { SolicitacaoPecaPage } from '../solicitacao-peca/solicitacao-peca';
+import { SolicitaProdutoPage } from '../solicita-produto/solicita-produto';
 import { VerificacaoPage } from '../verificacao/verificacao';
 import { ApontamentoPage } from '../apontamento/apontamento';
 
@@ -29,7 +29,7 @@ export class DashboardPage {
     this.navCtrl.push(CadastroOrdemServicoPage);
   }
   public solicitarPecas(){
-    this.navCtrl.push(SolicitacaoPecaPage);
+    this.navCtrl.push(SolicitaProdutoPage);
   }
   public apontamento(){
     this.navCtrl.push(ApontamentoPage);

@@ -25,7 +25,6 @@ import { TipoStatusProvider } from '../providers/tipo-status/tipo-status';
 import { TipoPrioridadeProvider } from '../providers/tipo-prioridade/tipo-prioridade';
 import { DetalhamentoOrdemProvider } from '../providers/detalhamento-ordem/detalhamento-ordem';
 import { ConsultaOrdemProvider } from '../providers/consulta-ordem/consulta-ordem';
-import { SolicitacaoPecaPage } from '../pages/solicitacao-peca/solicitacao-peca';
 import { DetalheOrdemServicoPage } from '../pages/detalhe-ordem-servico/detalhe-ordem-servico';
 import { FormsModule } from '@angular/forms';
 import { VerificacaoPage } from '../pages/verificacao/verificacao';
@@ -38,6 +37,8 @@ import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificac
 import { VerificaServicoProvider } from '../providers/verifica-servico/verifica-servico';
 import { TipoManutencaoProvider } from '../providers/tipo-manutencao/tipo-manutencao';
 import { OperacoesProvider } from '../providers/operacoesprovider';
+import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
+import { ConsultarMaquinasProvider } from '../providers/consultar-maquinas/consultar-maquinas';
 @NgModule({
   declarations: [
     MyApp,
@@ -47,7 +48,7 @@ import { OperacoesProvider } from '../providers/operacoesprovider';
     DashboardPage,
     ConsultaOrdensPage,
     CadastroOrdemServicoPage,
-    SolicitacaoPecaPage,
+    SolicitaProdutoPage,
     DetalheOrdemServicoPage ,
     VerificacaoPage,
     ApontamentoPage,
@@ -69,7 +70,7 @@ import { OperacoesProvider } from '../providers/operacoesprovider';
     DashboardPage,
     ConsultaOrdensPage,
     CadastroOrdemServicoPage,
-    SolicitacaoPecaPage,
+    SolicitaProdutoPage,
     DetalheOrdemServicoPage,
     VerificacaoPage,
     ApontamentoPage,
@@ -97,7 +98,8 @@ import { OperacoesProvider } from '../providers/operacoesprovider';
     GerarTokenProvider,
     VerificaServicoProvider,
     TipoManutencaoProvider,
-    OperacoesProvider
+    OperacoesProvider,
+    ConsultarMaquinasProvider
   ]
 })
 export class AppModule {}

@@ -22,11 +22,14 @@ export class ApontamentoPage {
   tempoDedicado : string;
   usuario : string;
   public verificacao = [];
+  private orderKey : any;
 
   constructor(public navCtrl: NavController, private toast : Toast, public navParams: NavParams, public lancamentosProvider: LancamentosProvider) {
+    this.orderKey = this.navParams.data.id;
+    this.usuario = window.localStorage.getItem("idUsuario")
   }
   public realizarApontamento() {
-    this.lancamentosProvider.lancamento(this.dataApontamento,this.tempoDedicado,this.usuario).subscribe(
+    this.lancamentosProvider.lancamento(this.orderKey,this.dataApontamento,this.tempoDedicado,this.usuario).subscribe(
       (data : any) => {
         this.verificacao=data;
         this.toast.presentToast("Apontamento cadastro com sucesso!", 7000);

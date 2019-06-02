@@ -1,5 +1,5 @@
 <!--
-  Generated template for the SolicitacaoPecaPage page.
+  Generated template for the SolicitaProdutoPage page.
 
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Solicitação Peça</ion-title>
+    <ion-title>solicitaProduto</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -15,15 +15,9 @@
 <ion-content padding>
     <ion-list>
         <ion-item>
-          <ion-label fixed>Número Cracha</ion-label>
-          <ion-input [(ngModel)]="Nome"type="text" value=""></ion-input>
-        </ion-item>
-      
-        <ion-item>
           <ion-label float>Número de peças</ion-label>
           <ion-input [(ngModel)]="numeroPecas"type="text"></ion-input>
         </ion-item>
-
         <ion-item>
             <ion-label fixed>{{Setor}}</ion-label>
             <ion-select [(ngModel)]="setor">
@@ -31,17 +25,19 @@
             </ion-select>
         </ion-item>
         <ion-item>
-            <ion-label float>Máquina Destinada</ion-label>
-            <ion-input [(ngModel)]="maquinaDestinada" type="text"></ion-input>
+            <ion-label fixed>Maquina Destinada</ion-label>
+            <ion-select [(ngModel)]="maquinaDestinada">
+                <ion-option value="{{item.id}}" *ngFor="let item of todasMaquinas">{{item.descricao}}</ion-option>
+            </ion-select>
         </ion-item>
         <ion-item>
-            <ion-label >Nome do Produto</ion-label>
+            <ion-label>Descrição Pedido</ion-label>
             <ion-input [(ngModel)]="NomePeca" type="text"></ion-input>
         </ion-item>
         <ion-item>
             <ion-label fixed>{{Prioridade}}</ion-label>
             <ion-select [(ngModel)]="prioridade">
-            <ion-option value="{{priori.id}}" *ngFor="let priori of listaPriridade">{{priori.tipoPrioridade}}</ion-option>
+                <ion-option value="{{priori.id}}" *ngFor="let priori of listaPriridade">{{priori.descricaoPrioridade}}</ion-option>
             </ion-select>
         </ion-item>
         <ion-item>
@@ -52,14 +48,11 @@
             <ion-label fixed>Data</ion-label>
             <ion-input [(ngModel)]="Data" type="date"></ion-input>
         </ion-item>
-
-
-      </ion-list>
-      <div padding>
-          <button ion-button  class="campo" color="primary"(click)="solicitarPeca()">Solicitar</button>
+        </ion-list>
+        <div padding>
+            <button ion-button  class="campo" color="primary"(click)="solicitarPeca()">Solicitar</button>
         </div>
-      
-  <div padding>
-    <button ion-button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
-</div>
+        <div padding>
+            <button ion-button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
+        </div>
 </ion-content>

@@ -6,18 +6,17 @@ export class SolicitarPecas {
 
     }
     urlPeca="http://localhost:3000/solicitapecas"
-
-    public pecas(  Nome:string,
-        numeroPecas:number,
+    public pecas(numeroPecas:number,
         setor:number,
         maquinaDestinada:string,
         NomePeca:string,
         prioridade:number,
         hora:string,
         Data:string,
-        precoPeca:string) {
+        precoPeca:string,
+        orderKey: string,
+        usuario:string){
             let obj ={
-                Nome:Nome,
                 numeroPecas:numeroPecas,
                 setor:setor,
                 maquinaDestinada:maquinaDestinada,
@@ -25,12 +24,13 @@ export class SolicitarPecas {
                 prioridade:prioridade,
                 hora:hora,
                 Data:Data,
-                precoPeca:precoPeca
+                usuario:usuario,
+                precoPeca:precoPeca,
+                orderKey:orderKey
             }
             console.log("aki esta");
             this.httpProvider.url= this.urlPeca;
             return this.httpProvider.post(obj);
 
-    }
+        }
 }
-
