@@ -48,6 +48,6 @@ export class HomePage {
     );  
   }
   public novoUsuario(){
-    this.navCtrl.setRoot(NovoUsuarioPage);
+    this.navCtrl.push(NovoUsuarioPage);
   }
 }
