@@ -40,14 +40,6 @@
                 <ion-option value="{{priori.id}}" *ngFor="let priori of listaPriridade">{{priori.descricaoPrioridade}}</ion-option>
             </ion-select>
         </ion-item>
-        <ion-item>
-            <ion-label fixed>Hora</ion-label>
-            <ion-input [(ngModel)]="hora" type="time"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label fixed>Data</ion-label>
-            <ion-input [(ngModel)]="Data" type="date"></ion-input>
-        </ion-item>
         </ion-list>
         <div padding>
             <button ion-button  class="campo" color="primary"(click)="solicitarPeca()">Solicitar</button>

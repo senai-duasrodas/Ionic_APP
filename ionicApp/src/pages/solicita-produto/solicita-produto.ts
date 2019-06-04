@@ -25,8 +25,6 @@ export class SolicitaProdutoPage {
   maquinaDestinada:string;
   NomePeca:string;
   prioridade:number;
-  hora:string;
-  Data:string;
   precoPeca:string;
   Prioridade: string = "Prioridade";
   Setor:string = "Setor";
@@ -82,8 +80,6 @@ export class SolicitaProdutoPage {
         this.maquinaDestinada,
         this.NomePeca,
         this.prioridade,
-        this.hora,
-        this.Data,
         this.precoPeca,
         this.orderKey,
         usuario

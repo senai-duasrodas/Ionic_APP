@@ -11,8 +11,7 @@ export class SolicitarPecas {
         maquinaDestinada:string,
         NomePeca:string,
         prioridade:number,
-        hora:string,
-        Data:string,
+
         precoPeca:string,
         orderKey: string,
         usuario:string){
@@ -22,8 +21,7 @@ export class SolicitarPecas {
                 maquinaDestinada:maquinaDestinada,
                 NomePeca:NomePeca,
                 prioridade:prioridade,
-                hora:hora,
-                Data:Data,
+
                 usuario:usuario,
                 precoPeca:precoPeca,
                 orderKey:orderKey
