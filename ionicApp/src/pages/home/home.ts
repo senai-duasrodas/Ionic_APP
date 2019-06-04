@@ -52,18 +52,6 @@ export class HomePage {
       }
     );
   }
-  public autenticaUsuario(){
-    console.log("Testessss")
-    let id = Number(this.usuario)
-    this.autenticaUsuarioProvider.verificaUsuario(id, this.token).subscribe(
-      (data : any) => {
-        console.log("Autenticação Realizada com Sucesso!!!!!")
-      },
-      (error : any) =>{
-        this.navCtrl.setRoot(HomePage);
-      }
-    );
-  }
   public novoUsuario(){
     this.navCtrl.push(NovoUsuarioPage);
   }
