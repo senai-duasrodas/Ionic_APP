@@ -5,6 +5,8 @@ import { CadastroOrdemServicoPage } from '../cadastro-ordem-servico/cadastro-ord
 import { SolicitaProdutoPage } from '../solicita-produto/solicita-produto';
 import { VerificacaoPage } from '../verificacao/verificacao';
 import { ApontamentoPage } from '../apontamento/apontamento';
+import { AutenticaUsuarioProvider } from '../../providers/autentica-usuario/autentica-usuario';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the DashboardPage page.
@@ -20,7 +22,13 @@ import { ApontamentoPage } from '../apontamento/apontamento';
 })
 export class DashboardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  usuario : string;
+  token : string;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public autenticaUsuarioProvider : AutenticaUsuarioProvider) {
+    this.usuario = window.localStorage.getItem("idUsuario")
+    this.token = window.localStorage.getItem("token")
+    this.autenticaUsuario()
   }
   public consultOrdem(){
     this.navCtrl.push(ConsultaOrdensPage);
@@ -34,8 +42,22 @@ export class DashboardPage {
   public apontamento(){
     this.navCtrl.push(ApontamentoPage);
   }
+  public autenticaUsuario(){
+    console.log("Testessss")
+    let id = Number(this.usuario)
+    this.autenticaUsuarioProvider.verificaUsuario(id, this.token).subscribe(
+      (data : any) => {
+        console.log("Autenticação Realizada com Sucesso!!!!!")
+      },
+      (error : any) =>{
+        this.navCtrl.setRoot(HomePage);
+      }
+    );
+  }
   public refresh(){
-    document.location.reload(true);
+    localStorage.removeItem('idUsuario');
+    localStorage.removeItem('token');
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

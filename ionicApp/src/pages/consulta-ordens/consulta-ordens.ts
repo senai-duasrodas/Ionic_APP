@@ -34,7 +34,6 @@ export class ConsultaOrdensPage {
       public tipoPrioridadeProvider: TipoPrioridadeProvider
   )
   {
-
     this.tipoStatus();
     this.tipoPrioridade();
   }

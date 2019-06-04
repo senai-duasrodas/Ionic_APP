@@ -39,6 +39,7 @@ import { TipoManutencaoProvider } from '../providers/tipo-manutencao/tipo-manute
 import { OperacoesProvider } from '../providers/operacoesprovider';
 import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
 import { ConsultarMaquinasProvider } from '../providers/consultar-maquinas/consultar-maquinas';
+import { AutenticaUsuarioProvider } from '../providers/autentica-usuario/autentica-usuario';
 @NgModule({
   declarations: [
     MyApp,
@@ -99,7 +100,8 @@ import { ConsultarMaquinasProvider } from '../providers/consultar-maquinas/consu
     VerificaServicoProvider,
     TipoManutencaoProvider,
     OperacoesProvider,
-    ConsultarMaquinasProvider
+    ConsultarMaquinasProvider,
+    AutenticaUsuarioProvider
   ]
 })
 export class AppModule {}
