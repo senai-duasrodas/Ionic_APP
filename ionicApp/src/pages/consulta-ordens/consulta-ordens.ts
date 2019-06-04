@@ -26,6 +26,8 @@ export class ConsultaOrdensPage {
   public prioridade = [];
   statusOrdemSelecionada : string;
   prioridadeSelecionada : string;
+  usuario : string;
+  token : string;
 
   constructor(
       public navCtrl: NavController, public navParams: NavParams,
@@ -34,7 +36,9 @@ export class ConsultaOrdensPage {
       public tipoPrioridadeProvider: TipoPrioridadeProvider
   )
   {
-
+    this.usuario = window.localStorage.getItem("idUsuario")
+    this.token = window.localStorage.getItem("token")
+    this.autenticaUsuario()
     this.tipoStatus();
     this.tipoPrioridade();
   }
