@@ -10,12 +10,12 @@ import { HttpProvider } from '../http';
 */
 @Injectable()
 export class VerificacaoManutencaoProvider {
-  
+
   url = "http://localhost:3000/verificamanutencao";
 
   constructor(public http: HttpProvider) {
   }
-  public verificacao(numeroOrdem : number, solucaoRealizada : string, dataFim : string, problemaResolvido: string, responsavel1: string, responsavel2: string ){
+  public verificacao(numeroOrdem : number, solucaoRealizada : string, dataFim : string, problemaResolvido: string, responsavel1: string, responsavel2: string,usuario : number){
     console.log("Passei Aqui mesmo");
     //console.log(userName);
     //console.log(password);
@@ -25,7 +25,8 @@ export class VerificacaoManutencaoProvider {
       dataFim : dataFim,
       problemaResolvido: problemaResolvido,
       responsavel1: responsavel1,
-      responsavel2: responsavel2
+      responsavel2: responsavel2,
+      usuario: usuario
     }
     this.http.url = this.url;
     return this.http.post(obj);

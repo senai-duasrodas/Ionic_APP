@@ -30,6 +30,7 @@ export class VerificacaoPage {
   private validacao : any;
   usuario : string;
   token : string;
+  usuario2 : any;
 
   constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams,public autenticandoProvider: AutenticandoProvider,private toast : Toast, public verificacaoManutencaoProvider: VerificacaoManutencaoProvider) {
     this.autenticaUsuario()
@@ -39,6 +40,7 @@ export class VerificacaoPage {
     this.validacao = this.navParams.get('name') || null;
     console.log("Aqui esta a validação")
     console.log(this.validacao)
+    this.usuario2 = window.localStorage.getItem("idUsuario")
   }
   public autenticaUsuario(){
     this.usuario = window.localStorage.getItem("idUsuario")
@@ -57,10 +59,10 @@ export class VerificacaoPage {
   public verificaOrdem() {
     this.responsavel1 = window.localStorage.getItem("1")
     this.responsavel2 = window.localStorage.getItem("2")
-    this.verificacaoManutencaoProvider.verificacao(this.orderKey,this.solucaoRealizada,this.dataFim,this.problemaResolvido,this.responsavel1,this.responsavel2).subscribe(
+    this.verificacaoManutencaoProvider.verificacao(this.orderKey,this.solucaoRealizada,this.dataFim,this.problemaResolvido,this.responsavel1,this.responsavel2,this.usuario2).subscribe(
       (data : any) => {
         this.verificacao=data;
-        this.toast.presentToast("Usuário autenticado com sucesso!", 7000);
+        this.toast.presentToast("Verificação Registrada com sucesso!", 7000);
         console.log(this.verificacao);
         localStorage.removeItem('1');
         localStorage.removeItem('2');

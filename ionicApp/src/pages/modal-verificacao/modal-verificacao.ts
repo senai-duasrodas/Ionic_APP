@@ -70,7 +70,7 @@ export class ModalVerificacaoPage {
         console.log(this.dadosVerifica.numeroCracha)
         window.localStorage.setItem(this.orderValue,data.numeroCracha)
         //this.validaVericacao = 1;
-        this.toast.presentToast("Verificação registrada com sucesso!", 7000);
+        this.toast.presentToast("Usuário autenticado com sucesso!", 7000);
         console.log("Este é o dados Login1: ");
       },
       (error : any) =>{
