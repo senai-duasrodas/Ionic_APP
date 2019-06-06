@@ -1,37 +1,30 @@
-import { NavController } from 'ionic-angular';
+import { HttpProvider } from './../http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { HttpProvider } from '../http';
-import { AutenticacaouserProvider } from '../autenticacaouser/autenticacaouser';
+import { AutenticaUsuarioProvider } from '../autentica-usuario/autentica-usuario';
+import { NavController } from 'ionic-angular/umd';
 import { HomePage } from '../../pages/home/home';
 
 /*
-  Generated class for the AutenticaUsuarioProvider provider.
+  Generated class for the AutenticacaoProvider provider.
 
   See https://angular.io/guide/dependency-injection for more info on providers
   and Angular DI.
 */
 @Injectable()
-export class AutenticaUsuarioProvider {
+export class AutenticacaoProvider {
 
-  url = "http://localhost:3000/autenticacao";
   usuario : string;
   token : string;
 
-  constructor(public http: HttpProvider,public navCtrl: NavController) {
+  constructor(public http: HttpProvider,public navCtrl: NavController,public autenticaUsuarioProvider : AutenticaUsuarioProvider) {
   }
-  public verificaUsuario(id:number, token: string){
-    this.http.url = this.url;
-    let obj = {
-      id : id,
-      token : token
-    }
-    return this.http.post(obj);
-  }
+
   public autenticaUsuario(){
     this.usuario = window.localStorage.getItem("idUsuario")
     let id = Number(this.usuario)
     this.token = window.localStorage.getItem("token")
-    this.verificaUsuario(id, this.token).subscribe(
+    this.autenticaUsuarioProvider.verificaUsuario(id, this.token).subscribe(
       (data : any) => {
         console.log("Autenticação Realizada com Sucesso!!!!!")
       },
@@ -39,6 +32,6 @@ export class AutenticaUsuarioProvider {
         this.navCtrl.setRoot(HomePage);
       }
     );
-
   }
+
 }

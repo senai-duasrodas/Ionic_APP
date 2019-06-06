@@ -1,7 +1,8 @@
+import { AutenticacaoProvider } from './../providers/autenticacao/autenticacao';
+import { AutenticaUsuarioProvider } from './../providers/autentica-usuario/autentica-usuario';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
@@ -39,7 +40,9 @@ import { TipoManutencaoProvider } from '../providers/tipo-manutencao/tipo-manute
 import { OperacoesProvider } from '../providers/operacoesprovider';
 import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
 import { ConsultarMaquinasProvider } from '../providers/consultar-maquinas/consultar-maquinas';
-import { AutenticaUsuarioProvider } from '../providers/autentica-usuario/autentica-usuario';
+import { AutenticacaouserProvider } from '../providers/autenticacaouser/autenticacaouser';
+import { AutenticandoProvider } from '../providers/autenticando';
+
 @NgModule({
   declarations: [
     MyApp,
@@ -101,7 +104,10 @@ import { AutenticaUsuarioProvider } from '../providers/autentica-usuario/autenti
     TipoManutencaoProvider,
     OperacoesProvider,
     ConsultarMaquinasProvider,
-    AutenticaUsuarioProvider
+    AutenticaUsuarioProvider,
+    AutenticacaouserProvider,
+    AutenticandoProvider
+    
   ]
 })
 export class AppModule {}
