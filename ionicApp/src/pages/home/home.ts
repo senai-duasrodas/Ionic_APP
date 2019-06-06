@@ -7,6 +7,11 @@ import { GerarTokenProvider } from '../../providers/gerar-token/gerar-token';
 import { VerificacaoPage } from '../verificacao/verificacao';
 import { DetalheOrdemServicoPage } from '../detalhe-ordem-servico/detalhe-ordem-servico';
 import { ConsultaOrdensPage } from '../consulta-ordens/consulta-ordens';
+import { ApontamentoPage } from '../apontamento/apontamento';
+import { CadastroOrdemServicoPage } from '../cadastro-ordem-servico/cadastro-ordem-servico';
+import { ModalVerificacaoPage } from '../modal-verificacao/modal-verificacao';
+import { OperacoesPage } from '../operacoes/operacoes';
+import { SolicitaProdutoPage } from '../solicita-produto/solicita-produto';
 
 @Component({
   selector: 'page-home',
@@ -54,17 +59,5 @@ export class HomePage {
   }
   public novoUsuario(){
     this.navCtrl.push(NovoUsuarioPage);
-  }
-  public DashboardPage(){
-    this.navCtrl.setRoot(DashboardPage);
-  }
-  public consulta(){
-    this.navCtrl.setRoot(ConsultaOrdensPage);
-  }
-  public detalhe(){
-    this.navCtrl.setRoot(DetalheOrdemServicoPage);
-  }
-  public verificacao(){
-    this.navCtrl.setRoot(VerificacaoPage);
   }
 }

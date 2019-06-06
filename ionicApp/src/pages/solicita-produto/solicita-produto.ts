@@ -6,6 +6,8 @@ import { Toast } from '../../providers/toast';
 import { ConsultarSetorProvider } from '../../providers/consultar-setor/consultar-setor';
 import { TipoPrioridadeProvider }  from   '../../providers/tipo-prioridade/tipo-prioridade';
 import { ConsultarMaquinasProvider } from '../../providers/consultar-maquinas/consultar-maquinas';
+import { AutenticandoProvider } from '../../providers/autenticando';
+import { HomePage } from '../home/home';
 /**
  * Generated class for the SolicitaProdutoPage page.
  *
@@ -20,6 +22,8 @@ import { ConsultarMaquinasProvider } from '../../providers/consultar-maquinas/co
 })
 export class SolicitaProdutoPage {
 
+  usuario : string;
+  token : string;
   numeroPecas:number;
   setor:number;
   maquinaDestinada:string;
@@ -35,16 +39,32 @@ export class SolicitaProdutoPage {
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    private solicitarPecas:SolicitarPecas, 
+    private solicitarPecas:SolicitarPecas,
     private toast:Toast,
     private consultarSetorProvider:ConsultarSetorProvider,
     private consultarMaquinasProvider: ConsultarMaquinasProvider,
+    public autenticandoProvider: AutenticandoProvider,
     private tipoPrioridadeProvider:TipoPrioridadeProvider) {
+      this.autenticaUsuario()
       this.orderKey = this.navParams.data.id;
       console.log( this.orderKey)
       this.prioridadePegar();
       this.setorPega();
-      this.showMaquinas(); 
+      this.showMaquinas();
+  }
+  public autenticaUsuario(){
+    this.usuario = window.localStorage.getItem("idUsuario")
+    let id = Number(this.usuario)
+    this.token = window.localStorage.getItem("token")
+    this.autenticandoProvider.verificaUsuario(id, this.token).subscribe(
+      (data : any) => {
+        console.log("Autenticação Realizada com Sucesso!!!!!")
+      },
+      (error : any) =>{
+        this.navCtrl.setRoot(HomePage);
+      }
+    );
+
   }
 
   setorPega(){

@@ -3,6 +3,8 @@ import { Toast } from './../../providers/toast';
 import { VerificaServicoProvider } from './../../providers/verifica-servico/verifica-servico';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { AutenticandoProvider } from '../../providers/autenticando';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ModalVerificacaoPage page.
@@ -17,15 +19,32 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'modal-verificacao.html',
 })
 export class ModalVerificacaoPage {
+  usuario : string;
+  token : string;
   cracha : string;
   password : string;
   validaVericacao : string = "0";
   private orderValue : any;
   private dadosVerifica : any = [];
 
-  constructor(public navCtrl: NavController,public navParams: NavParams,public toast: Toast, public verificaServicoProvider: VerificaServicoProvider) {
+  constructor(public navCtrl: NavController,public navParams: NavParams,public autenticandoProvider: AutenticandoProvider,public toast: Toast, public verificaServicoProvider: VerificaServicoProvider) {
+    this.autenticaUsuario()
     this.orderValue = this.navParams.data.id;
     console.log(this.orderValue)
+  }
+  public autenticaUsuario(){
+    this.usuario = window.localStorage.getItem("idUsuario")
+    let id = Number(this.usuario)
+    this.token = window.localStorage.getItem("token")
+    this.autenticandoProvider.verificaUsuario(id, this.token).subscribe(
+      (data : any) => {
+        console.log("Autenticação Realizada com Sucesso!!!!!")
+      },
+      (error : any) =>{
+        this.navCtrl.setRoot(HomePage);
+      }
+    );
+
   }
   public voltarVerificacao(){
     //this.navCtrl.getPrevious().data.name = validaVericacao;

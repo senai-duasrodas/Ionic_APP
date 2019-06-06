@@ -5,6 +5,8 @@ import { DashboardPage } from '../dashboard/dashboard';
 import { TipoStatusProvider } from '../../providers/tipo-status/tipo-status';
 import { TipoPrioridadeProvider } from '../../providers/tipo-prioridade/tipo-prioridade';
 import { DetalheOrdemServicoPage } from '../detalhe-ordem-servico/detalhe-ordem-servico';
+import { AutenticandoProvider } from '../../providers/autenticando';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the ConsultaOrdensPage page.
@@ -26,16 +28,34 @@ export class ConsultaOrdensPage {
   public prioridade = [];
   statusOrdemSelecionada : string;
   prioridadeSelecionada : string;
+  usuario : string;
+  token : string;
 
   constructor(
       public navCtrl: NavController, public navParams: NavParams,
       public consultOrdemProvider: ConsultOrdemProvider,
       public tipoStatusProvider: TipoStatusProvider,
-      public tipoPrioridadeProvider: TipoPrioridadeProvider
+      public tipoPrioridadeProvider: TipoPrioridadeProvider,
+      public autenticandoProvider: AutenticandoProvider
   )
   {
+    this.autenticaUsuario()
     this.tipoStatus();
     this.tipoPrioridade();
+  }
+  public autenticaUsuario(){
+    this.usuario = window.localStorage.getItem("idUsuario")
+    let id = Number(this.usuario)
+    this.token = window.localStorage.getItem("token")
+    this.autenticandoProvider.verificaUsuario(id, this.token).subscribe(
+      (data : any) => {
+        console.log("Autenticação Realizada com Sucesso!!!!!")
+      },
+      (error : any) =>{
+        this.navCtrl.setRoot(HomePage);
+      }
+    );
+
   }
   public consultOrdem() {
     this.consultOrdemProvider.consultarOrdem(this.statusOrdemSelecionada,this.prioridadeSelecionada).subscribe(

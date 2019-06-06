@@ -7,6 +7,8 @@ import { DashboardPage } from '../dashboard/dashboard';
 import { TipoPrioridadeProvider } from '../../providers/tipo-prioridade/tipo-prioridade';
 import { TipoStatusProvider } from '../../providers/tipo-status/tipo-status';
 import { TipoManutencaoProvider } from '../../providers/tipo-manutencao/tipo-manutencao';
+import { AutenticandoProvider } from '../../providers/autenticando';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the CadastroOrdemServicoPage page.
@@ -36,13 +38,30 @@ export class CadastroOrdemServicoPage {
   setorSelecionado : string;
   statusOrdemSelecionada : string;
   prioridadeSelecionada : string;
+  usuario : string;
+  token : string;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,private toast : Toast, public tipoManutencaoProvider: TipoManutencaoProvider ,public consultarSetorProvider: ConsultarSetorProvider, public cadastroOrdemProvider: CadastroOrdemProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider, public tipoStatusProvider: TipoStatusProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public autenticandoProvider: AutenticandoProvider,private toast : Toast, public tipoManutencaoProvider: TipoManutencaoProvider ,public consultarSetorProvider: ConsultarSetorProvider, public cadastroOrdemProvider: CadastroOrdemProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider, public tipoStatusProvider: TipoStatusProvider) {
+    this.autenticaUsuario()
     this.consultSetor();
     this.tipoPrioridade();
     this.tipoStatus();
     this.tipoManutencao();
+  }
+  public autenticaUsuario(){
+    this.usuario = window.localStorage.getItem("idUsuario")
+    let id = Number(this.usuario)
+    this.token = window.localStorage.getItem("token")
+    this.autenticandoProvider.verificaUsuario(id, this.token).subscribe(
+      (data : any) => {
+        console.log("Autenticação Realizada com Sucesso!!!!!")
+      },
+      (error : any) =>{
+        this.navCtrl.setRoot(HomePage);
+      }
+    );
+
   }
   public consultSetor() {
     this.consultarSetorProvider.todosSetores().subscribe(

@@ -3,10 +3,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ConsultaOrdensPage } from '../consulta-ordens/consulta-ordens';
 import { CadastroOrdemServicoPage } from '../cadastro-ordem-servico/cadastro-ordem-servico';
 import { SolicitaProdutoPage } from '../solicita-produto/solicita-produto';
-import { VerificacaoPage } from '../verificacao/verificacao';
 import { ApontamentoPage } from '../apontamento/apontamento';
 import { AutenticaUsuarioProvider } from '../../providers/autentica-usuario/autentica-usuario';
 import { HomePage } from '../home/home';
+import { AutenticacaouserProvider } from '../../providers/autenticacaouser/autenticacaouser';
+import { AutenticandoProvider } from '../../providers/autenticando';
 
 /**
  * Generated class for the DashboardPage page.
@@ -25,9 +26,7 @@ export class DashboardPage {
   usuario : string;
   token : string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public autenticaUsuarioProvider : AutenticaUsuarioProvider) {
-    this.usuario = window.localStorage.getItem("idUsuario")
-    this.token = window.localStorage.getItem("token")
+  constructor(public navCtrl: NavController, public navParams: NavParams,public autenticandoProvider: AutenticandoProvider) {
     this.autenticaUsuario()
   }
   public consultOrdem(){
@@ -42,10 +41,16 @@ export class DashboardPage {
   public apontamento(){
     this.navCtrl.push(ApontamentoPage);
   }
+  public refresh(){
+    localStorage.removeItem('idUsuario');
+    localStorage.removeItem('token');
+    this.navCtrl.setRoot(HomePage);
+  }
   public autenticaUsuario(){
-    console.log("Testessss")
+    this.usuario = window.localStorage.getItem("idUsuario")
     let id = Number(this.usuario)
-    this.autenticaUsuarioProvider.verificaUsuario(id, this.token).subscribe(
+    this.token = window.localStorage.getItem("token")
+    this.autenticandoProvider.verificaUsuario(id, this.token).subscribe(
       (data : any) => {
         console.log("Autenticação Realizada com Sucesso!!!!!")
       },
@@ -53,11 +58,7 @@ export class DashboardPage {
         this.navCtrl.setRoot(HomePage);
       }
     );
-  }
-  public refresh(){
-    localStorage.removeItem('idUsuario');
-    localStorage.removeItem('token');
-    this.navCtrl.setRoot(HomePage);
+
   }
 
 }

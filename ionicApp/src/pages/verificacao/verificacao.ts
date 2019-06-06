@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { VerificacaoManutencaoProvider } from '../../providers/verificacao-manutencao/verificacao-manutencao';
 import { Toast } from '../../providers/toast';
+import { AutenticandoProvider } from '../../providers/autenticando';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the VerificacaoPage page.
@@ -26,14 +28,31 @@ export class VerificacaoPage {
   responsavel2 : string;
   private orderKey : any;
   private validacao : any;
+  usuario : string;
+  token : string;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams,private toast : Toast, public verificacaoManutencaoProvider: VerificacaoManutencaoProvider) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams,public autenticandoProvider: AutenticandoProvider,private toast : Toast, public verificacaoManutencaoProvider: VerificacaoManutencaoProvider) {
+    this.autenticaUsuario()
     this.orderKey = this.navParams.data.id;
     localStorage.removeItem('1');
     localStorage.removeItem('2');
     this.validacao = this.navParams.get('name') || null;
     console.log("Aqui esta a validação")
     console.log(this.validacao)
+  }
+  public autenticaUsuario(){
+    this.usuario = window.localStorage.getItem("idUsuario")
+    let id = Number(this.usuario)
+    this.token = window.localStorage.getItem("token")
+    this.autenticandoProvider.verificaUsuario(id, this.token).subscribe(
+      (data : any) => {
+        console.log("Autenticação Realizada com Sucesso!!!!!")
+      },
+      (error : any) =>{
+        this.navCtrl.setRoot(HomePage);
+      }
+    );
+
   }
   public verificaOrdem() {
     this.responsavel1 = window.localStorage.getItem("1")
