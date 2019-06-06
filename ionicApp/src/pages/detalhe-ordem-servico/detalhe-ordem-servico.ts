@@ -7,6 +7,8 @@ import { VerificacaoPage } from '../verificacao/verificacao';
 import { ApontamentoPage } from '../apontamento/apontamento';
 import { SolicitaProdutoPage } from '../solicita-produto/solicita-produto';
 import { OperacoesPage } from '../operacoes/operacoes';
+import { AutenticandoProvider } from '../../providers/autenticando';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the DetalheOrdemServicoPage page.
@@ -28,12 +30,29 @@ export class DetalheOrdemServicoPage {
   statusOrdemSelecionada : string;
   prioridadeSelecionada : string;
   private orderKey : any;
+  usuario : string;
+  token : string;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public consultaOrdemProvider: ConsultaOrdemProvider, public tipoStatusProvider: TipoStatusProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public autenticandoProvider: AutenticandoProvider, public consultaOrdemProvider: ConsultaOrdemProvider, public tipoStatusProvider: TipoStatusProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider) {
     this.orderKey = this.navParams.data.id;
+    this.autenticaUsuario()
     this.tipoStatus();
     this.tipoPrioridade();
     this.consultaOrdem();
+
+}
+public autenticaUsuario(){
+  this.usuario = window.localStorage.getItem("idUsuario")
+  let id = Number(this.usuario)
+  this.token = window.localStorage.getItem("token")
+  this.autenticandoProvider.verificaUsuario(id, this.token).subscribe(
+    (data : any) => {
+      console.log("Autenticação Realizada com Sucesso!!!!!")
+    },
+    (error : any) =>{
+      this.navCtrl.setRoot(HomePage);
+    }
+  );
 
 }
   public consultaOrdem() {

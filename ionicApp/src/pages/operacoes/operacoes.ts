@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { OperacoesProvider } from '../../providers/operacoesprovider';
 import {TipoStatusProvider} from '../../providers/tipo-status/tipo-status';
 import { Toast } from  '../../providers/toast';
+import { AutenticandoProvider } from '../../providers/autenticando';
+import { HomePage } from '../home/home';
 
 /**
  * Generated class for the OperacoesPage page.
@@ -18,21 +20,35 @@ import { Toast } from  '../../providers/toast';
 })
 export class OperacoesPage {
 
+  usuario : string;
+  token : string;
   operacao:string;
   descricao:string;
   statusOrdemSelecionada:string;
   tempoplanejado:string;
   execucao:string;
-  
+
   public statusOrdem = [];
   public idOrdemcadastrada : number;
-  constructor(public navCtrl: NavController, public navParams: NavParams, private operacoesProvider :OperacoesProvider,private tipoStatusProvider:TipoStatusProvider,private toast :Toast) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private operacoesProvider :OperacoesProvider,private tipoStatusProvider:TipoStatusProvider,private toast :Toast,public autenticandoProvider: AutenticandoProvider) {
     this.idOrdemcadastrada = this.navParams.data.id;
     this.tipoStatus();
+    this.autenticaUsuario()
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad OperacoesPage');
+  public autenticaUsuario(){
+    this.usuario = window.localStorage.getItem("idUsuario")
+    let id = Number(this.usuario)
+    this.token = window.localStorage.getItem("token")
+    this.autenticandoProvider.verificaUsuario(id, this.token).subscribe(
+      (data : any) => {
+        console.log("Autenticação Realizada com Sucesso!!!!!")
+      },
+      (error : any) =>{
+        this.navCtrl.setRoot(HomePage);
+      }
+    );
+
   }
 
 
