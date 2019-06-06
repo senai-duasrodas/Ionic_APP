@@ -21,40 +21,66 @@
 
 
 <ion-content class="contentDashboard">
-  <ion-grid class="dashboardGrid">
+    <ion-grid class="contentGridOne">
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <img src="../../assets/imgs/grafico1.png">
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-grid class="contentGridOne">
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <img src="../../assets/imgs/grafico2.png" class="contentGridOneImg">
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  <ion-grid class="contentGridOne">
     <ion-row>
       <ion-col>
-        <ion-card class="contentCard">
-
+        <ion-card class="totalOrdem">
+          <ion-card-header class="ionCardHeader">
+            <p>ORDENS EM ABERTO</p>
+          </ion-card-header>
+          <ion-card-content class="ionCardContent">
+            <p>76</p>
+          </ion-card-content>
         </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="contentCard">
-          
+        <hr>
+        <ion-card class="totalOrdem">
+          <ion-card-header class="ionCardHeader">
+            <p>ORDENS PAUSADAS</p>
+          </ion-card-header>
+          <ion-card-content class="ionCardContent">
+            <p>6</p>
+          </ion-card-content>
         </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="contentCard">
-          
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-card class="contentCard">
-
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="contentCard">
-          
-        </ion-card>
-      </ion-col>
-      <ion-col>
-        <ion-card class="contentCard">
-          
+        <hr>
+        <ion-card class="totalOrdem">
+          <ion-card-header class="ionCardHeader">
+            <p>SOLICITAÇÕES</p>
+          </ion-card-header>
+          <ion-card-content class="ionCardContent">
+            <p>4</p>
+          </ion-card-content>
         </ion-card>
       </ion-col>
     </ion-row>
   </ion-grid>
+  
+  
+
+  
 </ion-content>
+
+<ion-footer class="gridFooter">
+  testeasas
+</ion-footer>
