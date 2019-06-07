@@ -1,50 +1,73 @@
-<!--
-  Generated template for the SolicitaProdutoPage page.
+<ion-content class="contentBackground">
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
 
-  <ion-navbar>
-    <ion-title>solicitaProduto</ion-title>
-  </ion-navbar>
+    <ion-grid class="contentGrid">
+        <ion-row>
+            <ion-col>
+                <div class="loginContent">
+                
+                    <div class="holdContentLogin">
+                        <div class="holdIcon">
+                            <ion-icon name="md-contact"></ion-icon>
+                        </div>
+                        <div class="holdInput">
+                            <ion-input type="text" [(ngModel)]="numeroPecas" name="Número de peças" placeholder="Número de peças" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                        </div>
+                    </div>
+                    <div class="holdContentLogin">
+                    <ion-item>
+                            <ion-label fixed>{{Setor}}</ion-label>
+                            <ion-select [(ngModel)]="setor">
+                                <ion-option value="{{setores.id}}" *ngFor="let setores of listaSetor">{{setores.nome}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+                    </div>
+                    <div class="holdContentLogin">
+                    <ion-item>
+                            <ion-label fixed>Maquina Destinada</ion-label>
+                            <ion-select [(ngModel)]="maquinaDestinada">
+                                <ion-option value="{{item.id}}" *ngFor="let item of todasMaquinas">{{item.descricao}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+                    </div>
+                    <div class="holdContentLogin">
+                            <div class="holdIcon">
+                                <ion-icon name="md-contact"></ion-icon>
+                            </div>
+                            <div class="holdInput">
+                                <ion-input type="text" [(ngModel)]="NomePeca" name="Descrição Pedido" placeholder="Descrição Pedido" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                            </div>
+                        </div>
+                        <div class="holdContentLogin">
+                                <ion-item>
+                                    <ion-label fixed>{{Prioridade}}</ion-label>
+                                    <ion-select [(ngModel)]="prioridade" class="holdInput">
+                                        <ion-option value="{{priori.id}}" *ngFor="let priori of listaPriridade">{{priori.descricaoPrioridade}}</ion-option>
+                                    </ion-select>
+                                </ion-item>
+                            </div>
+                    <div class="holdContentSubmit">
+                        <div class="holdInput">
+                                <button class="campo" color="primary" (click)="solicitarPeca()">Solicitar</button>
+                                
+                        </div>
+                    </div>
 
-</ion-header>
 
-<ion-content padding>
-    <ion-list>
-        <ion-item>
-          <ion-label float>Número de peças</ion-label>
-          <ion-input [(ngModel)]="numeroPecas"type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label fixed>{{Setor}}</ion-label>
-            <ion-select [(ngModel)]="setor">
-                <ion-option value="{{setores.id}}" *ngFor="let setores of listaSetor">{{setores.nome}}</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-            <ion-label fixed>Maquina Destinada</ion-label>
-            <ion-select [(ngModel)]="maquinaDestinada">
-                <ion-option value="{{item.id}}" *ngFor="let item of todasMaquinas">{{item.descricao}}</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-            <ion-label>Descrição Pedido</ion-label>
-            <ion-input [(ngModel)]="NomePeca" type="text"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label fixed>{{Prioridade}}</ion-label>
-            <ion-select [(ngModel)]="prioridade">
-                <ion-option value="{{priori.id}}" *ngFor="let priori of listaPriridade">{{priori.descricaoPrioridade}}</ion-option>
-            </ion-select>
-        </ion-item>
-        </ion-list>
-        <div padding>
-            <button ion-button  class="campo" color="primary"(click)="solicitarPeca()">Solicitar</button>
-        </div>
-        <div padding>
-            <button ion-button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
-        </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <ion-grid class="contentFooter">
+        <ion-row>
+            <ion-col>
+                <div class="holdNovoUsuario" (click)="voltarDashboard()">
+                    <span>Voltar</span>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+
 </ion-content>
