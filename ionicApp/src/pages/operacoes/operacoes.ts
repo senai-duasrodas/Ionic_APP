@@ -5,7 +5,7 @@ import {TipoStatusProvider} from '../../providers/tipo-status/tipo-status';
 import { Toast } from  '../../providers/toast';
 import { AutenticandoProvider } from '../../providers/autenticando';
 import { HomePage } from '../home/home';
-
+import { DetalheOrdemServicoPage } from '../detalhe-ordem-servico/detalhe-ordem-servico';
 /**
  * Generated class for the OperacoesPage page.
  *
@@ -78,5 +78,7 @@ export class OperacoesPage {
       }
     );
   }
-
+public voltarDetalheOrdemServico(){
+    this.navCtrl.setRoot(DetalheOrdemServicoPage);
+  }
 }
