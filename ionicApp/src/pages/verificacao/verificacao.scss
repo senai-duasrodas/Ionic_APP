@@ -1,3 +1,122 @@
 page-verificacao {
+      
+    // Uso global de tags
+    .holdInput input::placeholder{
+        color: white;
+    }
+
+    input{
+        color: #fff;
+    }
+    // fim uso global de tags
+
+    .contentBackground {
+        background-image: linear-gradient(to bottom, #e82c37 , #a32a34);
+    }
+
+    .contentGrid{
+        margin-top: 4rem;
+        padding: 15px;
+        
+    }
+
+    .contentGrid ion-col{
+        display: flex;
+        justify-content: center
+    }
+
+    .holdLogo{
+        width: 150px;
+    }
+
+    .loginContent{
+        width: 500px;
+        min-height: 50px;
+    }
+
+    .holdContentLogin{
+        display: flex;
+        background-color: rgba(231,120,127,0.3);
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.5rem;
+        border-radius: 20px;
+        padding: 0.5rem;
+    }
+
+    .holdContentSubmit{
+        display: flex;
+        background-color: #fff;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+        border-radius: 20px;
+        padding: 0.5rem;
+    }
+
+    .holdIcon{
+        width: 5rem;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;       
+    }
+
+    .holdIcon ion-icon{
+        font-size: 3rem;
+        color: rgb(255, 255, 255);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .holdInput{
+        width: 100%;
+    }
+
+    .campo{
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: none;
+        font-size: 15px;
+        padding: 15px;
+        font-weight: bold;
+        color: #e82c37;
+    }
+
+    .holdNovoUsuario{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .holdNovoUsuario span{
+        color:rgb(182, 182, 182);
+        font-size: 13px;
+        font-family: 'montserrat';
+        letter-spacing: 1px;
+    }
+
+    .contentFooter{
+        width: 100%;
+        height: 70px;
+        padding: 10px;
+        position: absolute;
+        z-index: 10;
+        bottom:0px;
+        display: flex;
+        align-items: center;
+        justify-content: center
+    }
+    .ItemselectContent{
+        
+        background: rgba(231,120,127,0.3);
+        border-radius: 20px;
+        color:rgb(182, 182, 182);
+        
+
+    }
+
 
 }

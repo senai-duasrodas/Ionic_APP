@@ -1,75 +1,106 @@
-<!--
-  Generated template for the CadastroOrdemServicoPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>cadastroOrdemServico</ion-title>
-  </ion-navbar>
-
-</ion-header>
+<ion-content class="contentBackground">
 
 
-<ion-content padding>
-    <form (ngSubmit)="cadastroOrdemServico()">
-      <ion-list>
-        <ion-item>
-            <ion-label floating>Resumo</ion-label>
-            <ion-input type="text" [(ngModel)]="resumo" name="resumo"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label floating>Descrição</ion-label>
-            <ion-input type="text" [(ngModel)]="descricao" name="descricao"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Tipo Manutenção</ion-label>
-            <ion-select [(ngModel)]="manutencao" name="manutencao">
-              <ion-option value="{{item.id}}" *ngFor="let item of manutencaoTodas">{{item.tipoManutencao}}</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label fixed>Inicio Planejado</ion-label>
-          <ion-input type="date" [(ngModel)]="inicioPlanejado" name="inicioPlanejado"></ion-input>
-        </ion-item>
-        <ion-item>
-            <ion-label fixed>Fim Planejado</ion-label>
-            <ion-input type="date" [(ngModel)]="fimPlanejado" name="fimPlanejado"></ion-input>
-        </ion-item>
-        <ion-item>
-          <ion-label>Prioridade</ion-label>
-            <ion-select [(ngModel)]="prioridadeSelecionada" name="prioridadeSelecionada">
-              <ion-option value="{{item.id}}" *ngFor="let item of prioridade">{{item.descricaoPrioridade}}</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>Status Ordem</ion-label>
-            <ion-select [(ngModel)]="statusOrdemSelecionada" name="statusOrdemSelecionada">
-              <ion-option value="{{item.id}}" *ngFor="let item of statusOrdem">{{item.tipoStatus}}</ion-option>
-            </ion-select>
-        </ion-item>
-        <ion-item>
-          <ion-label>Requer Parada</ion-label>
-            <ion-select [(ngModel)]="requerParada" name="requerParada">
-              <ion-option value="0">Não</ion-option>
-              <ion-option value="1">Sim</ion-option>
-            </ion-select>
-      </ion-item>
-        <ion-item>
-            <ion-label>Setor</ion-label>
-              <ion-select [(ngModel)]="setorSelecionado" name="setorSelecionado">
-                <ion-option value="{{item.id}}" *ngFor="let item of setor">{{item.nome}}</ion-option>
-              </ion-select>
-        </ion-item>
-      </ion-list>
-        <div padding>
-          <button ion-button  class="campo" color="primary" type="submit">Enviar</button>
-        </div>
-    </form>
-    <div padding>
-        <button ion-button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
-    </div>
+    <ion-grid class="contentGrid">
+        <ion-row>
+            <ion-col>
+                <div class="loginContent">
+                
+                    <div class="holdContentLogin">
+                        <div class="holdIcon">
+                            <ion-icon name="md-contact"></ion-icon>
+                        </div>
+                        <div class="holdInput">
+                            <ion-input type="text" [(ngModel)]="resumo" name="resumo" placeholder="Resumo" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                        </div>
+                    </div>
+                    <div class="holdContentLogin">
+                        <div class="holdIcon">
+                            <ion-icon name="md-contact"></ion-icon>
+                        </div>
+                        <div class="holdInput">
+                            <ion-input type="text" [(ngModel)]="descricao" name="descricao" placeholder="Descrição" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                        </div>
+                    </div>
+                    <div class="holdContentLogin">
+                    <ion-item class="ItemselectContent">
+                            <ion-label >Tipo Manutenção</ion-label>
+                            <ion-select [(ngModel)]="manutencao">
+                                <ion-option value="{{item.id}}" *ngFor="let item of manutencaoTodas" class="holdInput">{{item.tipoManutencao}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+                    </div>
+                    <div class="holdContentLogin">
+                        <div class="holdIcon">
+                            <ion-icon name="md-contact"></ion-icon>
+                        </div>
+                        <div class="holdInput">
+                            <ion-input type="date" [(ngModel)]="inicioPlanejado" name="inicioPlanejado" placeholder="Inicio Planejado" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                        </div>
+                    </div>
+                    <div class="holdContentLogin">
+                        <div class="holdIcon">
+                            <ion-icon name="md-contact"></ion-icon>
+                        </div>
+                        <div class="holdInput">
+                            <ion-input type="date" [(ngModel)]="fimPlanejado" name="fimPlanejado" placeholder="Fim Planejado" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                        </div>
+                    </div>
+                    <div class="holdContentLogin">
+                    <ion-item class="ItemselectContent">
+                            <ion-label >Status Ordem</ion-label>
+                            <ion-select [(ngModel)]="statusOrdemSelecionada">
+                                <ion-option value="{{item.id}}" *ngFor="let item of statusOrdem" class="holdInput">{{item.tipoStatus}}</ion-option>
+                            </ion-select>
+                    </ion-item>
+                    </div>
+                      <div class="holdContentLogin">
+                              <ion-item class="ItemselectContent">
+                                  <ion-label >Prioridade</ion-label>
+                                  <ion-select [(ngModel)]="prioridadeSelecionada"  class="holdInput">
+                                      <ion-option value="{{item.id}}" *ngFor="let item of prioridade" class="holdInput">{{item.descricaoPrioridade}}</ion-option>
+                                  </ion-select>
+                              </ion-item>
+                      </div>
+                      <div class="holdContentLogin">
+                        <ion-item class="ItemselectContent">
+                            <ion-label>Requer Parada</ion-label>
+                                <ion-select [(ngModel)]="requerParada" class="holdInput">
+                                <ion-option value="0" >Não</ion-option>
+                                <ion-option value="1" >Sim</ion-option>
+                                </ion-select>
+                        </ion-item>
+                      </div>
+                      <div class="holdContentLogin">
+                          <ion-item class="ItemselectContent">
+                              <ion-label >Setor</ion-label>
+                              <ion-select [(ngModel)]="setorSelecionado" class="holdInput">
+                                  <ion-option value="{{item.id}}" *ngFor="let item of setor" class="holdInput">{{item.nome}}</ion-option>
+                              </ion-select>
+                          </ion-item>
+                  </div>
+                    <div class="holdContentSubmit">
+                        <div class="holdInput">
+                                <button class="campo" color="primary" (click)="cadastroOrdemServico()">Enviar</button>
+                                
+                        </div>
+                    </div>
+
+
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <!-- <ion-grid class="contentFooter">
+        <ion-row>
+            <ion-col>
+                <div class="holdNovoUsuario" (click)="voltarDashboard()">
+                    <span>Voltar</span>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid> -->
+
 
 </ion-content>

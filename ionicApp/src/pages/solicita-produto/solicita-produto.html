@@ -18,15 +18,15 @@
                     <ion-item class="ItemselectContent">
                             <ion-label fixed>{{Setor}}</ion-label>
                             <ion-select [(ngModel)]="setor">
-                                <ion-option value="{{setores.id}}" *ngFor="let setores of listaSetor">{{setores.nome}}</ion-option>
+                                <ion-option value="{{setores.id}}" *ngFor="let setores of listaSetor" class="holdInput">{{setores.nome}}</ion-option>
                             </ion-select>
                     </ion-item>
                     </div>
                     <div class="holdContentLogin">
                     <ion-item class="ItemselectContent">
-                            <ion-label fixed>Maquina Destinada</ion-label>
+                            <ion-label >Maquina Destinada</ion-label>
                             <ion-select [(ngModel)]="maquinaDestinada">
-                                <ion-option value="{{item.id}}" *ngFor="let item of todasMaquinas">{{item.descricao}}</ion-option>
+                                <ion-option value="{{item.id}}" *ngFor="let item of todasMaquinas" class="holdInput">{{item.descricao}}</ion-option>
                             </ion-select>
                     </ion-item>
                     </div>
