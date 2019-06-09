@@ -27,15 +27,19 @@ export class DetalheOrdemServicoPage {
   public ordem = [];
   public statusOrdem = [];
   public prioridade = [];
+  public textoDescricacao = [];
   statusOrdemSelecionada : string;
   prioridadeSelecionada : string;
   private orderKey : any;
   usuario : string;
   token : string;
+  textoVelho : string;
+  textoNovo : string ;
+  tamanhoDoTextoQueVouQuebrar: number;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public autenticandoProvider: AutenticandoProvider, public consultaOrdemProvider: ConsultaOrdemProvider, public tipoStatusProvider: TipoStatusProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider) {
     this.orderKey = this.navParams.data.id;
-    this.autenticaUsuario()
+    this.autenticaUsuario();
     this.tipoStatus();
     this.tipoPrioridade();
     this.consultaOrdem();

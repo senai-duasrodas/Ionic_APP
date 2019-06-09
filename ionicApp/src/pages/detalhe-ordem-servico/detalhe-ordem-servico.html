@@ -7,48 +7,57 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>detalheOrdemServico</ion-title>
+    <ion-title>Detalhes Ordem de Serviço</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
-        <ion-fab right top>
-          <button ion-fab>
-            <ion-icon name="ios-paper"></ion-icon>
-          </button>
-        </ion-fab>
-        <ion-item>
-          <h2>Consultar Ordens:</h2>
-        </ion-item>
-    <ion-list>
-      <ion-card *ngFor="let item of ordem">
-        <ion-item>
-          <h2>Resumo: {{item.resumo}}</h2>
-          <p>Descricao: {{item.descricao}}</p><br>
-          <p>Setor: {{item.nome}}</p>
-          <p>Requer Parada: {{item.requerParada}}</p>
-          <p>Tipo de Manutencao: {{item.tipoManutencao}}</p>
-          <p>Número Patrimônio: {{item.numeroPatrimonio}}</p>
-          <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
-          <p>Fim Planejado: {{item.fimPlanejado}}</p>
-          <p>Status: {{item.tipoStatus}}</p>
-        </ion-item>
-      </ion-card>
-      <div padding>
-        <button ion-button  class="campo" color="primary" (click)="verificacao()">Verificação Serviço</button>
-      </div>
-      <div padding>
-        <button ion-button  class="campo" color="primary" (click)="solicitaPeca()">Solicitação de Peça</button>
-      </div>
-      <div padding>
-          <button ion-button  class="campo" color="primary" (click)="apontamento()">Apontamento</button>
-      </div>
-      <div padding>
-        <button ion-button  class="campo" color="primary" (click)="operacoes()">Operações</button>
-    </div>
-    </ion-list>
-      <div padding>
-        <button ion-button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
-      </div>
+<ion-content class="contentBackground">
+
+    <ion-grid class="contentGrid">
+        <ion-row>
+            <ion-col>
+              <div class="loginContent">
+                  <ion-card *ngFor="let item of ordem">
+                    <ion-item class="ListaTexto">
+                      <h2>Resumo: {{item.resumo}}</h2>
+                      <p>Descricao: {{item.descricao}}</p><br>
+                      <p>Setor: {{item.nome}}</p>
+                      <p>Requer Parada: {{item.requerParada}}</p>
+                      <p>Tipo de Manutencao: {{item.tipoManutencao}}</p>
+                      <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
+                      <p>Fim Planejado: {{item.fimPlanejado}}</p>
+                      <p>Status: {{item.tipoStatus}}</p>
+                    </ion-item>
+                  </ion-card>
+                
+                <div class="holdContentSubmit">
+                    <div class="holdInput">
+                            <button class="campo" color="primary" (click)="verificacao()">Verificação Serviço</button>
+                    </div>
+                </div>
+                <div class="holdContentSubmit">
+                    <div class="holdInput">
+                            <button  class="campo" color="primary" (click)="solicitaPeca()">Solicitação de Peça</button>
+                    </div>
+                </div>
+                <div class="holdContentSubmit">
+                    <div class="holdInput">
+                            <button  class="campo" color="primary" (click)="apontamento()">Apontamento</button>
+                    </div>
+                </div>
+                <div class="holdContentSubmit">
+                    <div class="holdInput">
+                            <button  class="campo" color="primary" (click)="operacoes()">Operações</button>
+                    </div>
+                </div>
+                <div class="holdContentSubmit">
+                    <div class="holdInput">
+                            <button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
+                    </div>
+                </div>
+       </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
