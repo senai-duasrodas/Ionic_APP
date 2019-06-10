@@ -24,22 +24,22 @@
     <ion-grid class="contentGridOne">
         <ion-row>
           <ion-col>
-            <ion-list>
-              <ion-item>
-                <img src="../../assets/imgs/grafico1.png">
-              </ion-item>
-            </ion-list>
-          </ion-col>
-        </ion-row>
-      </ion-grid>
-      <ion-grid class="contentGridOne">
-        <ion-row>
-          <ion-col>
-            <ion-list>
-              <ion-item>
-                <img src="../../assets/imgs/grafico2.png" class="contentGridOneImg">
-              </ion-item>
-            </ion-list>
+            <ion-card>
+              <ion-card-header>
+                Ordens Abertas por Setor
+              </ion-card-header>
+              <ion-card-content>  
+                <canvas #barCanvas></canvas>
+              </ion-card-content>
+          </ion-card>
+          <ion-card>
+              <ion-card-header>
+                Gráfico de Ordens
+              </ion-card-header>
+              <ion-card-content>  
+                <canvas #lineCanvas></canvas>
+              </ion-card-content>
+          </ion-card>
           </ion-col>
         </ion-row>
       </ion-grid>
