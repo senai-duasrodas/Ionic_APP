@@ -1,3 +1,119 @@
 page-consulta-ordens {
+    .contentConsulta{
+        background-color: #e7e7e7;
+    }
+
+    .button-inner{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .toolbar-title-md{
+        font-size: 16px;
+        letter-spacing: 1px;
+        display: flex;
+        align-items: center;
+    }
+
+    .contentGrid{
+        background-color: #ffffff;
+        padding: 5px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 20px;
+    }
+
+    .contentGridCol{
+        background-color: #ffffff;
+        padding: 0px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 20px;
+    }
+
+    .contentGridDetalhe{
+        background-color: #ffffff;
+        padding: 0px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 20px;        
+    }
+
+    .listContent{
+        margin: 0px; 
+    }
+
+    .contentConsulta h4{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'roboto';
+        margin-bottom: 3rem;
+        margin-top: 3rem;
+        color: #e82c37
+
+    }
+
+    .inputs{
+        width: 100%;
+    }
+
+    .holdContentSubmit{
+        background-color: #fff;
+        margin-bottom: 1rem;
+        margin-top: 2rem;
+    }
+
+    .campo{
+        width: 100%;
+        height: 100%;
+        border: none;
+        background: none;
+        font-size: 15px;
+        padding: 10px;
+        font-weight: bold;
+        color: #fff;
+        border-radius: 20px;
+        background-color: #e82c37;
+    }
+
+    .campo:focus{
+        background-color: #ce2934;
+    }
+
+    .holdInput{
+        width: 13rem;
+        float: right;
+    }
+
+    .itemStyle h2,
+    .itemStyle p,
+    .itemStyle span{
+        font-family: 'roboto'
+    }
+
+    .itemStyle{
+        margin: 0px;
+        border-radius: 20px;
+    }
+
+
+    .btnDetalhe{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btnDetalhe ion-icon{
+        color: #e82c37
+    }
+
+    .btnDetalhe span{
+        color: #e82c37
+    }
+    
+
+
 
 }

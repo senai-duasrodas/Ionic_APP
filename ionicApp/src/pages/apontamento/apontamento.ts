@@ -48,7 +48,7 @@ export class ApontamentoPage {
 
   }
   public realizarApontamento() {
-    this.lancamentosProvider.lancamento(this.orderKey,this.dataApontamento,this.tempoDedicado,this.usuario).subscribe(
+    this.lancamentosProvider.lancamento(this.orderKey,this.dataApontamento,this.tempoDedicado,this.usuario2).subscribe(
       (data : any) => {
         this.verificacao=data;
         this.toast.presentToast("Apontamento cadastro com sucesso!", 7000);
@@ -60,7 +60,7 @@ export class ApontamentoPage {
       }
     );
   }
-  public voltarDashboard(){
-    this.navCtrl.setRoot(DashboardPage);
+  public voltar(){
+    this.navCtrl.pop();
   }
 }

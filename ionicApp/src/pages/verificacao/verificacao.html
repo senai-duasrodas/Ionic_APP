@@ -8,24 +8,27 @@
               
                   <div class="holdContentLogin">
                       <div class="holdIcon">
-                          <ion-icon name="md-contact"></ion-icon>
+                          <ion-icon name="hammer"></ion-icon>
                       </div>
                       <div class="holdInput">
-                          <ion-input type="text" [(ngModel)]="solucaoRealizada" name="solucaoRealizada" placeholder="Solução Realizada" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                          <ion-input type="text" [(ngModel)]="solucaoRealizada" name="solucaoRealizada" placeholder="Solução Realizada" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Solução Realizada'"></ion-input>
                       </div>
                   </div>
                   <div class="holdContentLogin">
                           <div class="holdIcon">
-                              <ion-icon name="md-contact"></ion-icon>
+                              <ion-icon name="calendar"></ion-icon>
                           </div>
                           <div class="holdInput">
-                              <ion-input type="date" [(ngModel)]="dataFim" name="dataFim" placeholder="Data" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                              <ion-input type="date" [(ngModel)]="dataFim" name="dataFim" class="form-logar" required></ion-input>
                           </div>
                       </div>
                       <div class="holdContentLogin">
+                            <div class="holdIcon">
+                                <ion-icon name="alert"></ion-icon>
+                            </div>
                           <ion-item class="ItemselectContent">
-                              <ion-label>Problema Foi Resolvido</ion-label>
-                                <ion-select [(ngModel)]="problemaResolvido" name="problemaResolvido" class="holdInput">
+                              <ion-label>Resolvido?</ion-label>
+                                <ion-select [(ngModel)]="problemaResolvido" name="problemaResolvido" class="holdInput" interface="popover">
                                   <ion-option value="sim">Sim</ion-option>
                                   <ion-option value="nao">Não</ion-option>
                                 </ion-select>

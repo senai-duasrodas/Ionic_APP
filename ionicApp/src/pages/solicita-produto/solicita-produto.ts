@@ -89,8 +89,8 @@ export class SolicitaProdutoPage {
       }
     )
   }
-  voltarDashboard(){
-    this.navCtrl.setRoot(DashboardPage);
+  voltar(){
+    this.navCtrl.pop();
   }
   solicitarPeca(){
       let usuario = ""

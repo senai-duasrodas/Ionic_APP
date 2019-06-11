@@ -11,7 +11,7 @@
                             <ion-icon name="md-contact"></ion-icon>
                         </div>
                         <div class="holdInput">
-                            <ion-input type="date" [(ngModel)]="dataApontamento" name="dataApontamento" placeholder="Data Apontamento" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                            <ion-input type="date" [(ngModel)]="dataApontamento" name="dataApontamento"></ion-input>
                         </div>
                     </div>
                     <div class="holdContentLogin">
@@ -38,7 +38,7 @@
     <ion-grid class="contentFooter">
         <ion-row>
             <ion-col>
-                <div class="holdNovoUsuario" (click)="voltarDashboard()">
+                <div class="holdNovoUsuario" (click)="voltar()">
                     <span>Voltar</span>
                 </div>
             </ion-col>

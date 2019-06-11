@@ -1,7 +1,4 @@
 page-detalhe-ordem-servico {
-
-     
-    // Uso global de tags
     .holdInput input::placeholder{
         color: white;
     }
@@ -9,45 +6,41 @@ page-detalhe-ordem-servico {
     input{
         color: #fff;
     }
-    // fim uso global de tags
+
     .ListaTexto p{
-        font-size:14;
+        font-size:14px;
+        font-family: 'montserrat';
         color:#e82c37;
+        margin: 15px 0px 5px 10px;
     }
+
+    .ListaTexto p:last-of-type{
+        font-size:17px;
+        margin: 25px 0px 5px 0px;
+    }
+
+    
+
     .ListaTexto h2{
-        font-size:14;
+        font-size: 17px;
+        font-family: 'montserrat';
         color:#e82c37;
     }
+
+    .label-md{
+        white-space: normal;
+    }
+
     .contentBackground {
-        background-image: linear-gradient(to bottom, #e82c37 , #a32a34);
+        background-color: #e7e7e7
     }
 
     .contentGrid{
-            
-    }
-
-    .contentGrid ion-col{
-        display: flex;
-        justify-content: center
-    }
-
-    .holdLogo{
-        width: 150px;
-    }
-
-    .loginContent{
-        width: 500px;
-        min-height: 50px;
-    }
-
-    .holdContentLogin{
-        display: flex;
-        background-color: rgba(231,120,127,0.3);
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
+        background-color: #ffffff;
+        padding: 5px;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
         border-radius: 20px;
-        padding: 0.5rem;
     }
 
     .holdContentSubmit{
@@ -60,24 +53,10 @@ page-detalhe-ordem-servico {
         padding: 0.5rem;
     }
 
-    .holdIcon{
-        width: 5rem;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;       
-    }
-
-    .holdIcon ion-icon{
-        font-size: 3rem;
-        color: rgb(255, 255, 255);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     .holdInput{
         width: 100%;
+        margin-bottom: 2rem;
+        margin-top: 2rem;
     }
 
     .campo{
@@ -86,9 +65,11 @@ page-detalhe-ordem-servico {
         border: none;
         background: none;
         font-size: 15px;
-        padding: 15px;
+        padding: 10px;
         font-weight: bold;
-        color: #e82c37;
+        color: #fff;
+        border-radius: 20px;
+        background-color: #e82c37;
     }
 
     .holdNovoUsuario{

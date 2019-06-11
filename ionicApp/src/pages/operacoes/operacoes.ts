@@ -79,6 +79,6 @@ export class OperacoesPage {
     );
   }
 public voltarDetalheOrdemServico(){
-    this.navCtrl.setRoot(DetalheOrdemServicoPage);
+    this.navCtrl.pop();
   }
 }

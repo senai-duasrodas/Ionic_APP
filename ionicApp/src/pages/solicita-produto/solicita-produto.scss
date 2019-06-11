@@ -29,6 +29,10 @@ page-solicita-produto {
         width: 150px;
     }
 
+    .holdInput{
+        width: 100%;
+    }
+
     .loginContent{
         width: 500px;
         min-height: 50px;
@@ -109,13 +113,16 @@ page-solicita-produto {
         align-items: center;
         justify-content: center
     }
+    
     .ItemselectContent{
-        
-        background: rgba(231,120,127,0.3);
-        border-radius: 20px;
-        color:rgb(182, 182, 182);
-        
+        background: none;
+        color:#ffffff;
+    }
 
+    .item-input .label-md,
+    .item-select .label-md,
+    .item-datetime .label-md {
+        color: #ffffff;
     }
 
         

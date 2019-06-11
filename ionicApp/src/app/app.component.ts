@@ -30,13 +30,7 @@ export class MyApp {
       { title: 'Consultar OS', component: ConsultaOrdensPage, img: "../assets/imgs/logo/Consultar.png" },
       { title: 'Cadastrar OS', component: CadastroOrdemServicoPage, img: "../assets/imgs/logo/cadastrar.png" },
       { title: 'Solicitar Peça', component: SolicitaProdutoPage, img: "../assets/imgs/logo/solicitar.png" },
-      { title: 'Verificar OS', component: VerificacaoPage, img: "../assets/imgs/logo/verificar.png" },
-      { title: 'Apontamentos', component: ApontamentoPage, img: "../assets/imgs/logo/apontamento.png" },
-      { title: 'Consultar OS', component: ConsultaOrdensPage, img: "../assets/imgs/logo/Consultar.png" },
-      { title: 'Cadastrar OS', component: CadastroOrdemServicoPage, img: "../assets/imgs/logo/cadastrar.png" },
-      { title: 'Solicitar Peça', component: SolicitaProdutoPage, img: "../assets/imgs/logo/solicitar.png" },
-      { title: 'Verificar OS', component: VerificacaoPage, img: "../assets/imgs/logo/verificar.png" },
-      { title: 'Apontamentos', component: ApontamentoPage, img: "../assets/imgs/logo/apontamento.png" },
+
     ];
 
     this.evt.subscribe("swipeEnabled", () => {

@@ -1,6 +1,4 @@
 <ion-content class="contentBackground">
-
-
     <ion-grid class="contentGrid">
         <ion-row>
             <ion-col>
@@ -8,48 +6,56 @@
                 
                     <div class="holdContentLogin">
                         <div class="holdIcon">
-                            <ion-icon name="md-contact"></ion-icon>
+                            <ion-icon name="pricetag"></ion-icon>
                         </div>
                         <div class="holdInput">
-                            <ion-input type="text" [(ngModel)]="numeroPecas" name="Número de peças" placeholder="Número de peças" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
+                            <ion-input type="text" [(ngModel)]="numeroPecas" name="Número de peças" placeholder="Número de peças" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Número de peças'"></ion-input>
                         </div>
                     </div>
                     <div class="holdContentLogin">
-                    <ion-item class="ItemselectContent">
-                            <ion-label fixed>{{Setor}}</ion-label>
-                            <ion-select [(ngModel)]="setor">
-                                <ion-option value="{{setores.id}}" *ngFor="let setores of listaSetor" class="holdInput">{{setores.nome}}</ion-option>
-                            </ion-select>
+                        <div class="holdIcon">
+                            <ion-icon name="cog"></ion-icon>
+                        </div>
+                        <ion-item class="ItemselectContent">
+                            <ion-label no-line>{{Setor}}</ion-label>
+                            <ion-select [(ngModel)]="setor" interface="popover" class="holdInput">
+                                <ion-option value="{{setores.id}}" *ngFor="let setores of listaSetor">{{setores.nome}}</ion-option>
+                        </ion-select>
                     </ion-item>
                     </div>
                     <div class="holdContentLogin">
-                    <ion-item class="ItemselectContent">
-                            <ion-label >Maquina Destinada</ion-label>
-                            <ion-select [(ngModel)]="maquinaDestinada">
+                        <div class="holdIcon">
+                            <ion-icon name="construct"></ion-icon>
+                        </div>
+                        <ion-item class="ItemselectContent">
+                            <ion-label>Maquina Destinada</ion-label>
+                            <ion-select [(ngModel)]="maquinaDestinada" interface="popover">
                                 <ion-option value="{{item.id}}" *ngFor="let item of todasMaquinas" class="holdInput">{{item.descricao}}</ion-option>
-                            </ion-select>
+                        </ion-select>
                     </ion-item>
                     </div>
                     <div class="holdContentLogin">
-                            <div class="holdIcon">
-                                <ion-icon name="md-contact"></ion-icon>
-                            </div>
-                            <div class="holdInput">
-                                <ion-input type="text" [(ngModel)]="NomePeca" name="Descrição Pedido" placeholder="Descrição Pedido" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Usuário'"></ion-input>
-                            </div>
+                        <div class="holdIcon">
+                            <ion-icon name="text"></ion-icon>
                         </div>
-                        <div class="holdContentLogin">
-                                <ion-item class="ItemselectContent">
-                                    <ion-label fixed>{{Prioridade}}</ion-label>
-                                    <ion-select [(ngModel)]="prioridade" class="holdInput">
-                                        <ion-option value="{{priori.id}}" *ngFor="let priori of listaPriridade" class="holdInput">{{priori.descricaoPrioridade}}</ion-option>
-                                    </ion-select>
-                                </ion-item>
-                            </div>
+                        <div class="holdInput">
+                            <ion-input type="text" [(ngModel)]="NomePeca" name="Descrição Pedido" placeholder="Descrição Pedido" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Descrição Pedido'"></ion-input>
+                        </div>
+                    </div>
+                    <div class="holdContentLogin">
+                        <div class="holdIcon">
+                            <ion-icon name="alert"></ion-icon>
+                        </div>
+                        <ion-item class="ItemselectContent">
+                            <ion-label>{{Prioridade}}</ion-label>
+                            <ion-select [(ngModel)]="prioridade" class="holdInput" interface="popover">
+                                <ion-option value="{{priori.id}}" *ngFor="let priori of listaPriridade" class="holdInput">{{priori.descricaoPrioridade}}</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </div>
                     <div class="holdContentSubmit">
                         <div class="holdInput">
-                                <button class="campo" color="primary" (click)="solicitarPeca()">Solicitar</button>
-                                
+                            <button class="campo" color="primary" (click)="solicitarPeca()">Solicitar</button>    
                         </div>
                     </div>
 
@@ -62,7 +68,7 @@
     <ion-grid class="contentFooter">
         <ion-row>
             <ion-col>
-                <div class="holdNovoUsuario" (click)="voltarDashboard()">
+                <div class="holdNovoUsuario" (click)="voltar()">
                     <span>Voltar</span>
                 </div>
             </ion-col>

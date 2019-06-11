@@ -13,51 +13,36 @@
 </ion-header>
 
 <ion-content class="contentBackground">
-
-    <ion-grid class="contentGrid">
+    <ion-grid class="contentGrid" *ngFor="let item of ordem">
         <ion-row>
             <ion-col>
-              <div class="loginContent">
-                  <ion-card *ngFor="let item of ordem">
-                    <ion-item class="ListaTexto">
-                      <h2>Resumo: {{item.resumo}}</h2>
-                      <p>Descricao: {{item.descricao}}</p><br>
-                      <p>Setor: {{item.nome}}</p>
-                      <p>Requer Parada: {{item.requerParada}}</p>
-                      <p>Tipo de Manutencao: {{item.tipoManutencao}}</p>
-                      <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
-                      <p>Fim Planejado: {{item.fimPlanejado}}</p>
-                      <p>Status: {{item.tipoStatus}}</p>
-                    </ion-item>
-                  </ion-card>
-                
-                <div class="holdContentSubmit">
-                    <div class="holdInput">
-                            <button class="campo" color="primary" (click)="verificacao()">Verificação Serviço</button>
-                    </div>
-                </div>
-                <div class="holdContentSubmit">
-                    <div class="holdInput">
-                            <button  class="campo" color="primary" (click)="solicitaPeca()">Solicitação de Peça</button>
-                    </div>
-                </div>
-                <div class="holdContentSubmit">
-                    <div class="holdInput">
-                            <button  class="campo" color="primary" (click)="apontamento()">Apontamento</button>
-                    </div>
-                </div>
-                <div class="holdContentSubmit">
-                    <div class="holdInput">
-                            <button  class="campo" color="primary" (click)="operacoes()">Operações</button>
-                    </div>
-                </div>
-                <div class="holdContentSubmit">
-                    <div class="holdInput">
-                            <button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
-                    </div>
-                </div>
-       </div>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+                <ion-item no-lines class="ListaTexto">
+                  <h2>Resumo: {{item.resumo}}</h2>
+                  <p>Descricao: {{item.descricao}}</p><br>
+                  <p>Setor: {{item.nome}}</p>
+                  <p>Requer Parada: {{item.requerParada}}</p>
+                  <p>Tipo de Manutencao: {{item.tipoManutencao}}</p>
+                  <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
+                  <p>Fim Planejado: {{item.fimPlanejado}}</p>
+                  <p>Status: {{item.tipoStatus}}</p>
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <div class="holdInput">
+            <button class="campo" color="primary" (click)="verificacao()">Verificação Serviço</button>
+          </div>
+          <div class="holdInput">
+            <button  class="campo" color="primary" (click)="solicitaPeca()">Solicitação de Peça</button>
+          </div>
+          <div class="holdInput">
+            <button  class="campo" color="primary" (click)="apontamento()">Apontamento</button>
+          </div>
+          <div class="holdInput">
+            <button  class="campo" color="primary" (click)="operacoes()">Operações</button>
+          </div>
+          <div class="holdInput">
+            <button  class="campo" color="primary" (click)="voltarDashboard()">Voltar</button>
+          </div>
+       
 </ion-content>
