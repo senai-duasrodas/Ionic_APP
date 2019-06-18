@@ -5,7 +5,6 @@
       <ion-row>
           <ion-col>
               <div class="loginContent">
-              
                   <div class="holdContentLogin">
                       <div class="holdIcon">
                           <ion-icon name="hammer"></ion-icon>
@@ -29,8 +28,8 @@
                           <ion-item class="ItemselectContent">
                               <ion-label>Resolvido?</ion-label>
                                 <ion-select [(ngModel)]="problemaResolvido" name="problemaResolvido" class="holdInput" interface="popover">
-                                  <ion-option value="sim">Sim</ion-option>
-                                  <ion-option value="nao">Não</ion-option>
+                                  <ion-option value=1>Sim</ion-option>
+                                  <ion-option value=2>Não</ion-option>
                                 </ion-select>
                           </ion-item>
                           </div>
@@ -49,8 +48,6 @@
                     <button  class="campo" color="primary" (click)="verificaOrdem()">Enviar</button>                          
                   </div>
                </div> 
-
-
               </div>
           </ion-col>
       </ion-row>

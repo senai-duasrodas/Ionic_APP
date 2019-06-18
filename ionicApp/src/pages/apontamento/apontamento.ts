@@ -51,12 +51,12 @@ export class ApontamentoPage {
     this.lancamentosProvider.lancamento(this.orderKey,this.dataApontamento,this.tempoDedicado,this.usuario2).subscribe(
       (data : any) => {
         this.verificacao=data;
-        this.toast.presentToast("Apontamento cadastro com sucesso!", 7000);
+        this.toast.presentToast("Apontamento cadastro com sucesso!", 2500);
         console.log(this.verificacao);
       },
       (error : any) =>{
         console.log("Deu errado");
-        this.toast.presentToast("Erro ao registrar Verificação!", 7000);
+        this.toast.presentToast("Erro ao registrar Verificação!", 2500);
       }
     );
   }

@@ -12,22 +12,23 @@ import { CadastroOrdemServicoPage } from '../cadastro-ordem-servico/cadastro-ord
 import { ModalVerificacaoPage } from '../modal-verificacao/modal-verificacao';
 import { OperacoesPage } from '../operacoes/operacoes';
 import { SolicitaProdutoPage } from '../solicita-produto/solicita-produto';
+import { Toast } from '../../providers/toast';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  userName : string;
+  cracha : string;
   password : string;
   dadosLogin2 : number;
   public dadosLogin = [];
 
-  constructor(public navCtrl: NavController, public login: LoginProvider, private evt : Events, private gerarTokenProvider: GerarTokenProvider) {
+  constructor(public navCtrl: NavController, public login: LoginProvider,public toast: Toast, private evt : Events, private gerarTokenProvider: GerarTokenProvider) {
 
   }
    public logform() {
-    this.login.logando(this.userName, this.password).subscribe(
+    this.login.logando(this.cracha, this.password).subscribe(
       (data : any) => {
         window.localStorage.setItem("idUsuario",data.idUsuario)
         window.localStorage.setItem("token",data.token)
@@ -37,7 +38,7 @@ export class HomePage {
         this.inserirToken();
       },
       (error : any) =>{
-        console.log(error);
+        this.toast.presentToast("Login ou senha incorretos!", 3000);
       }
     );
   }

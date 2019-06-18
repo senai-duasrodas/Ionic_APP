@@ -1,10 +1,13 @@
 import { ModalVerificacaoPage } from './../modal-verificacao/modal-verificacao';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { VerificacaoManutencaoProvider } from '../../providers/verificacao-manutencao/verificacao-manutencao';
 import { Toast } from '../../providers/toast';
 import { AutenticandoProvider } from '../../providers/autenticando';
 import { HomePage } from '../home/home';
+//import { AngularFirestore, AngularFirestoreDocument } from 'angularfire2/firestore';
+import { Observable } from 'rxjs/Observable';
+import { AvaliarServicoProvider } from '../../providers/avaliar-servico/avaliar-servico';
 
 /**
  * Generated class for the VerificacaoPage page.
@@ -31,15 +34,32 @@ export class VerificacaoPage {
   usuario : string;
   token : string;
   usuario2 : any;
+  idUsuario1: string;
+  idUsuario2: string;
+  avaliador: any;
+  textoAvaliar1 : string;
+  textoAvaliar2 : string;
+  valorAvaliacao1 : string;
+  valorAvaliado1: number;
+  valorAvaliacao2 : string;
+  valorAvaliado2: number;
+  usuarioVerifica1: number;
+  usuarioVerifica2: number;
+  verificacaoValor: string;
+  verificacaoNumero: number;
 
-  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams,public autenticandoProvider: AutenticandoProvider,private toast : Toast, public verificacaoManutencaoProvider: VerificacaoManutencaoProvider) {
+
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public navParams: NavParams,public autenticandoProvider: AutenticandoProvider,private toast : Toast, public verificacaoManutencaoProvider: VerificacaoManutencaoProvider,public avaliarServicoProvider: AvaliarServicoProvider) {
     this.autenticaUsuario()
     this.orderKey = this.navParams.data.id;
     localStorage.removeItem('1');
     localStorage.removeItem('2');
-    this.validacao = this.navParams.get('name') || null;
-    console.log("Aqui esta a validação")
-    console.log(this.validacao)
+    localStorage.removeItem('verifica1');
+    localStorage.removeItem('verifica2');
+    localStorage.removeItem('textoAvaliar1');
+    localStorage.removeItem('textoAvaliar2');
+    localStorage.removeItem('valorAvaliacao1');
+    localStorage.removeItem('valorAvaliacao2');
     this.usuario2 = window.localStorage.getItem("idUsuario")
   }
   public autenticaUsuario(){
@@ -54,7 +74,6 @@ export class VerificacaoPage {
         this.navCtrl.setRoot(HomePage);
       }
     );
-
   }
   public verificaOrdem() {
     this.responsavel1 = window.localStorage.getItem("1")
@@ -62,33 +81,45 @@ export class VerificacaoPage {
     this.verificacaoManutencaoProvider.verificacao(this.orderKey,this.solucaoRealizada,this.dataFim,this.problemaResolvido,this.responsavel1,this.responsavel2,this.usuario2).subscribe(
       (data : any) => {
         this.verificacao=data;
-        this.toast.presentToast("Verificação Registrada com sucesso!", 7000);
-        console.log(this.verificacao);
+        this.toast.presentToast("Verificação Registrada com sucesso!", 3000);
         localStorage.removeItem('1');
         localStorage.removeItem('2');
+        this.avaliarServico();
       },
       (error : any) =>{
-        console.log("Deu errado");
-        this.toast.presentToast("Erro ao autenticar usuário!", 7000);
-        localStorage.removeItem('1');
-        localStorage.removeItem('2');
+        this.toast.presentToast("A verificação Falhou!", 3000);
       }
     );
   }
-  public validar(){
-    let teste = window.localStorage.getItem("1")
-    this.toast.presentToast(teste, 7000);
-    if (teste == "1"){
-      this.toast.presentToast("Validacao 1 deu Certo!", 7000);
-    }
+  public avaliarServico() {
+    this.verificacaoNumero = parseInt(this.verificacaoValor)
+    this.textoAvaliar1 = this.idUsuario2 = window.localStorage.getItem("textoAvaliar1")
+    this.textoAvaliar2 = this.idUsuario2 = window.localStorage.getItem("textoAvaliar2")
+    this.valorAvaliacao1 = this.idUsuario2 = window.localStorage.getItem("valorAvaliacao1")
+    this.valorAvaliado1 = parseInt(this.valorAvaliacao1)
+    this.valorAvaliacao2 = this.idUsuario2 = window.localStorage.getItem("valorAvaliacao2")
+    this.valorAvaliado2 = parseInt(this.valorAvaliacao2)
+    this.idUsuario1 = window.localStorage.getItem("verifica1")
+    this.idUsuario2 = window.localStorage.getItem("verifica2")
+    this.usuarioVerifica1 = parseInt(this.idUsuario1)
+    this.usuarioVerifica2 = parseInt(this.idUsuario2)
+    
+    this.avaliarServicoProvider.avaliar(this.textoAvaliar1,this.textoAvaliar2, this.valorAvaliado1,this.valorAvaliado2, this.usuarioVerifica1,this.usuarioVerifica2,this.orderKey).subscribe(
+      (data : any) => {
+        this.verificacao=data;
+        this.toast.presentToast("Avaliação Registrada com sucesso!", 7000);
+        localStorage.removeItem('textoAvaliar1');
+        localStorage.removeItem('textoAvaliar2');
+        localStorage.removeItem('valorAvaliacao1');
+        localStorage.removeItem('valorAvaliacao2');
+      },
+      (error : any) =>{
+        this.toast.presentToast("A avaliação Falhou!", 7000);
+      }
+    );
   }
-  public validar2(){
-    let teste = window.localStorage.getItem("2")
-    this.toast.presentToast(teste, 7000);
-    if (teste == "1"){
 
-    }
-  }
+
   public voltarDetalhe(){
     this.navCtrl.pop();
   }

@@ -1,4 +1,3 @@
-import { VerificacaoPage } from './../verificacao/verificacao';
 import { Toast } from './../../providers/toast';
 import { VerificaServicoProvider } from './../../providers/verifica-servico/verifica-servico';
 import { Component } from '@angular/core';
@@ -24,8 +23,15 @@ export class ModalVerificacaoPage {
   cracha : string;
   password : string;
   validaVericacao : string = "0";
+  valorAvaliacao: number = 5;
+  textoAvaliar : string;
+  numAvaliacao : string;
   private orderValue : any;
   private dadosVerifica : any = [];
+  a : number = 0;
+  texto1 : string; 
+  texto2 : string; 
+  valorUsuario: any;
 
   constructor(public navCtrl: NavController,public navParams: NavParams,public autenticandoProvider: AutenticandoProvider,public toast: Toast, public verificaServicoProvider: VerificaServicoProvider) {
     this.autenticaUsuario()
@@ -44,40 +50,54 @@ export class ModalVerificacaoPage {
         this.navCtrl.setRoot(HomePage);
       }
     );
-
   }
   public voltarVerificacao(){
     //this.navCtrl.getPrevious().data.name = validaVericacao;
     this.navCtrl.pop();
   }
+  public avaliarServico(){
+    this.texto1 = window.localStorage.getItem("textoAvaliar1")
+    console.log(this.texto1)
+    if(this.orderValue == 1){
+      window.localStorage.setItem("textoAvaliar1",this.textoAvaliar)
+      window.localStorage.setItem("valorAvaliacao1",this.valorAvaliacao.toString())
+    }else if(this.orderValue == 2){
+      window.localStorage.setItem("textoAvaliar2",this.textoAvaliar)
+      window.localStorage.setItem("valorAvaliacao2",this.valorAvaliacao.toString())
+    }
+    this.texto1 = window.localStorage.getItem("textoAvaliar1")
+    this.texto2 = window.localStorage.getItem("textoAvaliar2")
+    console.log(this.texto1)
+    this.toast.presentToast("Avaliação realizada com sucesso!", 2500);
+  }
   public verificaForm() {
     this.verificaServicoProvider.verificarServico(this.cracha, this.password).subscribe(
       (data : any) => {
-        /*
-        console.log(data)
-        let data2 = JSON.stringify(data);
-        console.log(data2)
-        let data3 = JSON.parse(data2);
-        console.log(data3)
-        data3.forEach((element : any) => {
-          this.dadosVerifica.push({
-            numeroCracha: element.numeroCracha,
-          })
-        });
-        */
         console.log("----------")
-        console.log(this.dadosVerifica.numeroCracha)
-        console.log(this.dadosVerifica.numeroCracha)
-        window.localStorage.setItem(this.orderValue,data.numeroCracha)
-        //this.validaVericacao = 1;
-        this.toast.presentToast("Usuário autenticado com sucesso!", 7000);
+        //console.log(this.dadosVerifica.numeroCracha)
+        this.toast.presentToast("Usuário autenticado com sucesso!", 3000);
         console.log("Este é o dados Login1: ");
+        this.valorUsuario = data["usuarioVerificador"];
+        this.valorUsuario = this.valorUsuario[0];
+        console.log("--------Este é o usuario e cracha")
+        console.log(this.valorUsuario["idUsuario"])
+        console.log(this.valorUsuario["numeroCracha"])
+        window.localStorage.setItem(this.orderValue,this.valorUsuario["numeroCracha"])
+        this.a = 1;
+        if(this.orderValue == 1){
+          window.localStorage.setItem("verifica1",this.valorUsuario["idUsuario"])
+        }else if(this.orderValue == 2){
+          window.localStorage.setItem("verifica2",this.valorUsuario["idUsuario"])
+        }
       },
       (error : any) =>{
         console.log(error);
       }
     );
   }
-
+  log(valor){
+    console.log(valor);
+    this.valorAvaliacao = valor;
+  }
 
 }

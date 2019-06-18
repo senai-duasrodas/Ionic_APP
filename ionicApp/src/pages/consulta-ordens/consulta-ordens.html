@@ -21,13 +21,13 @@
             <form (ngSubmit)="consultOrdem()">
               <ion-item>
                 <ion-label>Status Ordem</ion-label>
-                  <ion-select [(ngModel)]="statusOrdemSelecionada" name="statusOrdemSelecionada" interface="popover">
+                  <ion-select [(ngModel)]="statusOrdemSelecionada" name="statusOrdemSelecionada">
                     <ion-option value="{{item.id}}" *ngFor="let item of statusOrdem">{{item.tipoStatus}}</ion-option>
                   </ion-select>
               </ion-item>
               <ion-item>
                 <ion-label>Prioridade</ion-label>
-                  <ion-select [(ngModel)]="prioridadeSelecionada" name="prioridadeSelecionada" interface="popover">
+                  <ion-select [(ngModel)]="prioridadeSelecionada" name="prioridadeSelecionada">
                     <ion-option value="{{item.id}}" *ngFor="let item of prioridade">{{item.descricaoPrioridade}}</ion-option>
                   </ion-select>
               </ion-item>

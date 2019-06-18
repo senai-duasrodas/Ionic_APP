@@ -2,14 +2,14 @@
     <ion-grid class="contentGrid">
         <ion-row>
             <ion-col>
-                <form (ngSubmit)="verificaForm()">
+                <form (ngSubmit)="verificaForm()" *ngIf="a <= 0">
                     <ion-list>
                         <div class="holdContentLogin">
                             <div class="holdIcon">
                                 <ion-icon name="person"></ion-icon>
                             </div>
                             <div class="holdInput">
-                                <ion-input type="text" [(ngModel)]="cracha" name="cracha" placeholder="cracha" onfocus="this.placeholder = ''" onblur="this.placeholder = 'cracha'" required autofocus></ion-input>
+                              <ion-input type="text" [(ngModel)]="cracha" name="cracha" placeholder="cracha" onfocus="this.placeholder = ''" onblur="this.placeholder = 'cracha'" required autofocus></ion-input>
                             </div>
                         </div>
                         <div class="holdContentLogin">
@@ -27,6 +27,25 @@
                         </div>
                     </div>
                 </form>
+                <div *ngIf="a >= 1"  class="avaliacao">
+                    <h1>Avaliação de Ordem de Manutenção</h1>
+                    <div class="holdContentLogin">
+                        <div class="holdIcon">
+                            <ion-icon name="person"></ion-icon>
+                        </div>
+                        <div class="holdInput">
+                            <ion-textarea type="text" [(ngModel)]="textoAvaliar" name="textoAvaliar" placeholder="Observações sobre o Serviço" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Observações sobre o Serviço'" required autofocus></ion-textarea>
+                        </div>
+                    </div>
+                    <h2>Avalie o Serviço</h2>
+                    <ion-rating  [leitura]="false" (ionClick)="log($event)"></ion-rating>
+                    <div class="holdContentSubmit">
+                        <div class="holdInput">
+                            <button class="campo" color="primary" type="submit" (click)="avaliarServico()">Avaliar</button>
+                        </div>
+                    </div>
+                </div>
+               
             </ion-col>
         </ion-row>
     </ion-grid>

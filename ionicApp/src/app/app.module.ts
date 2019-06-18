@@ -11,14 +11,26 @@ import { HttpModule} from '@angular/http';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { FormsModule } from '@angular/forms';
+
+//Páginas
+
 import { NovoUsuarioPage } from '../pages/novo-usuario/novo-usuario';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { ConsultaOrdensPage } from '../pages/consulta-ordens/consulta-ordens';
+import { CadastroOrdemServicoPage } from '../pages/cadastro-ordem-servico/cadastro-ordem-servico';
+import { DetalheOrdemServicoPage } from '../pages/detalhe-ordem-servico/detalhe-ordem-servico';
+import { VerificacaoPage } from '../pages/verificacao/verificacao';
+import { ApontamentoPage } from '../pages/apontamento/apontamento';
+import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificacao';
+import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
+
+//Providers
+
 import { Toast } from '../providers/toast';
 import { NovoUsuarioProvider } from '../providers/novo-usuario/novo-usuario';
 import { HttpProvider } from '../providers/http';
 import { LoginProvider } from '../providers/login/login';
-import { DashboardPage } from '../pages/dashboard/dashboard';
-import { ConsultaOrdensPage } from '../pages/consulta-ordens/consulta-ordens';
-import { CadastroOrdemServicoPage } from '../pages/cadastro-ordem-servico/cadastro-ordem-servico';
 import { ConsultarSetorProvider } from '../providers/consultar-setor/consultar-setor';
 import { CadastroOrdemProvider } from '../providers/cadastro-ordem/cadastro-ordem';
 import { ConsultOrdemProvider } from '../providers/consult-ordem/consult-ordem';
@@ -26,22 +38,23 @@ import { TipoStatusProvider } from '../providers/tipo-status/tipo-status';
 import { TipoPrioridadeProvider } from '../providers/tipo-prioridade/tipo-prioridade';
 import { DetalhamentoOrdemProvider } from '../providers/detalhamento-ordem/detalhamento-ordem';
 import { ConsultaOrdemProvider } from '../providers/consulta-ordem/consulta-ordem';
-import { DetalheOrdemServicoPage } from '../pages/detalhe-ordem-servico/detalhe-ordem-servico';
-import { FormsModule } from '@angular/forms';
-import { VerificacaoPage } from '../pages/verificacao/verificacao';
 import { VerificacaoManutencaoProvider } from '../providers/verificacao-manutencao/verificacao-manutencao';
-import { ApontamentoPage } from '../pages/apontamento/apontamento';
 import { LancamentosProvider } from '../providers/lancamentos/lancamentos';
 import { SolicitarPecas } from '../providers/solicitapeca';
 import { GerarTokenProvider } from '../providers/gerar-token/gerar-token';
-import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificacao';
 import { VerificaServicoProvider } from '../providers/verifica-servico/verifica-servico';
 import { TipoManutencaoProvider } from '../providers/tipo-manutencao/tipo-manutencao';
 import { OperacoesProvider } from '../providers/operacoesprovider';
-import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
 import { ConsultarMaquinasProvider } from '../providers/consultar-maquinas/consultar-maquinas';
 import { AutenticacaouserProvider } from '../providers/autenticacaouser/autenticacaouser';
 import { AutenticandoProvider } from '../providers/autenticando';
+import { AvaliarServicoProvider } from '../providers/avaliar-servico/avaliar-servico';
+
+//Componentes
+import { IonRatingComponent } from './../components/ion-rating/ion-rating';
+
+
+
 
 @NgModule({
   declarations: [
@@ -57,7 +70,8 @@ import { AutenticandoProvider } from '../providers/autenticando';
     VerificacaoPage,
     ApontamentoPage,
     ModalVerificacaoPage,
-    OperacoesPage
+    OperacoesPage,
+    IonRatingComponent
   ],
   imports: [
     BrowserModule,
@@ -106,7 +120,8 @@ import { AutenticandoProvider } from '../providers/autenticando';
     ConsultarMaquinasProvider,
     AutenticaUsuarioProvider,
     AutenticacaouserProvider,
-    AutenticandoProvider
+    AutenticandoProvider,
+    AvaliarServicoProvider
     
   ]
 })

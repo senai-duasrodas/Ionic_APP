@@ -14,10 +14,10 @@ export class LoginProvider {
   
   constructor(public http: HttpProvider) {
   }
-  public logando(userName : string, password : string){
+  public logando(cracha : string, password : string){
     //console.log("Passei Aqui mesmo daora");
     let obj = {
-      userName : userName,
+      cracha : cracha,
       password : password
     }
     this.http.url = this.url;
