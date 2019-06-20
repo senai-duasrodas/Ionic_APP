@@ -10,6 +10,7 @@ import {VerificacaoPage} from '../pages/verificacao/verificacao';
 import {ApontamentoPage} from '../pages/apontamento/apontamento';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
+import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
 
 @Component({
   templateUrl: 'app.html'
@@ -27,6 +28,7 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
+      { title: 'Perfil de Usuário', component: PerfilUsuarioPage, img: "../assets/imgs/logo/Consultar.png" },
       { title: 'Consultar OS', component: ConsultaOrdensPage, img: "../assets/imgs/logo/Consultar.png" },
       { title: 'Cadastrar OS', component: CadastroOrdemServicoPage, img: "../assets/imgs/logo/cadastrar.png" },
       { title: 'Solicitar Peça', component: SolicitaProdutoPage, img: "../assets/imgs/logo/solicitar.png" },

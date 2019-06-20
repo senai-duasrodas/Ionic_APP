@@ -24,6 +24,7 @@ import { VerificacaoPage } from '../pages/verificacao/verificacao';
 import { ApontamentoPage } from '../pages/apontamento/apontamento';
 import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificacao';
 import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
+import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
 
 //Providers
 
@@ -54,8 +55,6 @@ import { AvaliarServicoProvider } from '../providers/avaliar-servico/avaliar-ser
 import { IonRatingComponent } from './../components/ion-rating/ion-rating';
 
 
-
-
 @NgModule({
   declarations: [
     MyApp,
@@ -71,7 +70,8 @@ import { IonRatingComponent } from './../components/ion-rating/ion-rating';
     ApontamentoPage,
     ModalVerificacaoPage,
     OperacoesPage,
-    IonRatingComponent
+    IonRatingComponent,
+    PerfilUsuarioPage
   ],
   imports: [
     BrowserModule,
@@ -93,7 +93,8 @@ import { IonRatingComponent } from './../components/ion-rating/ion-rating';
     VerificacaoPage,
     ApontamentoPage,
     ModalVerificacaoPage,
-    OperacoesPage
+    OperacoesPage,
+    PerfilUsuarioPage
   ],
   providers: [
     StatusBar,
