@@ -25,6 +25,7 @@ import { ApontamentoPage } from '../pages/apontamento/apontamento';
 import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificacao';
 import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
 import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
+import { MinhasosPage } from '../pages/minhasos/minhasos';
 
 //Providers
 
@@ -50,6 +51,9 @@ import { ConsultarMaquinasProvider } from '../providers/consultar-maquinas/consu
 import { AutenticacaouserProvider } from '../providers/autenticacaouser/autenticacaouser';
 import { AutenticandoProvider } from '../providers/autenticando';
 import { AvaliarServicoProvider } from '../providers/avaliar-servico/avaliar-servico';
+import { Messages } from '../providers/menssages';
+import { MinhasOSProvider } from '../providers/minhasos';
+import { MudaStatusProvider } from '../providers/mudastatusprovider';
 
 //Componentes
 import { IonRatingComponent } from './../components/ion-rating/ion-rating';
@@ -71,7 +75,8 @@ import { IonRatingComponent } from './../components/ion-rating/ion-rating';
     ModalVerificacaoPage,
     OperacoesPage,
     IonRatingComponent,
-    PerfilUsuarioPage
+    PerfilUsuarioPage,
+    MinhasosPage
   ],
   imports: [
     BrowserModule,
@@ -94,7 +99,8 @@ import { IonRatingComponent } from './../components/ion-rating/ion-rating';
     ApontamentoPage,
     ModalVerificacaoPage,
     OperacoesPage,
-    PerfilUsuarioPage
+    PerfilUsuarioPage,
+    MinhasosPage
   ],
   providers: [
     StatusBar,
@@ -122,7 +128,10 @@ import { IonRatingComponent } from './../components/ion-rating/ion-rating';
     AutenticaUsuarioProvider,
     AutenticacaouserProvider,
     AutenticandoProvider,
-    AvaliarServicoProvider
+    AvaliarServicoProvider,
+    Messages,
+    MinhasOSProvider,
+    MudaStatusProvider
     
   ]
 })

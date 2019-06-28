@@ -1,0 +1,111 @@
+<!--
+  Generated template for the MinhasosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<!-- <ion-header>
+
+  <ion-navbar>
+    <ion-title>minhasos</ion-title>
+  </ion-navbar>
+
+</ion-header> -->
+
+<ion-header>
+  <ion-title text-center><ion-label class="cortexto">MinhasOS</ion-label></ion-title>
+  <!-- <ion-segment (ionChange)="segmentChanged($event)" [(ngModel)]="pet">
+      <ion-segment-button value="OSAberta">
+        <ion-label class="cortexto">OS Aberta</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="OSFechada" >
+        <ion-label class="cortexto">OS Andamento</ion-label>
+      </ion-segment-button>
+    </ion-segment> -->
+    <ion-segment [(ngModel)]="pet">
+        <ion-segment-button value="OS Aberta">
+          <ion-label class="cortexto">OS Aberta</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="OS Andamento">
+          <ion-label class="cortexto">OS Andamento</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="OSPausadas">
+            <ion-label class="cortexto">OS Pausadas</ion-label>
+        </ion-segment-button>
+     </ion-segment>
+
+   
+    
+</ion-header>
+<ion-content padding>
+  
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+      <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+    
+  
+
+<div [ngSwitch]="pet">
+  
+      <ion-list *ngSwitchCase="'OS Andamento'" >
+        <div *ngIf="listaOSAndamento == ''">
+              <h3 class="MSGcortexto">Você não possui nenhuma os em Andamento</h3>
+        </div>
+        <div *ngIf="listaOSAndamento.length > 0 ">
+          <ion-item *ngFor="let item of listaOSAndamento">
+            <div>
+              <h2>Resumo: {{item.resumo}}</h2>
+              <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
+              <p>Fim Planejado: {{item.fimPlanejado}}</p>
+              <span>Status: {{item.Status_idStatus}}</span><br>
+            </div>
+            <button  type="button" size="small" class="stylebutton" (click)="AlteraStatus(item.Status_idStatus, item.idOrdemServico)" >Encerrada</button>
+            <button  type="button" size="small" class="stylebutton"(click)="AlteraStatus('OSPausar',item.idOrdemServico)">Pausar</button> 
+          </ion-item>
+          
+      </div>
+      </ion-list>
+  
+    
+      <ion-list *ngSwitchCase="'OS Aberta'" >
+          <div *ngIf="listaOSAberta == ''">
+              <h3 class="MSGcortexto">Você não possuo nenhuma os Abertas</h3>
+          </div>
+          <div *ngIf="listaOSAberta.length > 0">
+            <ion-item *ngFor="let item of listaOSAberta" >
+              <div (click)="MostraDetalhes(item.idOrdemServico)">
+                <h2>Resumo: {{item.resumo}}</h2>
+                <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
+                <p>Fim Planejado: {{item.fimPlanejado}}</p>
+                <span>Status: {{item.Status_idStatus}}</span><br>
+              </div>
+              <!-- <span>Click para Começar</span> -->
+              <div class="DivButton">
+                <button class="campo" type="button" size="small" (click)="AlteraStatus(item.Status_idStatus, item.idOrdemServico)">Iniciar</button> 
+              </div>
+            </ion-item>
+           
+          </div>
+      </ion-list>
+      <ion-list *ngSwitchCase="'OSPausadas'" >
+          <div *ngIf="listaOSPausadas == ''">
+                <h3 class="MSGcortexto">Você não possui nenhuma os Pausada</h3>
+          </div>
+          <div *ngIf="listaOSPausadas.length > 0 ">
+            <ion-item *ngFor="let item of listaOSPausadas">
+              <div>
+                <h2>Resumo: {{item.resumo}}</h2>
+                <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
+                <p>Fim Planejado: {{item.fimPlanejado}}</p>
+                <span>Status: {{item.Status_idStatus}}</span><br>
+              </div>
+              <div class="DivButton">
+                <button  type="button" size="small" class="campo"(click)="AlteraStatus(item.Status_idStatus, item.idOrdemServico)">Iniciar</button> 
+              </div>
+            </ion-item>
+            
+        </div>
+        </ion-list>
+    </div>
+
+</ion-content>

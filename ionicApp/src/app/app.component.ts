@@ -11,6 +11,7 @@ import {ApontamentoPage} from '../pages/apontamento/apontamento';
 import { DashboardPage } from '../pages/dashboard/dashboard';
 import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
 import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
+import { MinhasosPage } from '../pages/minhasos/minhasos';
 
 @Component({
   templateUrl: 'app.html'
@@ -32,7 +33,7 @@ export class MyApp {
       { title: 'Consultar OS', component: ConsultaOrdensPage, img: "../assets/imgs/logo/Consultar.png" },
       { title: 'Cadastrar OS', component: CadastroOrdemServicoPage, img: "../assets/imgs/logo/cadastrar.png" },
       { title: 'Solicitar Peça', component: SolicitaProdutoPage, img: "../assets/imgs/logo/solicitar.png" },
-
+      { title: 'Minhas OS' , component : MinhasosPage , img: "../assets/imgs/logo/cadastrar.png"}
     ];
 
     this.evt.subscribe("swipeEnabled", () => {
