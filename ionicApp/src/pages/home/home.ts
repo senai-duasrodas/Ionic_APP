@@ -2,7 +2,7 @@ import { DashboardPage } from './../dashboard/dashboard';
 //import { HomePage } from './home';
 import { LoginProvider } from './../../providers/login/login';
 import { Component } from '@angular/core';
-import { NavController, Events } from 'ionic-angular';
+import { NavController, Events, NavParams } from 'ionic-angular';
 import { NovoUsuarioPage } from '../novo-usuario/novo-usuario';
 //import { DashboardPage } from '../dashboard/dashboard';
 import { GerarTokenProvider } from '../../providers/gerar-token/gerar-token';
@@ -25,15 +25,20 @@ export class HomePage {
   password : string;
   dadosLogin2 : number;
   public dadosLogin = [];
-
+  private saida : any;
   splash = true;
   secondPage = DashboardPage;
 
-  constructor(public navCtrl: NavController, public login: LoginProvider,public toast: Toast, private evt : Events, private gerarTokenProvider: GerarTokenProvider) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public login: LoginProvider,public toast: Toast, private evt : Events, private gerarTokenProvider: GerarTokenProvider) {
+    this.saida = 0;
+    this.saida = this.navParams.data.saida;
   }
   ionViewDidLoad() {
-    setTimeout(() => this.splash = false, 4000);
+    if(this.saida == 1){
+      setTimeout(() => this.splash = false, 0);
+    }else{
+      setTimeout(() => this.splash = false, 4000);
+    }
   }
   public logform() {
     this.login.logando(this.cracha, this.password).subscribe(

@@ -29,11 +29,11 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
+      { title: 'Minhas OS' , component : MinhasosPage , img: "../assets/imgs/logo/cadastrar.png"},
       { title: 'Perfil de Usuário', component: PerfilUsuarioPage, img: "../assets/imgs/logo/Consultar.png" },
       { title: 'Consultar OS', component: ConsultaOrdensPage, img: "../assets/imgs/logo/Consultar.png" },
       { title: 'Cadastrar OS', component: CadastroOrdemServicoPage, img: "../assets/imgs/logo/cadastrar.png" },
-      { title: 'Solicitar Peça', component: SolicitaProdutoPage, img: "../assets/imgs/logo/solicitar.png" },
-      { title: 'Minhas OS' , component : MinhasosPage , img: "../assets/imgs/logo/cadastrar.png"}
+      { title: 'Solicitar Produto', component: SolicitaProdutoPage, img: "../assets/imgs/logo/solicitar.png" }
     ];
 
     this.evt.subscribe("swipeEnabled", () => {

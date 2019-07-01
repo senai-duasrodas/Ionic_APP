@@ -3,13 +3,12 @@
         <ion-row>
             <ion-col>
                 <div class="loginContent">
-                
                     <div class="holdContentLogin">
                         <div class="holdIcon">
                             <ion-icon name="pricetag"></ion-icon>
                         </div>
                         <div class="holdInput">
-                            <ion-input type="text" [(ngModel)]="numeroPecas" name="Número de peças" placeholder="Número de peças" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Número de peças'"></ion-input>
+                            <ion-input type="text" [(ngModel)]="numeroPecas" name="Número de peças" placeholder="Número de Itens" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Número de Itens'"></ion-input>
                         </div>
                     </div>
                     <div class="holdContentLogin">
@@ -20,8 +19,8 @@
                             <ion-label no-line>{{Setor}}</ion-label>
                             <ion-select [(ngModel)]="setor" interface="popover" class="holdInput">
                                 <ion-option value="{{setores.id}}" *ngFor="let setores of listaSetor">{{setores.nome}}</ion-option>
-                        </ion-select>
-                    </ion-item>
+                            </ion-select>
+                        </ion-item>
                     </div>
                     <div class="holdContentLogin">
                         <div class="holdIcon">

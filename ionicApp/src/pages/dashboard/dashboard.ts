@@ -123,9 +123,12 @@ export class DashboardPage {
     this.navCtrl.push(ApontamentoPage);
   }
   public refresh(){
+    let obj = {
+      saida : 1
+    }
     localStorage.removeItem('idUsuario');
     localStorage.removeItem('token');
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot(HomePage,obj);
   }
   public autenticaUsuario(){
     this.usuario = window.localStorage.getItem("idUsuario")

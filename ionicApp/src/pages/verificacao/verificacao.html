@@ -13,15 +13,7 @@
                           <ion-input type="text" [(ngModel)]="solucaoRealizada" name="solucaoRealizada" placeholder="Solução Realizada" class="form-logar" required onfocus="this.placeholder = ''" onblur="this.placeholder = 'Solução Realizada'"></ion-input>
                       </div>
                   </div>
-                  <div class="holdContentLogin">
-                          <div class="holdIcon">
-                              <ion-icon name="calendar"></ion-icon>
-                          </div>
-                          <div class="holdInput">
-                              <ion-input type="date" [(ngModel)]="dataFim" name="dataFim" class="form-logar" required></ion-input>
-                          </div>
-                      </div>
-                      <div class="holdContentLogin">
+                        <div class="holdContentLogin">
                             <div class="holdIcon">
                                 <ion-icon name="alert"></ion-icon>
                             </div>
@@ -32,17 +24,17 @@
                                   <ion-option value=2>Não</ion-option>
                                 </ion-select>
                           </ion-item>
-                          </div>
+                        </div>
                   <div class="holdContentSubmit">
                       <div class="holdInput">
                         <button   class="campo" color="primary" (click)="modalVerificacao(1)">Responsavel 1</button>   
                       </div>
                   </div>
-                  <div class="holdContentSubmit">
-                    <div class="holdInput">
-                      <button   class="campo" color="primary" (click)="modalVerificacao(2)">Responsavel 2</button>      
+                    <div class="holdContentSubmit">
+                        <div class="holdInput">
+                            <button   class="campo" color="primary" (click)="modalVerificacao(2)">Responsavel 2</button>      
+                        </div>
                     </div>
-                </div>
                 <div class="holdContentSubmit">
                   <div class="holdInput">
                     <button  class="campo" color="primary" (click)="verificaOrdem()">Enviar</button>                          

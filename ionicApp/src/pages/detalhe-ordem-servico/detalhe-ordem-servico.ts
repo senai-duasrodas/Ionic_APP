@@ -31,11 +31,13 @@ export class DetalheOrdemServicoPage {
   statusOrdemSelecionada : string;
   prioridadeSelecionada : string;
   private orderKey : any;
+  private userDetalhe : any;
   usuario : string;
   token : string;
   textoVelho : string;
-  textoNovo : string ;
+  textoNovo : string;
   tamanhoDoTextoQueVouQuebrar: number;
+  private visivel:boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public autenticandoProvider: AutenticandoProvider, public consultaOrdemProvider: ConsultaOrdemProvider, public tipoStatusProvider: TipoStatusProvider, public tipoPrioridadeProvider: TipoPrioridadeProvider) {
     this.orderKey = this.navParams.data.id;
@@ -43,7 +45,6 @@ export class DetalheOrdemServicoPage {
     this.tipoStatus();
     this.tipoPrioridade();
     this.consultaOrdem();
-
 }
 public autenticaUsuario(){
   this.usuario = window.localStorage.getItem("idUsuario")
@@ -57,7 +58,6 @@ public autenticaUsuario(){
       this.navCtrl.setRoot(HomePage);
     }
   );
-
 }
   public consultaOrdem() {
     this.consultaOrdemProvider.detalhamentoOrdem(this.orderKey).subscribe(
@@ -65,12 +65,23 @@ public autenticaUsuario(){
         this.ordem=data;
         console.log("Tela de Detalhamentoooo123");
         console.log(this.ordem);
+        let ini = this.ordem[0];
+        this.userDetalhe = ini["Usuario_idUsuario"]
+        this.verificaUsuarioDetalhe();
       },
       (error : any) =>{
         console.log("Deu errado");
       }
     );
   }
+  public verificaUsuarioDetalhe() {
+    console.log(this.visivel)
+    if(this.userDetalhe==window.localStorage.getItem("idUsuario")){
+      this.visivel = true;
+      console.log(this.visivel)
+    }
+  }
+
   public tipoStatus() {
     this.tipoStatusProvider.todosStatus().subscribe(
       (data : any) => {

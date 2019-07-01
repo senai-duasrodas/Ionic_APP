@@ -29,16 +29,16 @@
               </ion-col>
             </ion-row>
           </ion-grid>
-          <div class="holdInput">
+          <div class="holdInput" *ngIf="visivel == true">
             <button class="campo" color="primary" (click)="verificacao()">Verificação Serviço</button>
           </div>
-          <div class="holdInput">
+          <div class="holdInput" *ngIf="visivel == true">
             <button  class="campo" color="primary" (click)="solicitaPeca()">Solicitação de Peça</button>
           </div>
-          <div class="holdInput">
+          <div class="holdInput" *ngIf="visivel == true">
             <button  class="campo" color="primary" (click)="apontamento()">Apontamento</button>
           </div>
-          <div class="holdInput">
+          <div class="holdInput" *ngIf="visivel == true">
             <button  class="campo" color="primary" (click)="operacoes()">Operações</button>
           </div>
           <div class="holdInput">

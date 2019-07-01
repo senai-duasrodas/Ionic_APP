@@ -69,6 +69,7 @@ export class ModalVerificacaoPage {
     this.texto2 = window.localStorage.getItem("textoAvaliar2")
     console.log(this.texto1)
     this.toast.presentToast("Avaliação realizada com sucesso!", 2500);
+    this.navCtrl.pop();
   }
   public verificaForm() {
     this.verificaServicoProvider.verificarServico(this.cracha, this.password).subscribe(

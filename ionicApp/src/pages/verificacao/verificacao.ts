@@ -78,7 +78,7 @@ export class VerificacaoPage {
   public verificaOrdem() {
     this.responsavel1 = window.localStorage.getItem("1")
     this.responsavel2 = window.localStorage.getItem("2")
-    this.verificacaoManutencaoProvider.verificacao(this.orderKey,this.solucaoRealizada,this.dataFim,this.problemaResolvido,this.responsavel1,this.responsavel2,this.usuario2).subscribe(
+    this.verificacaoManutencaoProvider.verificacao(this.orderKey,this.solucaoRealizada,this.problemaResolvido,this.responsavel1,this.responsavel2,this.usuario2).subscribe(
       (data : any) => {
         this.verificacao=data;
         this.toast.presentToast("Verificação Registrada com sucesso!", 3000);

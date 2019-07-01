@@ -49,17 +49,17 @@
   
       <ion-list *ngSwitchCase="'OS Andamento'" >
         <div *ngIf="listaOSAndamento == ''">
-              <h3 class="MSGcortexto">Você não possui nenhuma os em Andamento</h3>
+              <h3 class="MSGcortexto">Você não possui nenhuma OS em Andamento</h3>
         </div>
         <div *ngIf="listaOSAndamento.length > 0 ">
           <ion-item *ngFor="let item of listaOSAndamento">
-            <div>
+            <div (click)="MostraDetalhes(item.idOrdemServico)">
               <h2>Resumo: {{item.resumo}}</h2>
               <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
               <p>Fim Planejado: {{item.fimPlanejado}}</p>
               <span>Status: {{item.Status_idStatus}}</span><br>
             </div>
-            <button  type="button" size="small" class="stylebutton" (click)="AlteraStatus(item.Status_idStatus, item.idOrdemServico)" >Encerrada</button>
+            <button  type="button" size="small" class="stylebutton"(click)="AlteraStatus(item.Status_idStatus, item.idOrdemServico)" >Encerrada</button>
             <button  type="button" size="small" class="stylebutton"(click)="AlteraStatus('OSPausar',item.idOrdemServico)">Pausar</button> 
           </ion-item>
           
@@ -69,7 +69,7 @@
     
       <ion-list *ngSwitchCase="'OS Aberta'" >
           <div *ngIf="listaOSAberta == ''">
-              <h3 class="MSGcortexto">Você não possuo nenhuma os Abertas</h3>
+              <h3 class="MSGcortexto">Você não possui nenhuma OS Abertas</h3>
           </div>
           <div *ngIf="listaOSAberta.length > 0">
             <ion-item *ngFor="let item of listaOSAberta" >
@@ -89,11 +89,11 @@
       </ion-list>
       <ion-list *ngSwitchCase="'OSPausadas'" >
           <div *ngIf="listaOSPausadas == ''">
-                <h3 class="MSGcortexto">Você não possui nenhuma os Pausada</h3>
+                <h3 class="MSGcortexto">Não há nenhuma OS Pausada</h3>
           </div>
           <div *ngIf="listaOSPausadas.length > 0 ">
             <ion-item *ngFor="let item of listaOSPausadas">
-              <div>
+              <div (click)="MostraDetalhes(item.idOrdemServico)">
                 <h2>Resumo: {{item.resumo}}</h2>
                 <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
                 <p>Fim Planejado: {{item.fimPlanejado}}</p>

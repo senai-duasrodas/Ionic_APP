@@ -15,14 +15,13 @@ export class VerificacaoManutencaoProvider {
 
   constructor(public http: HttpProvider) {
   }
-  public verificacao(numeroOrdem : number, solucaoRealizada : string, dataFim : string, problemaResolvido: string, responsavel1: string, responsavel2: string,usuario : number){
+  public verificacao(numeroOrdem : number, solucaoRealizada : string, problemaResolvido: string, responsavel1: string, responsavel2: string,usuario : number){
     console.log("Passei Aqui mesmo");
     //console.log(userName);
     //console.log(password);
     let obj = {
       numeroOrdem : numeroOrdem,
       solucaoRealizada : solucaoRealizada,
-      dataFim : dataFim,
       problemaResolvido: problemaResolvido,
       responsavel1: responsavel1,
       responsavel2: responsavel2,
