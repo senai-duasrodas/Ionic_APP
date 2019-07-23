@@ -20,7 +20,7 @@ export class MinhasosPage {
 
   @ViewChild(Segment) segment: Segment; 
 
-  public pet : string = 'OS Aberta';
+  public pet : string = 'Aberto';
   public listaOSAberta : any = [];
   public listaOSAndamento : any = [];
   public listaOSPausadas : any = [];
@@ -34,6 +34,7 @@ export class MinhasosPage {
      private mudaStatusProvider:MudaStatusProvider,
      private messages:Messages ) {
     this.minhaos();
+    
     
   }
   ngOnInit(){
@@ -105,9 +106,6 @@ export class MinhasosPage {
   }
 
   public doRefresh(event) {
-    // console.log("--------------------------------------------------------------")
-    // console.log(event);
-    // console.log("--------------------------------------------------------------")
     setTimeout(() => {
       console.log('renovando lista');
       event.complete(this.minhaos());

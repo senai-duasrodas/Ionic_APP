@@ -96,3 +96,13 @@ $toolbar-md-background: #e82c37;
 $navbar-md-height: #dc143c;
 $navbar-ios-height:#dc143c;
 $navbar-wp-height:#dc143c;
+
+.back-button-icon-md{
+  display: flex;
+  justify-content: flex;
+  align-items: center;
+}
+
+.scroll-content{
+  padding: 0px !important;
+}
