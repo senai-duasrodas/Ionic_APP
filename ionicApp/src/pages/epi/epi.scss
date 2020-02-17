@@ -1,0 +1,108 @@
+page-epi {
+
+    .content{
+        margin: 0 auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+   
+    .EpiButtons{
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        padding: 10px;
+        background-color: #faf8f8;
+        border-radius: 10px;         
+        -webkit-border-radius: 5px            ;
+        -moz-border-radius: 5px            ;
+        -ms-border-radius: 5px            ;
+        -o-border-radius: 5px            ;
+}
+// .LabelEpi{
+//     margin-bottom: 0 ;
+// }
+    .ioncheckbox{
+        border-radius: 2px;;
+
+        float: right;
+        right: 0px;
+        top:2px;
+    }
+    .iconEpi{
+        margin: 0 auto;
+        color:red!important;
+        font-size: 4rem!important;
+       
+
+    }
+
+    .labelEpi{
+        margin: 0 auto;
+    }
+    .CardEpi{
+        margin:  0 auto;
+        text-align: center;
+        margin-left: 6%; 
+        margin-top: 2%;
+        width: 40%;
+        // height: 100px;
+        display: inline-block;
+       
+        border-radius: 10px;
+        
+    }
+
+    ul.li{
+        font-family: 'Roboto';
+        //  padding: 2%;
+        margin-top: 1%;
+    }
+    ul{
+        list-style: none;
+       padding: 1%;
+    }
+    .IconEPITeste{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    h6{
+        font-family: 'Roboto';
+        text-decoration: underline red;
+        color: red;
+    }
+    .ContainerBotao{
+        margin: 0 auto;
+        padding: 5%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+       
+    
+    }
+    .BotaoEnviar{
+        border-radius: 10px;
+        background-color: red;
+    }
+    // .linhaEpi{
+    //     // margin: 0 auto;
+    //     width: 100%;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: center;
+    // }
+    // .ConteinerTeste{
+    //   margin: 0 auto;
+    //   width: 90%;
+    //   padding: 10px;
+    // }
+    // .listaEpi{
+    //     margin: 0 auto;
+    // }
+
+}

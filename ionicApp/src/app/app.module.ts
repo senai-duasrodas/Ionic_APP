@@ -26,6 +26,8 @@ import { ModalVerificacaoPage } from '../pages/modal-verificacao/modal-verificac
 import { SolicitaProdutoPage } from '../pages/solicita-produto/solicita-produto';
 import { PerfilUsuarioPage } from '../pages/perfil-usuario/perfil-usuario';
 import { MinhasosPage } from '../pages/minhasos/minhasos';
+import { EpiPage } from '../pages/epi/epi';
+import { ModalEpiPage } from '../pages/modal-epi/modal-epi'
 
 //Providers
 
@@ -57,7 +59,11 @@ import { MudaStatusProvider } from '../providers/mudastatusprovider';
 
 //Componentes
 import { IonRatingComponent } from './../components/ion-rating/ion-rating';
+import { BuscaEpiProvider } from '../providers/epis/busca-epi/busca-epi';
+import { EnviaDadosEpiProvider } from '../providers/epis/envia-dados-epi/envia-dados-epi';
+import { JustificaEpiProvider } from '../providers/epis/justifica-epi/justifica-epi';
 
+// import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -76,12 +82,15 @@ import { IonRatingComponent } from './../components/ion-rating/ion-rating';
     OperacoesPage,
     IonRatingComponent,
     PerfilUsuarioPage,
-    MinhasosPage
+    MinhasosPage,
+    EpiPage,
+    ModalEpiPage
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    // SweetAlert2Module,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -100,7 +109,9 @@ import { IonRatingComponent } from './../components/ion-rating/ion-rating';
     ModalVerificacaoPage,
     OperacoesPage,
     PerfilUsuarioPage,
-    MinhasosPage
+    MinhasosPage,
+    EpiPage,
+    ModalEpiPage
   ],
   providers: [
     StatusBar,
@@ -131,7 +142,10 @@ import { IonRatingComponent } from './../components/ion-rating/ion-rating';
     AvaliarServicoProvider,
     Messages,
     MinhasOSProvider,
-    MudaStatusProvider
+    MudaStatusProvider,
+    BuscaEpiProvider,
+    EnviaDadosEpiProvider,
+    JustificaEpiProvider,
     
   ]
 })

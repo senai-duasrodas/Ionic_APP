@@ -1,0 +1,167 @@
+<!--
+  Generated template for the EpiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Checklist EPI</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="content">
+  
+<!-- <img src="../../assets/icon/shoe-prints-solid.svg" class="IconNovos"> -->
+  <div class="EpiButtons">
+      <!-- <i class="fas fa-bookmark"></i>
+      <i class="fas fa-shoe-prints"></i>
+      <i class="fas fa-hard-hat"></i>
+      <ion-icon class="iconEpi" [class]="entry.Icon"style="color:red; margin: 0 auto" ></ion-icon> -->
+    <h6 >Para essa ordem você deve se atentar:</h6>
+    
+    <ul>
+      <li class="liEpi" *ngFor="let entry of formInformacoes"> <p>{{entry.id}} - {{entry.val}}.</p></li> 
+      
+      <!-- <li class="liEpi">2 - Seguir a norma 1518 - Espaço confinado</li>
+      <li class="liEpi">3 - Seguir a norma 1520 - Trabalho de corte e solda</li>
+      <li class="liEpi">4 - Seguir a norma 1528 - Demolição</li> -->
+    </ul>
+  </div>
+<div class="EpiButtons">
+    <h6 > Use EPI`s:</h6>
+  <ion-card class="CardEpi" *ngFor="let entry of ListaEPI"  (click)="auteraChekbox(entry)">
+      <ion-row>
+          <ion-col col-12>
+              <ion-checkbox class="ioncheckbox"color="primary" [(ngModel)]="entry.checked" ></ion-checkbox>
+          </ion-col>
+  
+        </ion-row>
+      <ion-row>
+          <ion-col col-4>
+            <!-- this.objetoos.epis[0].descricaoEpi -->
+          </ion-col>
+        <ion-col col-4 class="IconEPITeste">
+            <ion-icon class="iconEpi" [class]="entry.icon"style="color:red;" ></ion-icon>
+            
+        </ion-col>
+        <ion-col col-4>
+              
+          </ion-col>
+        <ion-col col-12 class="IconEPITeste">
+            <ion-label class="labelEpi">{{entry.descricaoEpi}}</ion-label>
+        </ion-col>
+      </ion-row>
+      
+
+</ion-card>
+<div class="ContainerBotao">
+    <button ion-button class="BotaoEnviar" (click)="VerificaStatusEPI()">Enviar</button>
+    <button ion-button (click)="openModal()"> CLick for Modal</button>
+</div>
+
+<!-- <ion-textarea style="background-color: red;">wqedqweqweqweqweqw</ion-textarea> -->
+
+      <!-- <ion-row>
+      <ion-col col-12>
+          <ion-label>capacete</ion-label>
+      </ion-col>
+    </ion-row> -->
+
+      
+
+    <!-- <ion-icon name="ios-headset" md="md-headset" class="iconEpi"></ion-icon><ion-checkbox class="ioncheckbox" [(ngModel)]="isChecked" color="primary"></ion-checkbox>
+    <ion-label>Protetor auricular</ion-label> -->
+
+
+  <!-- <ion-card class="CardEpi">
+     <ion-icon ios="ios-shirt" class="iconEpi" md="md-shirt"></ion-icon><ion-checkbox class="ioncheckbox"color="primary"></ion-checkbox>
+     <ion-label>Avental</ion-label> -->
+<!--      
+            <ion-label>capacete</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="isChecked"></ion-checkbox>
+  </ion-card> -->
+
+
+  <!-- <ion-list class="listaEpi">
+      <ion-item class="CardEpi"  >
+          <ion-icon ios="ios-shirt" class="iconEpi" md="md-shirt"></ion-icon>
+          <ion-label class="LabelEpi">capacete</ion-label>
+          <ion-checkbox slot="end" [(ngModel)]="isChecked"></ion-checkbox>
+        </ion-item>
+
+        <ion-item class="CardEpi"  >
+            <ion-label class="LabelEpi">capacete</ion-label>
+            <ion-checkbox slot="end" [(ngModel)]="isChecked"></ion-checkbox>
+          </ion-item>
+  </ion-list> -->
+
+  <!-- <ion-card class="CardEpi">
+     <ion-icon ios="ios-shirt" md="md-shirt" class="iconEpi"></ion-icon><ion-checkbox class="ioncheckbox" color="primary"></ion-checkbox>
+     <ion-label>Avental</ion-label>
+  </ion-card>
+  <ion-card class="CardEpi">
+    <ion-icon name="ios-glasses" md="md-glasses" class="iconEpi"></ion-icon><ion-checkbox class="ioncheckbox" color="primary"></ion-checkbox>
+  <ion-card-header>
+      <ion-label>Avental</ion-label>
+  </ion-card-header> -->
+<!-- 
+
+  </ion-card> -->
+
+
+<!--   
+      <ion-item  class="CardEpi"  >
+             
+              <ion-label>sdfsdfds</ion-label>
+              <ion-checkbox slot="end" [(ngModel)]="isChecked"></ion-checkbox>
+    
+      </ion-item> -->
+    
+
+<!-- <ion-item class="CardEpi"  >
+  <ion-icon class="fa-battery-2"></ion-icon>
+
+</ion-item> -->
+</div>
+<!-- <div class="ConteinerTeste">
+  <ion-list class="listaEpi">
+    <ion-item *ngFor="let entry of form" class="CardEpi"  >
+        <ion-icon class="iconEpi" [class]="entry.Icon"style="color:red; margin: 0 auto" ></ion-icon>
+        
+        
+       
+  
+    </ion-item>
+  </ion-list>
+</div> -->
+<!-- Botão para acionar modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalLongoExemplo">
+  Abrir modal de demonstração
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="ModalLongoExemplo" tabindex="-1" role="dialog" aria-labelledby="TituloModalLongoExemplo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="TituloModalLongoExemplo">Título do modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="MofalClose()">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</ion-content>

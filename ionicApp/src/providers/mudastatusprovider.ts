@@ -20,4 +20,5 @@ export class MudaStatusProvider {
         return this.httpProvider.patch(obj);
         
     }
+    
 }

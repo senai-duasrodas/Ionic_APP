@@ -15,10 +15,10 @@
     <ion-segment-button value="Aberto">
       <ion-label class="cortexto">Abertas</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="Andamento">
+    <ion-segment-button value="Em Andamento">
       <ion-label class="cortexto">Andamento</ion-label>
     </ion-segment-button>
-    <ion-segment-button value="Pausadas">
+    <ion-segment-button value="Pause">
         <ion-label class="cortexto">Pausadas</ion-label>
     </ion-segment-button>
   </ion-segment>
@@ -27,91 +27,33 @@
   <ion-refresher-content></ion-refresher-content>
 </ion-refresher>
     
-  
-
-<div [ngSwitch]="pet">
-  
-      <ion-list *ngSwitchCase="'Andamento'" >
-        <div class="holdContent">
-          <div *ngIf="listaOSAndamento == ''">
-                <h3 class="MSGcortexto">Você não possui nenhuma OS em Andamento</h3>
+    <ion-grid class="contentGridDetalhe" *ngIf="verificaLista();else semOS" >
+      <ion-row>
+        <ion-col class="contentGridCol">
+          <ion-list class="listContent" *ngFor="let item of todasOS">
+            <div *ngIf="item.tipoStatus == pet">
+              <ion-item no-lines class="itemStyle" (click)="MostraDetalhes(item.idOrdemServico)">
+                <h2>Resumo: {{item.resumo}}</h2>
+                <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
+                <p>Fim Planejado: {{item.fimPlanejado}}</p>
+                <span>Status: {{item.tipoStatus}}</span>
+              </ion-item>
+              <div class="holdBtn">
+                <button  type="button" class="campo"(click)="pegaepi(item)">Iniciar</button> 
+              </div>
+              <ion-item no-lines class="itemStyle" >
+                <hr>
+              </ion-item>
           </div>
-          <ion-grid class="contentGridDetalhe" *ngIf="listaOSAndamento.length > 0" >
-            <ion-row>
-              <ion-col class="contentGridCol">
-                <ion-list class="listContent" *ngFor="let item of listaOSAndamento">
-                    <ion-item no-lines class="itemStyle" (click)="MostraDetalhes(item.idOrdemServico)">
-                      <h2>Resumo: {{item.resumo}}</h2>
-                      <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
-                      <p>Fim Planejado: {{item.fimPlanejado}}</p>
-                      <span>Status: {{item.Status_idStatus}}</span>
-                    </ion-item>
-                    <div class="holdBtn">
-                    <!-- <button  type="button" size="small" class="stylebutton"(click)="AlteraStatus(item.Status_idStatus, item.idOrdemServico)" >Encerrada</button> -->
-                      <button  type="button" size="small" class="stylebutton"(click)="AlteraStatus('OSPausar',item.idOrdemServico)">Pausar</button> 
-                    </div>
-                    <ion-item no-lines class="itemStyle" >
-                      <hr>
-                    </ion-item>
-                  </ion-list>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </div>
-      </ion-list>
-
-      <ion-list *ngSwitchCase="'Aberto'" >
-        <div class="holdContent">
-          <div *ngIf="listaOSAberta == ''">
-              <h3 class="MSGcortexto">Você não possui nenhuma OS Abertas</h3>
-          </div>
-          <ion-grid class="contentGridDetalhe" *ngIf="listaOSAberta.length > 0" >
-              <ion-row>
-                <ion-col class="contentGridCol">
-                  <ion-list class="listContent" *ngFor="let item of listaOSAberta">
-                      <ion-item no-lines class="itemStyle" (click)="MostraDetalhes(item.idOrdemServico)">
-                        <h2>Resumo: {{item.resumo}}</h2>
-                        <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
-                        <p>Fim Planejado: {{item.fimPlanejado}}</p>
-                        <span>Status: {{item.Status_idStatus}}</span>
-                      </ion-item>
-                      <div class="holdBtn">
-                        <button  type="button" class="campo"(click)="AlteraStatus(item.Status_idStatus, item.idOrdemServico)">Iniciar</button> 
-                      </div>
-                      <ion-item no-lines class="itemStyle" >
-                        <hr>
-                      </ion-item>
-                  </ion-list>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-        </div>
-      </ion-list>
-      <ion-list *ngSwitchCase="'Pausadas'" >
-          <div *ngIf="listaOSPausadas == ''">
-                <h3 class="MSGcortexto">Não há nenhuma OS Pausada</h3>
-          </div>
-          <ion-grid class="contentGridDetalhe" *ngIf="listaOSPausadas.length > 0" >
-            <ion-row>
-              <ion-col class="contentGridCol">
-                <ion-list class="listContent" *ngFor="let item of listaOSPausadas">
-                  <ion-item no-lines class="itemStyle" (click)="MostraDetalhes(item.idOrdemServico)">
-                    <h2>Resumo: {{item.resumo}}</h2>
-                    <p>Inicio Planejado: {{item.inicioPlanejado}}</p>
-                    <p>Fim Planejado: {{item.fimPlanejado}}</p>
-                    <span>Status: {{item.Status_idStatus}}</span>
-                  </ion-item>
-                  <div class="holdBtn">
-                    <button  type="button" class="campo"(click)="AlteraStatus(item.Status_idStatus, item.idOrdemServico)">Iniciar</button> 
-                  </div>
-                  <ion-item no-lines class="itemStyle" >
-                    <hr>
-                  </ion-item>
-                </ion-list>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-list>
-    </div>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
 
 </ion-content>
+
+<ng-template #semOS >
+    <div>
+      <h3 class="MSGcortexto">Não há nenhuma OS {{pet}}</h3>
+  </div>
+</ng-template>
